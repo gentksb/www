@@ -48,6 +48,10 @@ hasCJKLanguage = true
   #url = "contact/"
 
   [[params.exNavlinks]]
+  name = "Blog"
+  url = "https://blog.gensobunya.net/"
+
+  [[params.exNavlinks]]
   name = "委託"
   url = "http://shop.comiczin.jp/products/list.php?category_id=6848"
 
