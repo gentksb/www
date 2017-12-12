@@ -4,7 +4,7 @@ baseURL = "http://www.gensobunya.net/"
 languageCode = "ja-jp"
 #canonifyURLs = false
 #relativeURLs = true
-theme = "amp"
+theme = "forty"
 enableRobotsTXT = false
 copyright = "© 2017 Copyright gensobunya."
 
