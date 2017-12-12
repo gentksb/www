@@ -4,7 +4,7 @@ baseURL = "http://www.gensobunya.net/"
 languageCode = "ja-jp"
 #canonifyURLs = false
 #relativeURLs = true
-theme = "forty"
+theme = "hugo-creative-portfolio-theme"
 enableRobotsTXT = false
 copyright = "© 2017 Copyright gensobunya."
 
@@ -17,13 +17,47 @@ hasCJKLanguage = true
 #uglyurls = true
 
 [params]
-  description = "@gen_sobunyaの同人サークル活動及び技術系活動の集積所" #optional
-# googleanalytics = "Your Tracking Id" # optional
+  # Style options: default (pink), blue, green, pink, red, sea, violet
+  # Use custom.css for your custom styling
+  style = "sea"
+  description = "幻想技研/なんとか技研　サークルサイト"
+  copyright = "&copy;2017 gensobunya"
+  sidebarAbout = []
+  # Contact page
+     # Since this template is static, the contact form uses www.formspree.io as a
+     # proxy. The form makes a POST request to their servers to send the actual
+     # email. Visitors can send up to a 1000 emails each month for free.
+     #
+     # What you need to do for the setup?
+     #
+     # - set your email address under 'email' below
+     # - upload the generated site to your server
+     # - send a dummy email yourself to confirm your account
+     # - click the confirm link in the email from www.formspree.io
+     # - you're done. Happy mailing!
+  email = "you@yoursite.com"
 
-# optional
-[social]
-  twitter = "gen_sobunya"
-#  github = "Your Github Name"
-#  facebook = "Your facebook Name"
-#  gplus = "Your Google+ profile name"
-#  linkedin = "Your LinkedIn Name"
+  # Nav links in the side bar
+  [[params.navlinks]]
+  name = "Home"
+  url = ""
+
+  [[params.navlinks]]
+  name = "About"
+  url = "about/"
+
+  #[[params.navlinks]]
+  #name = "Get in touch"
+  #url = "contact/"
+
+  [params.social]
+ # facebook      = "full page or profile url in facebook"
+ # googleplus    = "full profile url in googleplus"
+ # email         = "email@example.com"
+  twitter       = "https://twitter.com/gen_sobunya"
+ # linkedin      = "full profile url in linkedin"
+ # stackoverflow = "full profile url in stackoverflow"
+  instagram     = "https://www.instagram.com/gen_sobunya/"
+ # github        = "full profile url in github"
+
+
