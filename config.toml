@@ -1,0 +1,29 @@
+#website setting
+title = "幻想技研/なんとか技研"
+baseURL = "http://www.gensobunya.net/"
+languageCode = "ja-jp"
+#canonifyURLs = false
+#relativeURLs = true
+theme = "amp"
+enableRobotsTXT = false
+copyright = "© 2017 Copyright gensobunya."
+
+#system
+contentDir = "content"
+layoutDir = "layouts"
+publishDir = "public"
+buildDrafts = false
+hasCJKLanguage = true
+#uglyurls = true
+
+[params]
+  description = "@gen_sobunyaの同人サークル活動及び技術系活動の集積所" #optional
+# googleanalytics = "Your Tracking Id" # optional
+
+# optional
+[social]
+  twitter = "gen_sobunya"
+#  github = "Your Github Name"
+#  facebook = "Your facebook Name"
+#  gplus = "Your Google+ profile name"
+#  linkedin = "Your LinkedIn Name"
