@@ -43,12 +43,16 @@ hasCJKLanguage = true
   url = ""
 
   #[[params.navlinks]]
-  #name = "About"
-  #url = "about/"
-
-  #[[params.navlinks]]
   #name = "Get in touch"
   #url = "contact/"
+
+  [[params.exNavlinks]]
+  name = "委託"
+  url = "http://shop.comiczin.jp/products/list.php?category_id=6848"
+
+  [[params.exNavlinks]]
+  name = "電子版販売"
+  url = "https://gensobunya.booth.pm/"
 
   [params.social]
  # facebook      = "full page or profile url in facebook"
