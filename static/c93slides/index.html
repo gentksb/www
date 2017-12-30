@@ -24,7 +24,17 @@
 <script type="text/javascript" src="slick.min.js"></script>
 <script type="text/javascript">
   <!--
-  $('.slider').slick();
+  $('.slider').slick({
+    centerMode: true,
+    centerPadding: '160px',
+    dots: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    pauseOnDotsHover: false,
+    pauseOnHover: ture,
+    lazyLoad: "progressive"
+  });
   --></script>
 </body>
 </html>
