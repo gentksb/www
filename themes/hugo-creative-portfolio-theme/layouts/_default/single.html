@@ -5,6 +5,10 @@
     <div class="col-lg-8">
       <div class="content-column-content">
          <h1>{{ .Title }}</h1>
+         {{- if not .Date.IsZero }}
+				<time class="single_meta-date" datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">Posted at {{.Date.Format ( .Site.Params.dateformat | default "January 02, 2006")}}</time>
+        {{- end }}
+        <hr>
          {{ .Content }}
          {{ template "_internal/disqus.html" . }}
       </div>

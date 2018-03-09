@@ -1,1 +1,19 @@
 /* your styles go here */
+
+.single_meta-date{
+    color: #777777;
+    font-size: small;
+  }
+
+h2 {
+    padding: 0.5em;/*文字周りの余白*/
+    color: #494949;/*文字色*/
+    background: #d8d8d8;/*背景色*/
+    border-left: solid 5px #383838;/*左線（実線 太さ 色）*/
+}
+
+h3 {
+    padding: .25em 0 .5em .75em;
+    border-left: 6px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
