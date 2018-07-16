@@ -17,6 +17,8 @@ Qiitaのデザイン変更に伴って、qiita.comへアクセスした際にqii
 
 インストールはこちらから！
 [Chrome web store - QiiTopSet](https://chrome.google.com/webstore/detail/qiitopset/ipgbemcljflegiekgghabajhbaihmhlm)
+※2018/6現在、Qiitaの挙動変更により正常に動作しません。Trendのページにアクセスした場合必ず指定した先に遷移してしまうため、この拡張機能を無効にすることを推奨します
+
 
 ## Code
 
