@@ -6,7 +6,7 @@ languageCode = "ja-jp"
 #relativeURLs = true
 theme = "hugo-creative-portfolio-theme"
 enableRobotsTXT = true
-copyright = "© 2017 Copyright gensobunya."
+copyright = "© 2017- Copyright gensobunya."
 googleAnalytics = "UA-72162915-3"
 
 #system

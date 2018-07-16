@@ -868,7 +868,7 @@ a:active {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 700;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 0.1em;
 }
 .box-masonry h4 a {
