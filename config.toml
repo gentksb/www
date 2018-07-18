@@ -63,9 +63,9 @@ hasCJKLanguage = true
   name = "電子版販売(Kindle)"
   url = "https://amzn.to/2uyzRNW"
 
-  # [[params.exNavlinks]]
-  # name = "電子版販売(BookWalker)"
-  # url = ""
+  [[params.exNavlinks]]
+  name = "電子版販売(BookWalker)"
+  url = "https://bookwalker.jp/author/114298/"
 
   [params.social]
  # facebook      = "full page or profile url in facebook"
