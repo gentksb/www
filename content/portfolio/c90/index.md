@@ -3,10 +3,10 @@ title: "C90頒布物紹介"
 date: 2016-12-01T21:49:59+09:00
 draft: false
 tags: ["comicmarket", "C90"]
-image: "/img/C90/c90_sample01.png"
+image: "c90_sample01.png"
 ---
 ## ホビーレースのすゝめ
-{{<figure src="/img/c90/c90_sample01.png" width="30%">}}
+{{<figure src="c90_sample01.png" width="30%">}}
 
 自転車買ってレースに興味あるけどどうしよう？という方や草レースの仕組みが気になる方に向けた、ホビーレース参戦ノウハウ本！クリテリウム・ロードレース・シクロクロスをメインにレースの選び方、エントリー方法からレースへ向けての準備、当日の移動手段や、レース後のアフターケア(ビールクズ含む)までまるっと一冊に濃縮！
 
@@ -14,6 +14,6 @@ image: "/img/C90/c90_sample01.png"
 ※物理本は委託を含め完売しました、電子書籍販売中。左のメニューよりどうぞ
 
 ### サンプル
-{{<figure src="/img/C90/c90_sample02.png" width="30%">}}
+{{<figure src="c90_sample02.png" width="30%">}}
 \
-{{<figure src="/img/C90/c90_sample03.jpg" width="30%">}}
+{{<figure src="c90_sample03.jpg" width="30%">}}

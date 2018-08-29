@@ -3,7 +3,7 @@ title: "Chrome拡張作りました：QiiTopSet"
 date: 2018-03-08T21:07:25+09:00
 draft: false
 tags: ["code", ""]
-image: "/img/qiitopset/code.jpg"
+image: "code.jpg"
 ---
 ## タグフィードを最初に見たいんだ！
 

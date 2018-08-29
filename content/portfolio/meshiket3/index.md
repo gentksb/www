@@ -3,10 +3,10 @@ title: "関西めしけっと3に参加します"
 date: 2018-03-09T23:06:02+09:00
 draft: false
 tags: ["meshiket", "meshiket3"]
-image: "/img/meshiket3/meshiket3_cierclecut.png"
+image: "meshiket3_cierclecut.png"
 ---
 ## 関西めしけっと3
-{{<figure src="/img/meshiket3/meshiket3_cierclecut.png" width="100%">}}
+{{<figure src="meshiket3_cierclecut.png" width="100%">}}
 
 A06「なんとか技研」で[関西めしけっと3](http://meshiket.dojin.com/sanka)に参加します。
 

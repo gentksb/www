@@ -3,10 +3,10 @@ title: "C92頒布物紹介"
 date: 2017-08-01T21:49:59+09:00
 draft: false
 tags: ["comicmarket", "C92"]
-image: "/img/C92/c92_sample01.jpg"
+image: "c92_sample01.jpg"
 ---
 ## 銀輪練之概略
-{{<figure src="/img/C92/c92_sample01.jpg" width="30%">}}
+{{<figure src="c92_sample01.jpg" width="30%">}}
 
 脚は鍛えたいけどトレーニングはめんどくさい貴方へ。ロードトレーニング入門書。 非運動部の方でもわかるような基礎の基礎から書いてます！\
 噂のZwiftもセッティングからワークアウトをこなすまでじっくり解説。
@@ -15,11 +15,11 @@ image: "/img/C92/c92_sample01.jpg"
 委託価格750円（税込）
 
 ### 内容サンプル
-{{<figure src="/img/C92/c92_sample02.jpg" width="30%">}}
+{{<figure src="c92_sample02.jpg" width="30%">}}
 
 エグさを上げず効率だけ上げて脚を鍛える（面倒くさがり）
 
-{{<figure src="/img/C92/c92_sample03.jpg" width="30%">}}
+{{<figure src="c92_sample03.jpg" width="30%">}}
 
 Zwiftはいいぞ
 
