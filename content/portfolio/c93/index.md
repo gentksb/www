@@ -6,22 +6,22 @@ tags: ["comicmarket", "C93"]
 image: "c93_sample01.jpg"
 ---
 ## 大阪北部飯ポタ本＋
-<img src="c93_sample01.jpg" width="30%" style="float:left;">
-{{<figure src="c93_sample02.jpg" width="30%">}}
+<img src="./c93_sample01.jpg" width="30%" style="float:left;">
+{{<figure src="./c93_sample02.jpg" width="30%">}}
 
 大阪北部の飯ポタスポットを、エネルギー消費のためのライド情報と一緒に紹介。\
 おまけとして、「神奈川県民でも満足できる大阪の家系ラーメン屋」を収録。\
 全32ページ、頒布価格￥500
 
 ## 2017冬王滝　現場レポート
-{{<figure src="c93_sample03.jpg" width="60%">}}
+{{<figure src="./c93_sample03.jpg" width="60%">}}
 
 氷点下のスタート、過去最長の100kmコース、凍りつく機材…11月の王滝で何が起こっていたのか？完走率25%のアドベンチャーレースの記憶をたどる。\
 会場限定。全44ページ、頒布価格￥500
 
 ## 既刊電子版　DLカード
-<img src="c93_dlcard01.png" style="float:left;" width="15%">
-{{<figure src="c93_dlcard02.png"  width="15%">}}
+<img src="./c93_dlcard01.png" style="float:left;" width="15%">
+{{<figure src="./c93_dlcard02.png"  width="15%">}}
 
 過去作のイラスト・写真をフルカラーにしたPDFファイルのDLコード付きカード。\
 購入すると2018/12/31までオリジナルファイルをダウンロード可能です。
@@ -29,4 +29,4 @@ PDFなのでKindleに入れて電子書籍として楽しむことも可能。\
 
 特にDRM等はしかけていませんが、公衆への再配布は禁止とさせていただき、発見次第然るべき処置を取らせていただきます。
 
-{{<figure src="c93_menu.jpg" width="40%">}}
+{{<figure src="./c93_menu.jpg" width="40%">}}
