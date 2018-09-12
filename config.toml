@@ -56,16 +56,16 @@ hasCJKLanguage = true
   url = "http://shop.comiczin.jp/products/list.php?category_id=6848"
 
   [[params.exNavlinks]]
-  name = "電子版PDF販売"
+  name = "自家通販(Booth)"
   url = "https://gensobunya.booth.pm/"
 
   [[params.exNavlinks]]
   name = "電子版販売(Kindle)"
   url = "https://amzn.to/2Ls8KPj"
 
-  [[params.exNavlinks]]
-  name = "電子版販売(BookWalker)"
-  url = "https://bookwalker.jp/author/114298/"
+  # [[params.exNavlinks]]
+  # name = "電子版販売(BookWalker)"
+  # url = "https://bookwalker.jp/author/114298/"
 
   [params.social]
  # facebook      = "full page or profile url in facebook"
