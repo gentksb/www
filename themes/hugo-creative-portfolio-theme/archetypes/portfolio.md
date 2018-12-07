@@ -1,5 +1,7 @@
 +++
-draft = true
-image = ""
-showonlyimage = false
+title: ""
+date: ""
+draft: false
+tags: []
+image: ""
 +++
