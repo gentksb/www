@@ -7,16 +7,24 @@ image: "deirin_senden.jpg"
 ---
 ## 【新刊】泥輪事情
 <img src="./deirin_senden.jpg" width="30%" style="float:left;">
-{{<figure src="./deirin_senden.jpg" width="30%">}}
 
-{{<figure src="./page.PNG" width="30%">}}
+<img src="./page.PNG" width="30%" style="float:left;">
 
 {{<figure src="./page2.PNG" width="30%">}}
 
 シクロクロスの魅力をあらゆる面からアピールし、シクロクロス人口を爆増させる事を目的とした本です。気合が入りすぎてまずページ数が普段の1.5倍以上になってしまいました。
 
-シクロクロスレースに関するカテゴリシステムや機材の疑問を紹介しつつ、Twitter上で行ったシクロクロッサーへのアンケートや、シクロクロスを語る上で欠かせない「フォトグラファー」達からシクロクロスの魅力を語ってもらいます。 おまけで筆者が今年のCX全日本選手権に参加したレポートを載せています。  
+シクロクロスレースに関するカテゴリシステムや機材の疑問を紹介しつつ、Twitter上で行ったシクロクロッサーへのアンケートや、シクロクロスを語る上で欠かせない「フォトグラファー」達からシクロクロスの魅力を語ってもらいます。  
+おまけで筆者が今年のCX全日本選手権に参加したレポートを載せています。  
 全**56**ページ、頒布価格￥500
+
+
+### Guest Photographer
+
+[@ratsCRZ](https://twitter.com/ratscrz)  
+[@nakachan_k](https://twitter.com/nakachan_k])  
+[@youkan_0045](https://twitter.com/youkan_0045)  
+[@Nishimura_2015](https://twitter.com/Nishimura_2015)  
 
 ## 【既刊】大阪北部飯ポタ本＋
 <img src="./c93_sample01.jpg" width="30%" style="float:left;">
@@ -42,4 +50,4 @@ PDFなのでKindleに入れて電子書籍として楽しむことも可能。\
 
 特にDRM等はしかけていませんが、公衆への再配布は禁止とさせていただき、発見次第然るべき処置を取らせていただきます。
 
-{{<figure src="./c93_menu.jpg" width="40%">}}
+各200円
