@@ -29,6 +29,9 @@ image: "sphinx.png"
 
 `conf.py`が含まれたリポジトリは下記のとおりです。ビルド方法はREADME参照のこと。
 
+>[Github : gentksb/md2doujin_sphinx](https://github.com/gentksb/md2doujin_sphinx)  
+><https://github.com/gentksb/md2doujin_sphinx>
+
 ## プランニング
 
 ### 入稿要件
