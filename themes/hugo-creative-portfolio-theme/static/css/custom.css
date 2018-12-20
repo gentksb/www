@@ -4,6 +4,18 @@
     color: #242424;
 }
 
+.content-column-content ul li:before {
+    font-family: initial;
+    content: initial;
+    margin: initial;
+    color:initial;
+    list-style: disc;
+  }
+  
+.content-column-content ul li{
+    list-style: disc;
+}
+
 .single_meta-date{
     color: #494949;
     font-size: small;
