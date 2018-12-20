@@ -5,6 +5,11 @@ draft: false
 tags: ["comicmarket", "C95"]
 image: "deirin_senden.jpg"
 ---
+## スペース
+
+**3日目西あ70a**となります。  
+今回、自転車は壁にズラッと並ぶようです。
+
 ## 【新刊】泥輪事情
 <img src="./deirin_senden.jpg" width="30%" style="float:left;">
 
