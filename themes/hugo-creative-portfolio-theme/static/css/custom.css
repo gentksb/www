@@ -1,7 +1,11 @@
 /* your styles go here */
 
+.content-column-content p, .content-column-content li {
+    color: #242424;
+}
+
 .single_meta-date{
-    color: #777777;
+    color: #494949;
     font-size: small;
   }
 

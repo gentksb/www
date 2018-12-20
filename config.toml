@@ -20,7 +20,7 @@ hasCJKLanguage = true
 [params]
   # Style options: default (pink), blue, green, pink, red, sea, violet
   # Use custom.css for your custom styling
-  style = "sea"
+  style = "blue"
   description = "幻想技研/なんとか技研　サークルサイト"
   copyright = "&copy;2017 gensobunya"
   sidebarAbout = []
