@@ -52,8 +52,12 @@ hasCJKLanguage = true
   url = "https://blog.gensobunya.net/"
 
   [[params.exNavlinks]]
-  name = "委託"
-  url = "http://shop.comiczin.jp/products/list.php?category_id=6848"
+  name = "COMIC ZIN委託"
+  url = "https://shop.comiczin.jp/products/list.php?category_id=6848"
+  
+  [[params.exNavlinks]]
+  name = "COMIC ZIN委託2"
+  url = "https://shop.comiczin.jp/products/list.php?category_id=8285"
 
   [[params.exNavlinks]]
   name = "自家通販(Booth)"
@@ -62,10 +66,6 @@ hasCJKLanguage = true
   [[params.exNavlinks]]
   name = "電子版販売(Kindle)"
   url = "https://amzn.to/2Ls8KPj"
-
-  # [[params.exNavlinks]]
-  # name = "電子版販売(BookWalker)"
-  # url = "https://bookwalker.jp/author/114298/"
 
   [params.social]
  # facebook      = "full page or profile url in facebook"
