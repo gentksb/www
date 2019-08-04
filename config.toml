@@ -52,14 +52,6 @@ hasCJKLanguage = true
   url = "https://blog.gensobunya.net/"
 
   [[params.exNavlinks]]
-  name = "COMIC ZIN委託"
-  url = "https://shop.comiczin.jp/products/list.php?category_id=6848"
-  
-  [[params.exNavlinks]]
-  name = "COMIC ZIN委託2"
-  url = "https://shop.comiczin.jp/products/list.php?category_id=8285"
-
-  [[params.exNavlinks]]
   name = "自家通販(Booth)"
   url = "https://gensobunya.booth.pm/"
 
@@ -69,7 +61,6 @@ hasCJKLanguage = true
 
   [params.social]
  # facebook      = "full page or profile url in facebook"
- # googleplus    = "full profile url in googleplus"
  # email         = "email@example.com"
   twitter       = "https://twitter.com/gen_sobunya"
  # linkedin      = "full profile url in linkedin"
