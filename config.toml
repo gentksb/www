@@ -54,6 +54,10 @@ hasCJKLanguage = true
   [[params.exNavlinks]]
   name = "自家通販(Booth)"
   url = "https://gensobunya.booth.pm/"
+  
+   [[params.exNavlinks]]
+  name = "書籍委託販売"
+  url= "https://www.melonbooks.co.jp/circle/index.php?circle_id=45540"
 
   [[params.exNavlinks]]
   name = "電子版販売(Kindle)"
