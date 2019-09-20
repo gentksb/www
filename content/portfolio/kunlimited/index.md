@@ -6,7 +6,7 @@ tags: ["kindle"]
 image: "kindleunlimitedlogo.png"
 ---
 
-![image](./kindleunlimitedlogo.png" width="100%)
+![image](./kindleunlimitedlogo.png)
 
 ## 電子書籍販売元をKindleに一本化しました
 
