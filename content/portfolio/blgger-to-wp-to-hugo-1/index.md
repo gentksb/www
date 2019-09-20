@@ -6,7 +6,7 @@ tags: ["Code"]
 image: hugo.png
 #url: "/2017/10/blgger-to-wp-to-hugo-1"
 ---
-{{<figure src="hugo.png" width="100%">}}
+![image](hugo.png" width="100%)
 ## まずはBloggerをやめたかった
 
 かなり長い間Bloggerでブログを書いてきたのですが、最近不満が目立つようになってきました。主な点は下記の2点。
@@ -35,7 +35,9 @@ GCPにも興味があって並行して調べていたところ、下記の通�
 
 
 ## GCPすごい
-{{<tweet 910320028464988160>}}
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">GCEのすごいところ<br><br>ターミナルソフト←いらない<br>ユーザーの作成←いらない<br>sudo権限付与←いらない<br>ssh鍵の生成←いらない<br>ssh鍵の転送←いらない<br>GCP用sdkのインストール←いらない</p>&mdash; ゲン (@gen_sobunya) <a href="https://twitter.com/gen_sobunya/status/910320028464988160?ref_src=twsrc%5Etfw">September 20, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 まずはGCPの機能に感動。SSHするのにブラウザから1クリックで証明書を自動作成してインスタンスに登録してSSHできる…
 
 さすがにWEBアプリなのでちょっと遅いが、大抵の作業は事足りる上にAndroidのConsoleアプリからも同じことができる。

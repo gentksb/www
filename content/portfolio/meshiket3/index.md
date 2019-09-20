@@ -6,7 +6,7 @@ tags: ["meshiket", "meshiket3"]
 image: "meshiket3_cierclecut.png"
 ---
 ## 関西めしけっと3
-{{<figure src="./meshiket3_cierclecut.png" width="100%">}}
+![image](./meshiket3_cierclecut.png" width="100%)
 
 A06「なんとか技研」で[関西めしけっと3](http://meshiket.dojin.com/sanka)に参加します。
 
@@ -21,5 +21,4 @@ A06「なんとか技研」で[関西めしけっと3](http://meshiket.dojin.com
 コミケで頒布した「大阪北部飯ポタ本」及び「会場限定　冬王滝レポ」を持ち込む予定です。\
 珍しくインテックスではなく都心部で行うアクセスも良いイベントですので、関西エリアの方はぜひお越しください。
 
-<img src=".//img/C93/c93_sample01.jpg" width="30%" style="float:left; margin:10px;" >
-{{<figure src=".//img/C93/c93_sample03.jpg" width="40%" style="float:left; margin:10px;" >}}
+![image](./img/C93/c93_sample03.jpg)

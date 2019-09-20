@@ -341,7 +341,7 @@ LuaLatexはdvildfmxを使わずにPDFを出力でき、`\usepackage[x-1a1]{pdfx}
 
 <img src="./page.PNG" width="30%" style="float:left;">
 
-{{<figure src="./page2.PNG" width="30%">}}
+![image](./page2.PNG" width="30%)
 
 シクロクロスの魅力をあらゆる面からアピールし、シクロクロス人口を爆増させる事を目的とした本です。気合が入りすぎてまずページ数が普段の1.5倍以上になってしまいました。
 
