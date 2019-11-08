@@ -7,7 +7,9 @@ languageCode = "ja-jp"
 theme = "hugo-creative-portfolio-theme"
 enableRobotsTXT = true
 copyright = "© 2017- Copyright gensobunya."
-googleAnalytics = "UA-72162915-3"
+# GA provide by Tag manager
+# googleAnalytics = "UA-72162915-3"
+
 
 #system
 contentDir = "content"
