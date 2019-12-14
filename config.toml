@@ -1,5 +1,5 @@
 #website setting
-title = "幻想サイクル　サークルサイト"
+title = "幻想サイクルサークルサイト"
 baseURL = "https://www.gensobunya.net/"
 languageCode = "ja-jp"
 #canonifyURLs = false
@@ -23,7 +23,7 @@ hasCJKLanguage = true
   # Style options: default (pink), blue, green, pink, red, sea, violet
   # Use custom.css for your custom styling
   style = "blue"
-  description = "幻想技研/なんとか技研　サークルサイト"
+  description = "幻想サイクルサークルサイト"
   copyright = "&copy;2017 gensobunya"
   sidebarAbout = []
   # Contact page
