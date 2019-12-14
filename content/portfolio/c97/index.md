@@ -30,6 +30,10 @@ To be upload
 
 ![サンプル2](./c97sample2.jpg)
 
+### 通販・電子版
+
+委託通販は[メロンブックス](https://www.melonbooks.co.jp/detail/detail.php?product_id=595340)様、電子版は[Kindle](https://amzn.to/34jEM5w)でそれぞれ予約受付中です。
+
 ## 【既刊】泥輪事情
 
 ![image](./c95sample1.jpg")
