@@ -30,13 +30,17 @@ image: "c97cover.jpg"
 
 ![サンプル2](./c97sample2.jpg)
 
+### 通販・電子版
+
+委託通販は[メロンブックス](https://www.melonbooks.co.jp/detail/detail.php?product_id=595340)様、電子版は[Kindle](https://amzn.to/34jEM5w)でそれぞれ予約受付中です。
+
 ## 【既刊】泥輪事情
 
-![image](./c95sample1.jpg")
+![image](./c95sample1.jpg)
 
-![image](./c95sample2.PNG")
+![image](./c95sample2.PNG)
 
-![image](./c95sample3.PNG")
+![image](./c95sample3.PNG)
 
 シクロクロスの魅力をあらゆる面からアピールし、シクロクロス人口を爆増させる事を目的とした本です。気合が入りすぎてまずページ数が普段の 1.5 倍以上になってしまいました。
 
@@ -46,8 +50,8 @@ image: "c97cover.jpg"
 
 ## 【既刊】大阪北部飯ポタ本＋
 
-![image](./c93_sample01.jpg")
-![image](./c93_sample02.jpg")
+![image](./c93_sample01.jpg)
+![image](./c93_sample02.jpg)
 
 大阪北部の飯ポタスポットを、エネルギー消費のためのライド情報と一緒に紹介。\
 おまけとして、「神奈川県民でも満足できる大阪の家系ラーメン屋」を収録。\
@@ -55,7 +59,7 @@ image: "c97cover.jpg"
 
 ## 【既刊】2017 冬王滝　現場レポート
 
-![image](./c93_sample03.jpg")
+![image](./c93_sample03.jpg)
 
 氷点下のスタート、過去最長の 100km コース、凍りつく機材…11 月の王滝で何が起こっていたのか？完走率 25%のアドベンチャーレースの記憶をたどる。\
 会場限定。全 44 ページ、頒布価格￥ 500
