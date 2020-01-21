@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-typescript-plus",
-  "description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
+  "name": "gensoucycle-portfolio-and-circle-website",
+  "description": "Gensobunya's doujin circle and portfolio website",
   "version": "1.0.0",
   "private": true,
-  "author": "Resi Respati <resir014@gmail.com>",
+  "author": "gensobunya",
   "keywords": [
-    "gatsby"
+    "gatsby, frontend, cycle"
   ],
   "license": "MIT",
   "main": "n/a",

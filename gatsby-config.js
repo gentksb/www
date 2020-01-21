@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: 'gatsby-starter-typescript-plus',
-    description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
-    keywords: 'gatsbyjs, gatsby, javascript, sample, something',
-    siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
+    title: '幻想サイクル Circle site & Portfolio',
+    description: '同人サイクル「幻想サイクル」公式WEBサイト兼、代表ゲンのポートフォリオ',
+    keywords: 'シクロクロス, 自転車同人誌, プログラミング, フロントエンド',
+    siteUrl: 'https://www.gensobunya.net/',
     author: {
-      name: 'Resi Respati',
-      url: 'https://twitter.com/resir014',
-      email: 'resir014@gmail.com'
+      name: 'gensobunya',
+      url: 'https://twitter.com/gen_sobunya',
+      email: 'gen@gensobunya.net'
     }
   },
   plugins: [
