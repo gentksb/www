@@ -1,0 +1,31 @@
+{
+  "blog": [
+    {
+      "name": "幻想サイクルブログ",
+      "url": "https://blog.gensosycle.net/",
+      "rank": 0
+    },
+    {
+      "name": "gensobunya tech blog",
+      "url": "https://gensobunya-tech.hatenablog.com/",
+      "rank": 1
+    }
+  ],
+  "shop": [
+    {
+      "name": "kindle",
+      "url": "https://amzn.to/2Ls8KPj",
+      "rank": 0
+    },
+    {
+      "name": "メロンブックス",
+      "url": "https://www.melonbooks.co.jp/circle/index.php?circle_id=45540",
+      "rank": 1
+    },
+    {
+      "name": "booth",
+      "url": "https://gensobunya.booth.pm/",
+      "rank": 2
+    }
+  ]
+}
