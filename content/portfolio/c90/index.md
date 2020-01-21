@@ -1,9 +1,9 @@
 ---
-title: "C90：ホビーレースのすゝめ"
+title: 'C90：ホビーレースのすゝめ'
 date: 2016-12-01T21:49:59+09:00
 draft: false
-tags: ["comicmarket", "C90"]
-image: "c90_sample01.png"
+tags: ['comicmarket', 'C90', 'Doujin']
+image: 'c90_sample01.png'
 ---
 
 ## ホビーレースのすゝめ
@@ -13,7 +13,9 @@ image: "c90_sample01.png"
 自転車買ってレースに興味あるけどどうしよう？という方や草レースの仕組みが気になる方に向けた、ホビーレース参戦ノウハウ本！クリテリウム・ロードレース・シクロクロスをメインにレースの選び方、エントリー方法からレースへ向けての準備、当日の移動手段や、レース後のアフターケア(ビールクズ含む)までまるっと一冊に濃縮！
 
 頒布価格 500 円\
-※物理本は委託を含め完売しました、電子書籍販売中。左のメニューよりどうぞ
+電子書籍版販売中です。
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://amzn.to/2NJXuNU" data-iframely-url="//cdn.iframe.ly/KZ9irLe?iframe=card-small"></a></div></div>
 
 ### サンプル
 

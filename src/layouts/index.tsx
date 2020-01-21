@@ -39,7 +39,9 @@ const IndexLayout: React.FC = ({ children }) => (
             { name: 'description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: data.site.siteMetadata.keywords }
           ]}
-        />
+        >
+          <script type="text/javascript" src="https://cdn.iframe.ly/embed.js" />
+        </Helmet>
         <Header title={data.site.siteMetadata.title} />
         <LayoutMain>{children}</LayoutMain>
       </LayoutRoot>
