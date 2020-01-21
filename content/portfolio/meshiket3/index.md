@@ -1,9 +1,9 @@
 ---
-title: '関西めしけっと3に参加します'
+title: "関西めしけっと3に参加します"
 date: 2018-03-09T23:06:02+09:00
 draft: false
-tags: ['meshiket', 'meshiket3', 'Doujin']
-cover: './meshiket3_cierclecut.png'
+tags: ["meshiket', 'meshiket3', 'Doujin"]
+cover: "./meshiket3_cierclecut.png"
 ---
 
 ## 関西めしけっと 3

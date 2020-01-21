@@ -1,10 +1,10 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
+import * as React from "react"
+import { Link } from "gatsby"
 
-import Page from '../components/Page'
-import Container from '../components/Container'
-import IndexLayout from '../layouts'
-import Recents from '../components/Recents'
+import Page from "../components/Page"
+import Container from "../components/Container"
+import IndexLayout from "../layouts"
+import Recents from "../components/Recents"
 
 const IndexPage = () => (
   <IndexLayout>

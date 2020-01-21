@@ -1,6 +1,6 @@
-import React from 'react'
-// import styled from '@emotion/styled'
-import { graphql, StaticQuery } from 'gatsby'
+import React from "react"
+// import styled from "@emotion/styled"
+import { graphql, StaticQuery } from "gatsby"
 
 interface StaticQueryProps {
   allMarkdownRemark: {
@@ -13,7 +13,13 @@ interface Edge {
     frontmatter: {
       date: string
       title: string
-      image?: string
+      cover?: {
+        childImageSharp: {
+          fluid: {
+            src: string
+          }
+        }
+      }
     }
     id: string
   }
@@ -23,13 +29,19 @@ const recentPost: React.FC = () => (
   <StaticQuery
     query={graphql`
       query RecentPostQuery {
-        allMarkdownRemark(limit: 4, sort: { fields: frontmatter___date, order: DESC }) {
+        allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
           edges {
             node {
               frontmatter {
                 date(formatString: "YYYY/MM/DD")
                 title
-                cover
+                cover {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
               }
               id
             }
