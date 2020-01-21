@@ -16,13 +16,19 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
-        path: `${__dirname}/content`
+        path: `${__dirname}/content/portfolio`
       }
     },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 960
+            }
+          },
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {
@@ -31,14 +37,7 @@ module.exports = {
           },
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 960,
-              quality: 90
-            }
-          }
+          'gatsby-remark-smartypants'
         ]
       }
     },

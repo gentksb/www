@@ -29,7 +29,7 @@ const recentPost: React.FC = () => (
               frontmatter {
                 date(formatString: "YYYY/MM/DD")
                 title
-                image
+                cover
               }
               id
             }

@@ -3,7 +3,7 @@ title: 'C92：銀輪練之概略'
 date: 2017-08-01T21:49:59+09:00
 draft: false
 tags: ['comicmarket', 'C92', 'Doujin']
-image: 'c92_sample01.jpg'
+cover: './c92_sample01.jpg'
 ---
 
 ## 銀輪練之概略

@@ -3,7 +3,7 @@ title: '電子書籍化しました'
 date: 2018-07-17T21:00:21+09:00
 draft: false
 tags: ['kindle', 'bookwalker', 'Doujin']
-image: 'amazon-kindle.png'
+cover: './amazon-kindle.png'
 ---
 
 ## 既刊の電子書籍版を発行しました
