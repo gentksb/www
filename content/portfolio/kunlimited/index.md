@@ -2,7 +2,7 @@
 title: "既刊がKindle Unlimitedで読めるようになりました"
 date: 2018-03-09T23:06:02+09:00
 draft: false
-tags: ["kindle', 'Doujin"]
+tags: ["kindle", "Doujin"]
 cover: "./kindleunlimitedlogo.png"
 ---
 

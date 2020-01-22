@@ -2,7 +2,7 @@
 title: "Chrome拡張：QiiTopSet"
 date: 2018-03-08T21:07:25+09:00
 draft: false
-tags: ["code', 'ChromeExtension"]
+tags: ["code", "ChromeExtension"]
 cover: "./code.jpg"
 ---
 

@@ -5,14 +5,17 @@ import Page from "../components/Page"
 import Container from "../components/Container"
 import IndexLayout from "../layouts"
 import Recents from "../components/Recents"
+import Doujin from "../components/Doujin"
 
 const IndexPage = () => (
   <IndexLayout>
     <Page>
       <Container>
         <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
+        <p>Recent posts.</p>
         <Recents />
+        <p>Douijn top posts.</p>
+        <Doujin />
         <p>Now go build something great.</p>
         <Link to="/page-2/">Go to page 2</Link>
       </Container>

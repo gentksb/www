@@ -2,7 +2,7 @@
 title: "C95:泥輪事情"
 date: 2018-12-07T20:00:29+09:00
 draft: false
-tags: ["comicmarket', 'C95', 'Doujin"]
+tags: ["comicmarket", "C95", "Doujin"]
 cover: "./deirin_senden.jpg"
 ---
 
