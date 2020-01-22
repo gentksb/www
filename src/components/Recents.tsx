@@ -29,7 +29,10 @@ const recentPost: React.FC = () => (
   <StaticQuery
     query={graphql`
       query RecentPostQuery {
-        allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+        allMarkdownRemark(
+          sort: { fields: frontmatter___date, order: DESC }
+          limit: 4
+        ) {
           edges {
             node {
               frontmatter {
