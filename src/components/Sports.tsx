@@ -58,7 +58,7 @@ const sportsPost: React.FC = () => {
   const postList = data.allMarkdownRemark.edges.map(edge => (
     <div key={edge.node.id}>{edge.node.frontmatter.title}</div>
   ))
-  //ここは共通化する
+  // ここは共通化する
 
   return <div>{postList}</div>
 }

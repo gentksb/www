@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 import Page from "../components/Page"
 import Container from "../components/Container"
@@ -7,20 +6,21 @@ import IndexLayout from "../layouts"
 import Recents from "../components/Recents"
 import Doujin from "../components/Doujin"
 import Sports from "../components/Sports"
+import Externals from "../components/Externals"
 
 const IndexPage = () => (
   <IndexLayout>
     <Page>
       <Container>
         <h1>Hi people</h1>
-        <p>Recent posts.</p>
+        <h2>Recent posts.</h2>
         <Recents />
-        <p>Douijn top posts.</p>
+        <h2>Douijn top posts.</h2>
         <Doujin />
-        <p>Now go build something great.</p>
-        <Link to="/page-2/">Go to page 2</Link>
-        <p>hook test</p>
+        <h2>hook test</h2>
         <Sports />
+        <h2>JSON Data</h2>
+        <Externals />
       </Container>
     </Page>
   </IndexLayout>
