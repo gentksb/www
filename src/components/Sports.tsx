@@ -28,11 +28,11 @@ interface Edge {
 const sportsPost: React.FC = () => {
   const data: StaticQueryProps = useStaticQuery(
     graphql`
-      query DoujinPostQuery {
+      query SportsPostQuery {
         allMarkdownRemark(
           sort: { fields: frontmatter___date, order: DESC }
           limit: 4
-          filter: { frontmatter: { tags: { eq: "Doujin" } } }
+          filter: { frontmatter: { tags: { eq: "Sports" } } }
         ) {
           edges {
             node {
