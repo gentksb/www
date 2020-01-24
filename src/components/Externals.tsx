@@ -1,6 +1,7 @@
 import React from "react"
 // import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
+import LinkBoxList from "./units/LinkBoxList"
 
 interface StaticQueryProps {
   allDataJson: {
@@ -45,25 +46,16 @@ const externalLinks: React.FC = () => {
     `
   )
 
-  const blogLinkList: Function = (externalLinkData: StaticQueryProps) => {
-    const blogData: ExternalLinkData[] =
-      externalLinkData.allDataJson.edges[0].node.blog
-    return blogData.map((blogLinkData: ExternalLinkData) => (
-      <div>{JSON.stringify(blogLinkData)}</div>
-    ))
-  }
-  const shopLinkList: Function = (externalLinkData: StaticQueryProps) => {
-    const shopData: ExternalLinkData[] =
-      externalLinkData.allDataJson.edges[0].node.shop
-    return shopData.map((blogLinkData: ExternalLinkData) => (
-      <div>{JSON.stringify(blogLinkData)}</div>
-    ))
-  }
-
   return (
     <div>
-      {blogLinkList(data)}
-      {shopLinkList(data)}
+      <LinkBoxList
+        linkData={data.allDataJson.edges[0].node.blog}
+        color="blue"
+      />
+      <LinkBoxList
+        linkData={data.allDataJson.edges[0].node.shop}
+        color="skyblue"
+      />
     </div>
   )
 }

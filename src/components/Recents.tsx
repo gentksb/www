@@ -1,6 +1,7 @@
 import React from "react"
 // import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
+import PostList from "./units/PostList"
 
 interface StaticQueryProps {
   allMarkdownRemark: {
@@ -22,6 +23,9 @@ interface Edge {
       }
     }
     id: string
+    fields: {
+      slug: string
+    }
   }
 }
 
@@ -47,6 +51,9 @@ const sportsPost: React.FC = () => {
                 }
               }
               id
+              fields {
+                slug
+              }
             }
           }
         }
@@ -54,12 +61,7 @@ const sportsPost: React.FC = () => {
     `
   )
 
-  const postList = data.allMarkdownRemark.edges.map(edge => (
-    <div key={edge.node.id}>{edge.node.frontmatter.title}</div>
-  ))
-
-  // ここは共通化する
-  return <div>{postList}</div>
+  return <PostList edges={data.allMarkdownRemark.edges} color="white" />
 }
 
 export default sportsPost
