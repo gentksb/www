@@ -1,16 +1,11 @@
 import React from "react"
-import { Card, CardHeader, CardMedia, CardContent } from "@material-ui/core"
+import { Card, CardHeader, CardContent } from "@material-ui/core"
 import styled from "@emotion/styled"
+import { Maybe, DataJsonBlog } from "../../../types/graphql-types"
 
 interface PageProps {
   color?: string
-  linkData: ExternalLinkData[]
-}
-
-interface ExternalLinkData {
-  name: string
-  url: string
-  rank: number
+  linkData: Maybe<Array<Maybe<Pick<DataJsonBlog, "name" | "url" | "rank">>>>
 }
 
 const PostCard = styled(Card)`
@@ -18,11 +13,11 @@ const PostCard = styled(Card)`
   /* max-width: 360px; */
 `
 
-const linkBoxRoop = (edges: ExternalLinkData[], color?: string) => {
-  return edges.map(linkdatas => (
+const linkBoxRoop = (edges: PageProps["linkData"], color?: string) => {
+  return edges?.map(linkdata => (
     <PostCard>
-      <a href={linkdatas.url}>
-        <CardHeader title={linkdatas.name} />
+      <a href={linkdata?.url != null ? linkdata.url : "/"}>
+        <CardHeader title={linkdata?.name} />
       </a>
       <CardContent>{color}</CardContent>
     </PostCard>

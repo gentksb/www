@@ -2,37 +2,12 @@ import React from "react"
 // import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import PostList from "./units/PostList"
-
-interface StaticQueryProps {
-  allMarkdownRemark: {
-    edges: Edge[]
-  }
-}
-
-interface Edge {
-  node: {
-    frontmatter: {
-      date: string
-      title: string
-      cover?: {
-        childImageSharp: {
-          fluid: {
-            src: string
-          }
-        }
-      }
-    }
-    id: string
-    fields: {
-      slug: string
-    }
-  }
-}
+import { DoujinPostQuery } from "../../types/graphql-types"
 
 const sportsPost: React.FC = () => {
-  const data: StaticQueryProps = useStaticQuery(
+  const data: DoujinPostQuery = useStaticQuery(
     graphql`
-      query DoujinPostQuery {
+      query DoujinPost {
         allMarkdownRemark(
           sort: { fields: frontmatter___date, order: DESC }
           limit: 4

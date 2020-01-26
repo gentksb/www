@@ -2,30 +2,12 @@ import React from "react"
 // import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import LinkBoxList from "./units/LinkBoxList"
-
-interface StaticQueryProps {
-  allDataJson: {
-    edges: Edge[]
-  }
-}
-
-interface Edge {
-  node: {
-    blog: ExternalLinkData[]
-    shop: ExternalLinkData[]
-  }
-}
-
-interface ExternalLinkData {
-  name: string
-  url: string
-  rank: number
-}
+import { ExternalLinkQuery } from "../../types/graphql-types"
 
 const externalLinks: React.FC = () => {
-  const data: StaticQueryProps = useStaticQuery(
+  const data: ExternalLinkQuery = useStaticQuery(
     graphql`
-      query ExternalLinkQuery {
+      query ExternalLink {
         allDataJson {
           edges {
             node {
