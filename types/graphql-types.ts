@@ -37,24 +37,10 @@ export type DataJson = Node & {
   parent?: Maybe<Node>,
   children: Array<Node>,
   internal: Internal,
-  blog?: Maybe<Array<Maybe<DataJsonBlog>>>,
-  shop?: Maybe<Array<Maybe<DataJsonShop>>>,
-};
-
-export type DataJsonBlog = {
+  tag?: Maybe<Scalars['String']>,
   name?: Maybe<Scalars['String']>,
   url?: Maybe<Scalars['String']>,
   rank?: Maybe<Scalars['Int']>,
-};
-
-export type DataJsonBlogFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>,
-  url?: Maybe<StringQueryOperatorInput>,
-  rank?: Maybe<IntQueryOperatorInput>,
-};
-
-export type DataJsonBlogFilterListInput = {
-  elemMatch?: Maybe<DataJsonBlogFilterInput>,
 };
 
 export type DataJsonConnection = {
@@ -171,22 +157,24 @@ export type DataJsonFieldsEnum =
   'internal___mediaType' |
   'internal___owner' |
   'internal___type' |
-  'blog' |
-  'blog___name' |
-  'blog___url' |
-  'blog___rank' |
-  'shop' |
-  'shop___name' |
-  'shop___url' |
-  'shop___rank';
+  'tag' |
+  'name' |
+  'url' |
+  'rank';
 
 export type DataJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>,
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  blog?: Maybe<DataJsonBlogFilterListInput>,
-  shop?: Maybe<DataJsonShopFilterListInput>,
+  tag?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  url?: Maybe<StringQueryOperatorInput>,
+  rank?: Maybe<IntQueryOperatorInput>,
+};
+
+export type DataJsonFilterListInput = {
+  elemMatch?: Maybe<DataJsonFilterInput>,
 };
 
 export type DataJsonGroupConnection = {
@@ -196,22 +184,6 @@ export type DataJsonGroupConnection = {
   pageInfo: PageInfo,
   field: Scalars['String'],
   fieldValue?: Maybe<Scalars['String']>,
-};
-
-export type DataJsonShop = {
-  name?: Maybe<Scalars['String']>,
-  url?: Maybe<Scalars['String']>,
-  rank?: Maybe<Scalars['Int']>,
-};
-
-export type DataJsonShopFilterInput = {
-  name?: Maybe<StringQueryOperatorInput>,
-  url?: Maybe<StringQueryOperatorInput>,
-  rank?: Maybe<IntQueryOperatorInput>,
-};
-
-export type DataJsonShopFilterListInput = {
-  elemMatch?: Maybe<DataJsonShopFilterInput>,
 };
 
 export type DataJsonSortInput = {
@@ -577,7 +549,7 @@ export type File = Node & {
   children: Array<Node>,
   internal: Internal,
   childMarkdownRemark?: Maybe<MarkdownRemark>,
-  childDataJson?: Maybe<DataJson>,
+  childrenDataJson?: Maybe<Array<Maybe<DataJson>>>,
 };
 
 
@@ -916,6 +888,7 @@ export type FileFieldsEnum =
   'childMarkdownRemark___frontmatter___cover___publicURL' |
   'childMarkdownRemark___frontmatter___cover___id' |
   'childMarkdownRemark___frontmatter___cover___children' |
+  'childMarkdownRemark___frontmatter___cover___childrenDataJson' |
   'childMarkdownRemark___excerpt' |
   'childMarkdownRemark___rawMarkdownBody' |
   'childMarkdownRemark___fileAbsolutePath' |
@@ -969,52 +942,49 @@ export type FileFieldsEnum =
   'childMarkdownRemark___internal___mediaType' |
   'childMarkdownRemark___internal___owner' |
   'childMarkdownRemark___internal___type' |
-  'childDataJson___id' |
-  'childDataJson___parent___id' |
-  'childDataJson___parent___parent___id' |
-  'childDataJson___parent___parent___children' |
-  'childDataJson___parent___children' |
-  'childDataJson___parent___children___id' |
-  'childDataJson___parent___children___children' |
-  'childDataJson___parent___internal___content' |
-  'childDataJson___parent___internal___contentDigest' |
-  'childDataJson___parent___internal___description' |
-  'childDataJson___parent___internal___fieldOwners' |
-  'childDataJson___parent___internal___ignoreType' |
-  'childDataJson___parent___internal___mediaType' |
-  'childDataJson___parent___internal___owner' |
-  'childDataJson___parent___internal___type' |
-  'childDataJson___children' |
-  'childDataJson___children___id' |
-  'childDataJson___children___parent___id' |
-  'childDataJson___children___parent___children' |
-  'childDataJson___children___children' |
-  'childDataJson___children___children___id' |
-  'childDataJson___children___children___children' |
-  'childDataJson___children___internal___content' |
-  'childDataJson___children___internal___contentDigest' |
-  'childDataJson___children___internal___description' |
-  'childDataJson___children___internal___fieldOwners' |
-  'childDataJson___children___internal___ignoreType' |
-  'childDataJson___children___internal___mediaType' |
-  'childDataJson___children___internal___owner' |
-  'childDataJson___children___internal___type' |
-  'childDataJson___internal___content' |
-  'childDataJson___internal___contentDigest' |
-  'childDataJson___internal___description' |
-  'childDataJson___internal___fieldOwners' |
-  'childDataJson___internal___ignoreType' |
-  'childDataJson___internal___mediaType' |
-  'childDataJson___internal___owner' |
-  'childDataJson___internal___type' |
-  'childDataJson___blog' |
-  'childDataJson___blog___name' |
-  'childDataJson___blog___url' |
-  'childDataJson___blog___rank' |
-  'childDataJson___shop' |
-  'childDataJson___shop___name' |
-  'childDataJson___shop___url' |
-  'childDataJson___shop___rank';
+  'childrenDataJson' |
+  'childrenDataJson___id' |
+  'childrenDataJson___parent___id' |
+  'childrenDataJson___parent___parent___id' |
+  'childrenDataJson___parent___parent___children' |
+  'childrenDataJson___parent___children' |
+  'childrenDataJson___parent___children___id' |
+  'childrenDataJson___parent___children___children' |
+  'childrenDataJson___parent___internal___content' |
+  'childrenDataJson___parent___internal___contentDigest' |
+  'childrenDataJson___parent___internal___description' |
+  'childrenDataJson___parent___internal___fieldOwners' |
+  'childrenDataJson___parent___internal___ignoreType' |
+  'childrenDataJson___parent___internal___mediaType' |
+  'childrenDataJson___parent___internal___owner' |
+  'childrenDataJson___parent___internal___type' |
+  'childrenDataJson___children' |
+  'childrenDataJson___children___id' |
+  'childrenDataJson___children___parent___id' |
+  'childrenDataJson___children___parent___children' |
+  'childrenDataJson___children___children' |
+  'childrenDataJson___children___children___id' |
+  'childrenDataJson___children___children___children' |
+  'childrenDataJson___children___internal___content' |
+  'childrenDataJson___children___internal___contentDigest' |
+  'childrenDataJson___children___internal___description' |
+  'childrenDataJson___children___internal___fieldOwners' |
+  'childrenDataJson___children___internal___ignoreType' |
+  'childrenDataJson___children___internal___mediaType' |
+  'childrenDataJson___children___internal___owner' |
+  'childrenDataJson___children___internal___type' |
+  'childrenDataJson___internal___content' |
+  'childrenDataJson___internal___contentDigest' |
+  'childrenDataJson___internal___description' |
+  'childrenDataJson___internal___fieldOwners' |
+  'childrenDataJson___internal___ignoreType' |
+  'childrenDataJson___internal___mediaType' |
+  'childrenDataJson___internal___owner' |
+  'childrenDataJson___internal___type' |
+  'childrenDataJson___tag' |
+  'childrenDataJson___name' |
+  'childrenDataJson___url' |
+  'childrenDataJson___rank';
 
 export type FileFilterInput = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>,
@@ -1057,7 +1027,7 @@ export type FileFilterInput = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>,
-  childDataJson?: Maybe<DataJsonFilterInput>,
+  childrenDataJson?: Maybe<DataJsonFilterListInput>,
 };
 
 export type FileGroupConnection = {
@@ -1792,10 +1762,13 @@ export type MarkdownRemarkFieldsEnum =
   'frontmatter___cover___childMarkdownRemark___timeToRead' |
   'frontmatter___cover___childMarkdownRemark___tableOfContents' |
   'frontmatter___cover___childMarkdownRemark___children' |
-  'frontmatter___cover___childDataJson___id' |
-  'frontmatter___cover___childDataJson___children' |
-  'frontmatter___cover___childDataJson___blog' |
-  'frontmatter___cover___childDataJson___shop' |
+  'frontmatter___cover___childrenDataJson' |
+  'frontmatter___cover___childrenDataJson___id' |
+  'frontmatter___cover___childrenDataJson___children' |
+  'frontmatter___cover___childrenDataJson___tag' |
+  'frontmatter___cover___childrenDataJson___name' |
+  'frontmatter___cover___childrenDataJson___url' |
+  'frontmatter___cover___childrenDataJson___rank' |
   'excerpt' |
   'rawMarkdownBody' |
   'fileAbsolutePath' |
@@ -2081,7 +2054,7 @@ export type QueryFileArgs = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>,
-  childDataJson?: Maybe<DataJsonFilterInput>
+  childrenDataJson?: Maybe<DataJsonFilterListInput>
 };
 
 
@@ -2197,8 +2170,10 @@ export type QueryDataJsonArgs = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
-  blog?: Maybe<DataJsonBlogFilterListInput>,
-  shop?: Maybe<DataJsonShopFilterListInput>
+  tag?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  url?: Maybe<StringQueryOperatorInput>,
+  rank?: Maybe<IntQueryOperatorInput>
 };
 
 
@@ -3112,7 +3087,7 @@ export type DoujinPostQuery = { allMarkdownRemark: { edges: Array<{ node: (
 export type ExternalLinkQueryVariables = {};
 
 
-export type ExternalLinkQuery = { allDataJson: { edges: Array<{ node: { blog: Maybe<Array<Maybe<Pick<DataJsonBlog, 'name' | 'url' | 'rank'>>>>, shop: Maybe<Array<Maybe<Pick<DataJsonShop, 'name' | 'url' | 'rank'>>>> } }> } };
+export type ExternalLinkQuery = { allDataJson: { edges: Array<{ node: Pick<DataJson, 'id' | 'name' | 'rank' | 'tag' | 'url'> }> } };
 
 export type RecentPostQueryVariables = {};
 

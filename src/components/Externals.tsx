@@ -11,16 +11,11 @@ const externalLinks: React.FC = () => {
         allDataJson {
           edges {
             node {
-              blog {
-                name
-                url
-                rank
-              }
-              shop {
-                name
-                url
-                rank
-              }
+              id
+              name
+              rank
+              tag
+              url
             }
           }
         }
@@ -28,16 +23,16 @@ const externalLinks: React.FC = () => {
     `
   )
 
+  const tagLinks = (tagString: string) => {
+    return data.allDataJson.edges.filter(obj => {
+      return obj.node.tag === tagString
+    })
+  }
+
   return (
     <div>
-      <LinkBoxList
-        linkData={data.allDataJson.edges[0].node.blog}
-        color="blue"
-      />
-      <LinkBoxList
-        linkData={data.allDataJson.edges[0].node.shop}
-        color="skyblue"
-      />
+      <LinkBoxList linkData={tagLinks("blog")} color="blue" />
+      <LinkBoxList linkData={tagLinks("shop")} color="skyblue" />
     </div>
   )
 }

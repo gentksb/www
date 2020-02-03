@@ -45,7 +45,7 @@ const postRoop = (edges: Edge[], color?: string) => {
         : "dummy.jpg"
 
     return (
-      <PostCard>
+      <PostCard key={edge.node.id}>
         <CardHeader title={postTitle} />
         <CardMedia src={postCoverSrc} />
         <CardContent>{color}</CardContent>
