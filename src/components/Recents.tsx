@@ -1,6 +1,7 @@
 import React from "react"
 // import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
+import { Grid } from "@material-ui/core"
 import PostList from "./units/PostList"
 import { RecentPostQuery } from "../../types/graphql-types"
 
@@ -36,7 +37,11 @@ const sportsPost: React.FC = () => {
     `
   )
 
-  return <PostList edges={data.allMarkdownRemark.edges} color="white" />
+  return (
+    <Grid container>
+      <PostList edges={data.allMarkdownRemark.edges} color="white" />
+    </Grid>
+  )
 }
 
 export default sportsPost

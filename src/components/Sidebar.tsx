@@ -1,21 +1,22 @@
 import * as React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
+import { Grid } from "@material-ui/core"
 
 import Container from "./Container"
+import Externals from "./Externals"
 
 const StyledHeader = styled.header`
-  height: 30 px;
+  height: 100%;
   padding: 0 1rem;
   background-color: red;
   color: white;
 `
 
-const HeaderInner = styled(Container)`
+const HeaderInnerGrid = styled(Grid)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100%;
 `
 
 const HomepageLink = styled(Link)`
@@ -35,9 +36,14 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title }) => (
   <StyledHeader>
-    <HeaderInner>
-      <HomepageLink to="/">{title}</HomepageLink>
-    </HeaderInner>
+    <HeaderInnerGrid container>
+      <Grid item xs={12}>
+        <HomepageLink to="/">{title}</HomepageLink>
+      </Grid>
+      <Grid item>
+        <Externals />
+      </Grid>
+    </HeaderInnerGrid>
   </StyledHeader>
 )
 

@@ -6,7 +6,6 @@ import IndexLayout from "../layouts"
 import Recents from "../components/Recents"
 import Doujin from "../components/Doujin"
 import Sports from "../components/Sports"
-import Externals from "../components/Externals"
 
 const IndexPage = () => (
   <IndexLayout>
@@ -20,7 +19,6 @@ const IndexPage = () => (
         <h2>hook test</h2>
         <Sports />
         <h2>JSON Data</h2>
-        <Externals />
       </Container>
     </Page>
   </IndexLayout>

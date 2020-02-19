@@ -1,8 +1,9 @@
 import * as React from "react"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
+import { Grid } from "@material-ui/core"
 
-import Header from "../components/Header"
+import Sidebar from "../components/Sidebar"
 import LayoutRoot from "../components/LayoutRoot"
 import LayoutMain from "../components/LayoutMain"
 
@@ -42,8 +43,14 @@ const IndexLayout: React.FC = ({ children }) => (
         >
           <script type="text/javascript" src="https://cdn.iframe.ly/embed.js" />
         </Helmet>
-        <Header title={data.site.siteMetadata.title} />
-        <LayoutMain>{children}</LayoutMain>
+        <Grid container spacing={0}>
+          <Grid item sm={4} xs="auto">
+            <Sidebar title={data.site.siteMetadata.title} />
+          </Grid>
+          <Grid item sm={8} xs={12}>
+            <LayoutMain>{children}</LayoutMain>
+          </Grid>
+        </Grid>
       </LayoutRoot>
     )}
   />

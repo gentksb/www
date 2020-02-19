@@ -1,5 +1,11 @@
 import React from "react"
-import { Card, CardHeader, CardMedia, CardContent } from "@material-ui/core"
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  Grid,
+} from "@material-ui/core"
 import styled from "@emotion/styled"
 import {
   Maybe,
@@ -45,17 +51,19 @@ const postRoop = (edges: Edge[], color?: string) => {
         : "dummy.jpg"
 
     return (
-      <PostCard key={edge.node.id}>
-        <CardHeader title={postTitle} />
-        <CardMedia src={postCoverSrc} />
-        <CardContent>{color}</CardContent>
-      </PostCard>
+      <Grid item xs={12} sm={6} key={edge.node.id}>
+        <PostCard>
+          <CardHeader title={postTitle} />
+          <CardMedia src={postCoverSrc} />
+          <CardContent>{color}</CardContent>
+        </PostCard>
+      </Grid>
     )
   })
 }
 
 const PostList: React.FC<PageProps> = ({ color, edges }) => (
-  <div>{postRoop(edges, color)}</div>
+  <>{postRoop(edges, color)}</>
 )
 
 export default PostList
