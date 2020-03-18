@@ -2,7 +2,7 @@
 title: "2018-19年シクロクロス全日本選手権　男子エリートに出場しました"
 date: 2018-12-20
 draft: false
-tags: ["Sports"]
+tags: ["Achivements"]
 # cover: ""
 ---
 

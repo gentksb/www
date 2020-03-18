@@ -1,8 +1,8 @@
 ---
 title: "岸田教団&THE明星ロケッツのライブレポート企画で大賞に選ばれました"
-date: 2016-12-01T21:49:59+09:00
+date: 2019-11-06
 draft: false
-tags: ["Writing"]
+tags: ["Achivements"]
 # cover: ""
 ---
 

@@ -7,31 +7,11 @@ import {
   Grid,
 } from "@material-ui/core"
 import styled from "@emotion/styled"
-import {
-  Maybe,
-  ImageSharpFluid,
-  MarkdownRemark,
-  MarkdownRemarkFrontmatter,
-  MarkdownRemarkFields,
-} from "../../../types/graphql-types"
-
+import { RecentPostQuery } from "../../../types/graphql-types"
+// 同じデータ型だけど、名前が分かれてしまっているのでRecentPostQueryを代表で利用
 interface PageProps {
   color?: string
-  edges: Edge[]
-}
-
-// recentPost, SportsPost, DoujinPostなどのクエリを共通化できれば、何処かから型定義を持ってこれる？
-interface Edge {
-  node: Pick<MarkdownRemark, "id"> & {
-    frontmatter: Maybe<
-      Pick<MarkdownRemarkFrontmatter, "date" | "title"> & {
-        cover: Maybe<{
-          childImageSharp: Maybe<{ fluid: Maybe<Pick<ImageSharpFluid, "src">> }>
-        }>
-      }
-    >
-    fields: Maybe<Pick<MarkdownRemarkFields, "slug">>
-  }
+  edges: RecentPostQuery["allMarkdownRemark"]["edges"]
 }
 
 const PostCard = styled(Card)`
@@ -39,7 +19,7 @@ const PostCard = styled(Card)`
   /* max-width: 360px; */
 `
 
-const postRoop = (edges: Edge[], color?: string) => {
+const postRoop = (edges: PageProps["edges"], color?: PageProps["color"]) => {
   return edges.map(edge => {
     const postTitle: string =
       edge.node.frontmatter?.title != null

@@ -1,11 +1,11 @@
-import * as React from "react"
+import React from "react"
 
 import Page from "../components/Page"
 import Container from "../components/Container"
 import IndexLayout from "../layouts"
 import Recents from "../components/Recents"
 import Doujin from "../components/Doujin"
-import Sports from "../components/Sports"
+import Achivements from "../components/Achivements"
 
 const IndexPage = () => (
   <IndexLayout>
@@ -16,9 +16,8 @@ const IndexPage = () => (
         <Recents />
         <h2>Douijn top posts.</h2>
         <Doujin />
-        <h2>hook test</h2>
-        <Sports />
-        <h2>JSON Data</h2>
+        <h2>Achivements</h2>
+        <Achivements />
       </Container>
     </Page>
   </IndexLayout>

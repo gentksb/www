@@ -1,16 +1,17 @@
-import * as React from "react"
+import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import { Grid } from "@material-ui/core"
 
-import Container from "./Container"
+import Bio from "./units/Bio"
 import Externals from "./Externals"
 
 const StyledHeader = styled.header`
   height: 100%;
   padding: 0 1rem;
-  background-color: red;
+  background-color: #1e2022;
   color: white;
+  text-decoration: none;
 `
 
 const HeaderInnerGrid = styled(Grid)`
@@ -34,11 +35,14 @@ interface HeaderProps {
   title: string
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => (
+const Sidebar: React.FC<HeaderProps> = ({ title }) => (
   <StyledHeader>
     <HeaderInnerGrid container>
       <Grid item xs={12}>
         <HomepageLink to="/">{title}</HomepageLink>
+      </Grid>
+      <Grid item>
+        <Bio />
       </Grid>
       <Grid item>
         <Externals />
@@ -47,4 +51,4 @@ const Header: React.FC<HeaderProps> = ({ title }) => (
   </StyledHeader>
 )
 
-export default Header
+export default Sidebar

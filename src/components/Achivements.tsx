@@ -12,7 +12,7 @@ const sportsPost: React.FC = () => {
         allMarkdownRemark(
           sort: { fields: frontmatter___date, order: DESC }
           limit: 4
-          filter: { frontmatter: { tags: { eq: "Sports" } } }
+          filter: { frontmatter: { tags: { eq: "Achivements" } } }
         ) {
           edges {
             node {
