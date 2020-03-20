@@ -3296,6 +3296,11 @@ export type RecentPostQuery = { allMarkdownRemark: { edges: Array<{ node: (
         )>, fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>> }
       ) }> } };
 
+export type BioQueryVariables = {};
+
+
+export type BioQuery = { file?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, site?: Maybe<{ siteMetadata?: Maybe<{ social?: Maybe<Pick<SiteSiteMetadataSocial, 'github' | 'instagram' | 'twitter'>> }> }> };
+
 export type IndexLayoutQueryQueryVariables = {};
 
 

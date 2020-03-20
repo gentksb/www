@@ -32,7 +32,7 @@ const externalLinks: React.FC = () => {
 
   return (
     <Grid container>
-      <Typography variant="h6" component="h3">
+      <Typography variant="subtitle1" component="h3">
         Links
       </Typography>
       <LinkBoxList linkData={tagLinks("blog")} />

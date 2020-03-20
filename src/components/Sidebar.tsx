@@ -19,6 +19,10 @@ const HeaderInnerGrid = styled(Grid)`
   flex-direction: row;
   align-items: center;
 `
+const BioGrid = styled(Grid)`
+  margin: auto;
+  align-items: center;
+`
 
 const HomepageLink = styled(Link)`
   color: white;
@@ -43,10 +47,10 @@ const Sidebar: React.FC<HeaderProps> = ({ title }) => (
           <HomepageLink to="/">{title}</HomepageLink>
         </Typography>
       </Grid>
-      <Grid item>
+      <BioGrid item xs={6}>
         <Bio />
-      </Grid>
-      <Grid item>
+      </BioGrid>
+      <Grid item xs={12}>
         <Externals />
       </Grid>
     </HeaderInnerGrid>
