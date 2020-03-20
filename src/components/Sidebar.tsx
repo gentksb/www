@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import { Grid } from "@material-ui/core"
+import { Grid, Typography } from "@material-ui/core"
 
 import Bio from "./units/Bio"
 import Externals from "./Externals"
@@ -39,7 +39,9 @@ const Sidebar: React.FC<HeaderProps> = ({ title }) => (
   <StyledHeader>
     <HeaderInnerGrid container>
       <Grid item xs={12}>
-        <HomepageLink to="/">{title}</HomepageLink>
+        <Typography variant="h5" component="span">
+          <HomepageLink to="/">{title}</HomepageLink>
+        </Typography>
       </Grid>
       <Grid item>
         <Bio />

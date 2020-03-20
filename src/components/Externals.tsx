@@ -1,7 +1,7 @@
 import React from "react"
 // import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
-import { Grid } from "@material-ui/core"
+import { Grid, Typography } from "@material-ui/core"
 import LinkBoxList from "./units/LinkBoxList"
 import { ExternalLinkQuery } from "../../types/graphql-types"
 
@@ -32,8 +32,11 @@ const externalLinks: React.FC = () => {
 
   return (
     <Grid container>
-      <LinkBoxList linkData={tagLinks("blog")} color="blue" />
-      <LinkBoxList linkData={tagLinks("shop")} color="skyblue" />
+      <Typography variant="h6" component="h3">
+        Links
+      </Typography>
+      <LinkBoxList linkData={tagLinks("blog")} />
+      <LinkBoxList linkData={tagLinks("shop")} />
     </Grid>
   )
 }

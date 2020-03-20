@@ -9,9 +9,9 @@ import Achivements from "../components/Achivements"
 const IndexPage = () => (
   <IndexLayout>
     <Page>
-      <h2>Recent posts.</h2>
+      <h2>Recent</h2>
       <Recents />
-      <h2>Douijn top posts.</h2>
+      <h2>Douijn</h2>
       <Doujin />
       <h2>Achivements</h2>
       <Achivements />

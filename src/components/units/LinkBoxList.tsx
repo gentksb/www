@@ -1,35 +1,35 @@
 import React from "react"
-import { Card, CardHeader, CardContent, Grid } from "@material-ui/core"
+import { Grid } from "@material-ui/core"
 import { OpenInNew } from "@material-ui/icons"
 import styled from "@emotion/styled"
 import { ExternalLinkQuery } from "../../../types/graphql-types"
+import theme from "../../layouts/theme"
 
 interface PageProps {
   color?: string
   linkData: ExternalLinkQuery["allDataJson"]["edges"]
 }
 
-const PostCard = styled(Card)`
-  margin-top: 16px;
-  /* max-width: 360px; */
+const ExternalLinkText = styled.a`
+  margin-top: ${theme.spacing(2)};
+  color: ${theme.palette.text.secondary};
 `
 
-const linkBoxRoop = (edges: PageProps["linkData"], color?: string) => {
+const linkBoxRoop = (edges: PageProps["linkData"]) => {
   return edges?.map(linkdata => (
     <Grid item xs={12} key={linkdata.node.id}>
-      <PostCard>
-        <a href={linkdata.node.url != null ? linkdata.node.url : "/"}>
-          <CardHeader title={linkdata.node.name} />
-          <OpenInNew color="primary" />
-        </a>
-        <CardContent>{color}</CardContent>
-      </PostCard>
+      <ExternalLinkText
+        href={linkdata.node.url != null ? linkdata.node.url : "/"}
+      >
+        {linkdata.node.name}
+        <OpenInNew color="inherit" fontSize="small" />
+      </ExternalLinkText>
     </Grid>
   ))
 }
 
-const LinkBoxList: React.FC<PageProps> = ({ color, linkData }) => (
-  <>{linkBoxRoop(linkData, color)}</>
+const LinkBoxList: React.FC<PageProps> = ({ linkData }) => (
+  <>{linkBoxRoop(linkData)}</>
 )
 
 export default LinkBoxList
