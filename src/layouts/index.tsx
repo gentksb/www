@@ -1,9 +1,8 @@
 import React from "react"
 import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
-import { Grid, Container } from "@material-ui/core"
+import { Grid, Container, CssBaseline } from "@material-ui/core"
 import { ThemeProvider, StylesProvider } from "@material-ui/styles"
-
 import Sidebar from "../components/Sidebar"
 import theme from "./theme"
 
@@ -20,7 +19,7 @@ interface StaticQueryProps {
 const IndexLayout: React.FC = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query IndexLayoutQuery {
+      query IndexLayout {
         site {
           siteMetadata {
             title
@@ -43,20 +42,22 @@ const IndexLayout: React.FC = ({ children }) => (
         >
           <script type="text/javascript" src="https://cdn.iframe.ly/embed.js" />
         </Helmet>
-        <StylesProvider injectFirst>
-          <ThemeProvider theme={theme}>
-            <Container fixed>
-              <Grid container spacing={0}>
-                <Grid item sm={4} xs="auto">
-                  <Sidebar title={data.site.siteMetadata.title} />
+        <CssBaseline>
+          <StylesProvider injectFirst>
+            <ThemeProvider theme={theme}>
+              <Container fixed>
+                <Grid container spacing={0}>
+                  <Grid item sm={4} xs="auto">
+                    <Sidebar title={data.site.siteMetadata.title} />
+                  </Grid>
+                  <Grid item sm={8} xs={12}>
+                    {children}
+                  </Grid>
                 </Grid>
-                <Grid item sm={8} xs={12}>
-                  {children}
-                </Grid>
-              </Grid>
-            </Container>
-          </ThemeProvider>
-        </StylesProvider>
+              </Container>
+            </ThemeProvider>
+          </StylesProvider>
+        </CssBaseline>
       </>
     )}
   />

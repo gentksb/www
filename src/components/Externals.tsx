@@ -2,7 +2,8 @@ import React from "react"
 // import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import { Grid, Typography } from "@material-ui/core"
-import LinkBoxList from "./units/LinkBoxList"
+import styled from "@emotion/styled"
+import LinkList from "./units/LinkList"
 import { ExternalLinkQuery } from "../../types/graphql-types"
 
 const externalLinks: React.FC = () => {
@@ -30,14 +31,19 @@ const externalLinks: React.FC = () => {
     })
   }
 
+  const RootGrid = styled(Grid)`
+    text-align: center;
+    margin-top: 16px;
+  `
+
   return (
-    <Grid container>
-      <Typography variant="subtitle1" component="h3">
-        Links
-      </Typography>
-      <LinkBoxList linkData={tagLinks("blog")} />
-      <LinkBoxList linkData={tagLinks("shop")} />
-    </Grid>
+    <RootGrid container spacing={1}>
+      <Grid item xs={12}>
+        <Typography variant="overline">Links</Typography>
+      </Grid>
+      <LinkList linkData={tagLinks("blog")} />
+      <LinkList linkData={tagLinks("shop")} />
+    </RootGrid>
   )
 }
 

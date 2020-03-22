@@ -40,17 +40,29 @@ const Bio: React.FC = () => {
       <a
         href={`https://github.com/${bioQuery.site.siteMetadata.social.github}`}
       >
-        <GitHub fontSize="large" color="secondary" />
+        <GitHub
+          fontSize="large"
+          color="secondary"
+          alignmentBaseline="central"
+        />
       </a>
       <a
         href={`https://twitter.com/${bioQuery.site.siteMetadata.social.twitter}`}
       >
-        <Twitter fontSize="large" color="secondary" />
+        <Twitter
+          fontSize="large"
+          color="secondary"
+          alignmentBaseline="central"
+        />
       </a>
       <a
         href={`https://instagram.com/${bioQuery.site.siteMetadata.social.instagram}`}
       >
-        <Instagram fontSize="large" color="secondary" />
+        <Instagram
+          fontSize="large"
+          color="secondary"
+          alignmentBaseline="central"
+        />
       </a>
     </>
   )

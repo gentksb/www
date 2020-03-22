@@ -3301,10 +3301,10 @@ export type BioQueryVariables = {};
 
 export type BioQuery = { file?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, site?: Maybe<{ siteMetadata?: Maybe<{ social?: Maybe<Pick<SiteSiteMetadataSocial, 'github' | 'instagram' | 'twitter'>> }> }> };
 
-export type IndexLayoutQueryQueryVariables = {};
+export type IndexLayoutQueryVariables = {};
 
 
-export type IndexLayoutQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+export type IndexLayoutQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
 export type PageTemplateQueryQueryVariables = {
   slug: Scalars['String'];
