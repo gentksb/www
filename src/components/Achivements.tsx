@@ -2,7 +2,7 @@ import React from "react"
 // import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import { Grid } from "@material-ui/core"
-import PostList from "./units/PostList"
+import PostLineList from "./units/PostLineList"
 import { SportsPostQuery } from "../../types/graphql-types"
 
 const sportsPost: React.FC = () => {
@@ -40,7 +40,7 @@ const sportsPost: React.FC = () => {
 
   return (
     <Grid container>
-      <PostList edges={data.allMarkdownRemark.edges} color="black" />
+      <PostLineList edges={data.allMarkdownRemark.edges} />
     </Grid>
   )
 }
