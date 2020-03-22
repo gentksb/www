@@ -38,7 +38,7 @@ const sportsPost: React.FC = () => {
   )
 
   return (
-    <Grid container>
+    <Grid container spacing={1}>
       <PostBoxList edges={data.allMarkdownRemark.edges} />
     </Grid>
   )

@@ -1,5 +1,6 @@
 import React from "react"
 
+import { Typography } from "@material-ui/core"
 import Page from "../components/Page"
 import IndexLayout from "../layouts"
 import Recents from "../components/Recents"
@@ -9,11 +10,17 @@ import Achivements from "../components/Achivements"
 const IndexPage = () => (
   <IndexLayout>
     <Page>
-      <h2>Recent</h2>
+      <Typography variant="h5" component="h2">
+        RECENTS
+      </Typography>
       <Recents />
-      <h2>Douijn</h2>
+      <Typography variant="h5" component="h2">
+        DOUJIN
+      </Typography>
       <Doujin />
-      <h2>Achivements</h2>
+      <Typography variant="h5" component="h2">
+        ACHEVEMENTS
+      </Typography>
       <Achivements />
     </Page>
   </IndexLayout>

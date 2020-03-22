@@ -1,16 +1,10 @@
 import React from "react"
-import {
-  Card,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  Grid,
-} from "@material-ui/core"
+import { Card, CardHeader, CardMedia, Grid } from "@material-ui/core"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
 import { RecentPostQuery } from "../../../types/graphql-types"
 // 同じデータ型だけど、名前が分かれてしまっているのでRecentPostQueryを代表で利用
 interface PageProps {
-  color?: string
   edges: RecentPostQuery["allMarkdownRemark"]["edges"]
 }
 
@@ -19,7 +13,7 @@ const PostCard = styled(Card)`
   /* max-width: 360px; */
 `
 
-const postRoop = (edges: PageProps["edges"], color?: PageProps["color"]) => {
+const postRoop = (edges: PageProps["edges"]) => {
   return edges.map(edge => {
     const postTitle: string =
       edge.node.frontmatter?.title != null
@@ -30,20 +24,25 @@ const postRoop = (edges: PageProps["edges"], color?: PageProps["color"]) => {
         ? edge.node.frontmatter.cover.childImageSharp.fluid.src
         : "dummy.jpg"
 
+    const postSlug: string =
+      edge.node.fields?.slug != null ? edge.node.fields.slug : "/"
+
+    const postDate: string =
+      edge.node.frontmatter?.date != null ? edge.node.frontmatter?.date : ""
+
     return (
       <Grid item xs={12} sm={6} key={edge.node.id}>
         <PostCard>
-          <CardHeader title={postTitle} />
+          <Link to={postSlug}>
+            <CardHeader title={postTitle} subheader={postDate} />
+          </Link>
           <CardMedia src={postCoverSrc} />
-          <CardContent>{color}</CardContent>
         </PostCard>
       </Grid>
     )
   })
 }
 
-const PostList: React.FC<PageProps> = ({ color, edges }) => (
-  <>{postRoop(edges, color)}</>
-)
+const PostList: React.FC<PageProps> = ({ edges }) => <>{postRoop(edges)}</>
 
 export default PostList

@@ -46,7 +46,7 @@ const IndexLayout: React.FC = ({ children }) => (
           <StylesProvider injectFirst>
             <ThemeProvider theme={theme}>
               <Container fixed>
-                <Grid container spacing={0}>
+                <Grid container>
                   <Grid item sm={4} xs="auto">
                     <Sidebar title={data.site.siteMetadata.title} />
                   </Grid>

@@ -13,13 +13,18 @@ const postRoop = (edges: PageProps["edges"]) => {
       edge.node.frontmatter?.title != null
         ? edge.node.frontmatter.title
         : "No POST!"
+
     const postSlug: string =
       edge.node.fields?.slug != null ? edge.node.fields.slug : ""
+
+    const postDate: string =
+      edge.node.frontmatter?.date != null ? edge.node.frontmatter?.date : ""
+
     return (
       <Grid item xs={12} key={edge.node.id}>
         <Link to={postSlug}>
           <ListItem button>
-            <ListItemText primary={postTitle} />
+            <ListItemText primary={`${postTitle}(${postDate})`} />
           </ListItem>
         </Link>
       </Grid>
