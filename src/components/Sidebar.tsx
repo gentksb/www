@@ -5,12 +5,13 @@ import { Grid, Typography } from "@material-ui/core"
 
 import Bio from "./units/Bio"
 import Externals from "./Externals"
+import theme from "../layouts/theme"
 
 const StyledSidebar = styled.header`
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #1e2022;
+  background-color: ${theme.palette.primary.main};
   color: white;
   text-decoration: none;
 `

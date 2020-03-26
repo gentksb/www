@@ -6,7 +6,6 @@ const StyledPage = styled.div`
   flex: 1;
   position: relative;
   padding: 1rem;
-  margin-bottom: 3rem;
 `
 
 interface PageProps {

@@ -5,6 +5,7 @@ import { Grid, Container, CssBaseline } from "@material-ui/core"
 import { ThemeProvider, StylesProvider } from "@material-ui/styles"
 import styled from "@emotion/styled"
 import Sidebar from "../components/Sidebar"
+import Footer from "../components/Footer"
 import theme from "./theme"
 
 interface StaticQueryProps {
@@ -20,6 +21,7 @@ interface StaticQueryProps {
 const RootContainer = styled(Container)`
   background-color: ${theme.palette.background.paper};
   width: 100vw;
+  padding: 0;
 `
 
 const TopGrid = styled(Grid)`
@@ -64,6 +66,7 @@ const IndexLayout: React.FC = ({ children }) => (
                     {children}
                   </Grid>
                 </TopGrid>
+                <Footer />
               </RootContainer>
             </ThemeProvider>
           </StylesProvider>
