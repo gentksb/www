@@ -65,8 +65,10 @@ const IndexLayout: React.FC = ({ children }) => (
                   <Grid item sm={8} xs={12}>
                     {children}
                   </Grid>
+                  <Grid item sm={12} xs={12}>
+                    <Footer />
+                  </Grid>
                 </TopGrid>
-                <Footer />
               </RootContainer>
             </ThemeProvider>
           </StylesProvider>
