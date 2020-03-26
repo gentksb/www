@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "@emotion/styled"
-import PostStyle from "../layouts/poststyle"
 
 const StyledPage = styled.div`
   display: block;
@@ -16,7 +15,6 @@ interface PageProps {
 
 const Page: React.FC<PageProps> = ({ children, className }) => (
   <>
-    <PostStyle />
     <StyledPage className={className}>{children}</StyledPage>
   </>
 )

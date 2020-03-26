@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import Page from "../components/Page"
 import IndexLayout from "../layouts"
 
+import PostStyle from "../layouts/poststyle"
+
 interface PageTemplateProps {
   data: {
     site: {
@@ -28,6 +30,7 @@ interface PageTemplateProps {
 
 const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => (
   <IndexLayout>
+    <PostStyle />
     <Page>
       <h1>{data.markdownRemark.frontmatter.title}</h1>
       {/* eslint-disable-next-line react/no-danger */}
