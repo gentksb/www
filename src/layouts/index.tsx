@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 import { StaticQuery, graphql } from "gatsby"
 import { Grid, Container, CssBaseline } from "@material-ui/core"
 import { ThemeProvider, StylesProvider } from "@material-ui/styles"
+import styled from "@emotion/styled"
 import Sidebar from "../components/Sidebar"
 import theme from "./theme"
 
@@ -15,6 +16,14 @@ interface StaticQueryProps {
     }
   }
 }
+
+const RootContainer = styled(Container)`
+  background-color: ${theme.palette.secondary.dark};
+`
+
+const TopGrid = styled(Grid)`
+  height: 100vh;
+`
 
 const IndexLayout: React.FC = ({ children }) => (
   <StaticQuery
@@ -45,16 +54,16 @@ const IndexLayout: React.FC = ({ children }) => (
         <CssBaseline>
           <StylesProvider injectFirst>
             <ThemeProvider theme={theme}>
-              <Container fixed>
-                <Grid container>
+              <RootContainer fixed>
+                <TopGrid container>
                   <Grid item sm={4} xs="auto">
                     <Sidebar title={data.site.siteMetadata.title} />
                   </Grid>
                   <Grid item sm={8} xs={12}>
                     {children}
                   </Grid>
-                </Grid>
-              </Container>
+                </TopGrid>
+              </RootContainer>
             </ThemeProvider>
           </StylesProvider>
         </CssBaseline>
