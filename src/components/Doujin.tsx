@@ -11,7 +11,6 @@ const sportsPost: React.FC = () => {
       query DoujinPost {
         allMarkdownRemark(
           sort: { fields: frontmatter___date, order: DESC }
-          limit: 4
           filter: { frontmatter: { tags: { eq: "Doujin" } } }
         ) {
           edges {
