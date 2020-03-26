@@ -12,11 +12,11 @@ interface PageProps {
 
 const ExternalLinkText = styled.a`
   margin-top: ${theme.spacing(2)};
-  color: ${theme.palette.text.secondary};
+  color: ${theme.palette.secondary.main};
 `
 
 const linkBoxRoop = (edges: PageProps["linkData"]) => {
-  return edges?.map(linkdata => (
+  return edges?.map((linkdata) => (
     <Grid item xs={12} key={linkdata.node.id}>
       <ExternalLinkText
         href={linkdata.node.url != null ? linkdata.node.url : "/"}

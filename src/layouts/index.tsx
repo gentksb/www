@@ -18,7 +18,7 @@ interface StaticQueryProps {
 }
 
 const RootContainer = styled(Container)`
-  background-color: ${theme.palette.secondary.dark};
+  background-color: ${theme.palette.background.paper};
 `
 
 const TopGrid = styled(Grid)`
