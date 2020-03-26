@@ -19,6 +19,7 @@ interface StaticQueryProps {
 
 const RootContainer = styled(Container)`
   background-color: ${theme.palette.background.paper};
+  width: 100vw;
 `
 
 const TopGrid = styled(Grid)`

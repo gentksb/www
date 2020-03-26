@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "@emotion/styled"
 import { GitHub, Twitter, Instagram } from "@material-ui/icons"
+import theme from "../../layouts/theme"
 // import { IconImageQuery } from "../../../types/graphql-types"
 // 型を入れるとundefined可能性でコケるためコメントアウト
 
@@ -33,6 +34,7 @@ const Bio: React.FC = () => {
   const IconImage = styled(Img)`
     border-radius: 100%;
   `
+  const socialIconColor: string = theme.palette.secondary.main
 
   return (
     <>
@@ -42,7 +44,7 @@ const Bio: React.FC = () => {
       >
         <GitHub
           fontSize="large"
-          color="secondary"
+          style={{ color: socialIconColor }}
           alignmentBaseline="central"
         />
       </a>
@@ -51,7 +53,7 @@ const Bio: React.FC = () => {
       >
         <Twitter
           fontSize="large"
-          color="secondary"
+          style={{ color: socialIconColor }}
           alignmentBaseline="central"
         />
       </a>
@@ -60,7 +62,7 @@ const Bio: React.FC = () => {
       >
         <Instagram
           fontSize="large"
-          color="secondary"
+          style={{ color: socialIconColor }}
           alignmentBaseline="central"
         />
       </a>
