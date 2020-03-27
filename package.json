@@ -37,7 +37,7 @@
     "gatsby-plugin-canonical-urls": "^2.2.1",
     "gatsby-plugin-emotion": "^4.2.1",
     "gatsby-plugin-google-tagmanager": "^2.2.1",
-    "gatsby-plugin-graphql-codegen": "^2.6.0",
+    "gatsby-plugin-graphql-codegen": "^2.6.1",
     "gatsby-plugin-lodash": "^3.2.1",
     "gatsby-plugin-material-ui": "^2.1.6",
     "gatsby-plugin-react-helmet": "^3.2.1",
