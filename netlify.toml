@@ -1,11 +1,11 @@
-[context.production.environment]
+[context.production]
   command = "npm run build"
   publish = "/public"
 
-[context.deploy-preview.environment]
+[context.deploy-preview]
   command = "npm run build"
   publish = "/public"
 
-[context.branch-deploy.environment]
+[context.branch-deploy]
   command = "npm run build"
   publish = "/public"
