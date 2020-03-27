@@ -71,7 +71,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        id: "YGTM-5R7P93N",
+        id: "GTM-5R7P93N",
       },
     },
     "gatsby-plugin-emotion",
