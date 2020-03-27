@@ -21,7 +21,6 @@ interface StaticQueryProps {
 const RootContainer = styled(Container)`
   background-color: ${theme.palette.background.paper};
   width: 100vw;
-  padding: 0 0 0 0;
 `
 
 const TopGrid = styled(Grid)`
@@ -57,7 +56,7 @@ const IndexLayout: React.FC = ({ children }) => (
         <CssBaseline>
           <StylesProvider injectFirst>
             <ThemeProvider theme={theme}>
-              <RootContainer fixed>
+              <RootContainer disableGutters fixed>
                 <TopGrid container>
                   <Grid item sm={4} xs="auto">
                     <Sidebar title={data.site.siteMetadata.title} />
