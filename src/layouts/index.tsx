@@ -23,11 +23,9 @@ const RootContainer = styled(Container)`
   width: 100vw;
 `
 
-const TopGrid = styled(Grid)`
-  min-height: 100vh;
-`
+const TopGrid = styled(Grid)``
 const MainGrid = styled(Grid)`
-  min-height: 100%;
+  min-height: 100vh;
 `
 
 const IndexLayout: React.FC = ({ children }) => (
