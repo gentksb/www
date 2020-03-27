@@ -63,15 +63,18 @@ module.exports = {
     },
     "gatsby-transformer-json",
     {
-      resolve: "gatsby-plugin-canonical-urls",
-      options: {
-        siteUrl: "https://gatsby-starter-typescript-plus.netlify.com",
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-5R7P93N",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-preconnect",
+      options: {
+        domains: [
+          "https://www.google-analytics.com",
+          "https://stats.g.doubleclick.net",
+        ],
       },
     },
     "gatsby-plugin-emotion",
