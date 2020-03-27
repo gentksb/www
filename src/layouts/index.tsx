@@ -26,6 +26,9 @@ const RootContainer = styled(Container)`
 const TopGrid = styled(Grid)`
   height: 100vh;
 `
+const MainGrid = styled(Grid)`
+  height: 100%;
+`
 
 const IndexLayout: React.FC = ({ children }) => (
   <StaticQuery
@@ -58,12 +61,12 @@ const IndexLayout: React.FC = ({ children }) => (
             <ThemeProvider theme={theme}>
               <RootContainer disableGutters fixed>
                 <TopGrid container>
-                  <Grid item sm={4} xs="auto">
+                  <MainGrid item sm={4} xs="auto">
                     <Sidebar title={data.site.siteMetadata.title} />
-                  </Grid>
-                  <Grid item sm={8} xs={12}>
+                  </MainGrid>
+                  <MainGrid item sm={8} xs={12}>
                     {children}
-                  </Grid>
+                  </MainGrid>
                   <Grid item sm={12} xs={12}>
                     <Footer />
                   </Grid>
