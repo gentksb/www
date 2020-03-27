@@ -24,7 +24,7 @@ const RootContainer = styled(Container)`
 `
 
 const TopGrid = styled(Grid)`
-  height: 100vh;
+  min-height: 100vh;
 `
 const MainGrid = styled(Grid)`
   min-height: 100%;
