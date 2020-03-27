@@ -27,7 +27,7 @@ const TopGrid = styled(Grid)`
   height: 100vh;
 `
 const MainGrid = styled(Grid)`
-  height: 100%;
+  min-height: 100%;
 `
 
 const IndexLayout: React.FC = ({ children }) => (
