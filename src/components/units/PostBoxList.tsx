@@ -3,7 +3,7 @@ import { Card, CardHeader, CardMedia, Grid } from "@material-ui/core"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import { RecentPostQuery } from "../../../types/graphql-types"
-import theme from "../../layouts/theme"
+
 // 同じデータ型だけど、名前が分かれてしまっているのでRecentPostQueryを代表で利用
 interface PageProps {
   edges: RecentPostQuery["allMarkdownRemark"]["edges"]

@@ -77,7 +77,6 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-emotion",
     "gatsby-plugin-typescript",
     {
       resolve: `gatsby-plugin-graphql-codegen`,
@@ -93,6 +92,14 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-material-ui",
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    "gatsby-plugin-emotion",
   ],
 }
