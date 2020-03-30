@@ -46,7 +46,7 @@ const IndexLayout: React.FC = ({ children }) => {
     if (window.twitter) {
       window.twitter.widgets.load()
     }
-  }, [])
+  })
 
   const data: StaticQueryProps = useStaticQuery(
     graphql`
