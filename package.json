@@ -12,9 +12,8 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "deploy": "gatsby build",
-    "dev": "gatsby clean && gatsby develop",
-    "serve": "npm run build && gatsby serve",
+    "dev": "gatsby clean && gatsby develop -o",
+    "serve": "npm run build && gatsby serve -o",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "start": "npm run dev",

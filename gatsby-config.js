@@ -74,6 +74,8 @@ module.exports = {
         domains: [
           "https://www.google-analytics.com",
           "https://stats.g.doubleclick.net",
+          "https://cdn.iframe.ly",
+          "https://platform.twitter.com",
         ],
       },
     },
