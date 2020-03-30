@@ -19,3 +19,5 @@ cover: "./kindleunlimitedlogo.png"
 **元価格：600 円 → 新価格：450 円**
 
 ユーザーの多いプラットフォームへ一本化することで、より便利になったかと思います。
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://amzn.to/2Ls8KPj" data-iframely-url="//cdn.iframe.ly/lOIHEng"></a></div></div
