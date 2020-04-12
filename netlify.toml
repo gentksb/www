@@ -2,17 +2,17 @@
   command = "npm run build"
   publish = "/public"
   [context.production.environment]
-    GATSBY_TELEMETRY_DISABLED=1
+    GATSBY_TELEMETRY_DISABLED = "1"
 
 
 [context.deploy-preview]
   command = "npm run build"
   publish = "/public"
   [context.deploy-preview.environment]
-    GATSBY_TELEMETRY_DISABLED=1
+    GATSBY_TELEMETRY_DISABLED = "1"
 
 [context.branch-deploy]
   command = "npm run build"
   publish = "/public"
   [context.branch-deploy.environment]
-    GATSBY_TELEMETRY_DISABLED=1
+    GATSBY_TELEMETRY_DISABLED = "1"
