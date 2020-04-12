@@ -2,6 +2,7 @@ import React from "react"
 import { Card, CardHeader, CardMedia, Grid } from "@material-ui/core"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
+import { useTheme } from "@material-ui/core/styles"
 import { RecentPostQuery } from "../../../types/graphql-types"
 
 // 同じデータ型だけど、名前が分かれてしまっているのでRecentPostQueryを代表で利用
@@ -9,15 +10,18 @@ interface PageProps {
   edges: RecentPostQuery["allMarkdownRemark"]["edges"]
 }
 
-const PostCard = styled(Card)`
-  margin-top: 16px;
-  height: 80%;
-`
-const BoxLink = styled(Link)`
-  text-decoration: none;
-`
-
 const postRoop = (edges: PageProps["edges"]) => {
+  const theme = useTheme()
+
+  const PostCard = styled(Card)`
+    margin-top: 16px;
+    height: 80%;
+    background-color: ${theme.palette.common.white};
+  `
+  const BoxLink = styled(Link)`
+    text-decoration: none;
+  `
+
   return edges.map((edge) => {
     const postTitle: string =
       edge.node.frontmatter?.title != null

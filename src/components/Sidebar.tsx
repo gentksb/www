@@ -9,65 +9,10 @@ import {
   IconButton,
   Box,
 } from "@material-ui/core"
+import { useTheme } from "@material-ui/core/styles"
 import { MenuOpen } from "@material-ui/icons"
 import Bio from "./units/Bio"
 import Externals from "./Externals"
-import theme from "../layouts/theme"
-
-const StyledSidebar = styled.header`
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: ${theme.palette.primary.main};
-  color: white;
-  text-decoration: none;
-`
-
-const SidebarInnerGrid = styled(Grid)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-`
-const BioGrid = styled(Grid)`
-  margin: 8px auto auto auto;
-`
-
-const TitleGrid = styled(Grid)`
-  min-height: 5vh;
-  width: 100vw;
-`
-
-const MenuButtonBox = styled(Box)`
-  float: left;
-  margin-left: 8px;
-  position: absolute;
-`
-
-const HomepageLink = styled(Link)`
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  line-height: 100%;
-  vertical-align: bottom;
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-`
-const DrawerGrid = styled(Grid)`
-  height: 100%;
-  width: 50vw;
-  margin: 0;
-  padding: 0;
-  background-color: ${theme.palette.primary.main};
-  color: white;
-  text-decoration: none;
-`
-const DrawerInnerGrid = styled(Grid)`
-  margin: 8px auto auto auto;
-`
 
 interface HeaderProps {
   title: string
@@ -75,6 +20,62 @@ interface HeaderProps {
 
 const Sidebar: React.FC<HeaderProps> = ({ title }) => {
   const [drawerState, setDrawerState] = React.useState(false)
+  const theme = useTheme()
+
+  const StyledSidebar = styled.header`
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: ${theme.palette.primary.main};
+    color: white;
+    text-decoration: none;
+  `
+
+  const SidebarInnerGrid = styled(Grid)`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  `
+  const BioGrid = styled(Grid)`
+    margin: 8px auto auto auto;
+  `
+
+  const TitleGrid = styled(Grid)`
+    min-height: 5vh;
+    width: 100vw;
+  `
+
+  const MenuButtonBox = styled(Box)`
+    float: left;
+    margin-left: 8px;
+    position: absolute;
+  `
+
+  const HomepageLink = styled(Link)`
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 100%;
+    vertical-align: bottom;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  `
+  const DrawerGrid = styled(Grid)`
+    height: 100%;
+    width: 50vw;
+    margin: 0;
+    padding: 0;
+    background-color: ${theme.palette.primary.main};
+    color: white;
+    text-decoration: none;
+  `
+  const DrawerInnerGrid = styled(Grid)`
+    margin: 8px auto auto auto;
+  `
 
   const toggleDrawer = () => {
     setDrawerState(!drawerState)
@@ -106,10 +107,10 @@ const Sidebar: React.FC<HeaderProps> = ({ title }) => {
                 onClick={toggleDrawer}
                 onKeyDown={toggleDrawer}
               >
-                <DrawerInnerGrid item alignItems="center" xs={12}>
+                <DrawerInnerGrid item xs={12}>
                   <Externals />
                 </DrawerInnerGrid>
-                <DrawerInnerGrid item alignItems="center" xs={12}>
+                <DrawerInnerGrid item xs={12}>
                   <Bio />
                 </DrawerInnerGrid>
               </DrawerGrid>

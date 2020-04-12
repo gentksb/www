@@ -2,7 +2,6 @@ import React from "react"
 
 import { Typography, Grid } from "@material-ui/core"
 import styled from "@emotion/styled"
-import Page from "../components/Page"
 import IndexLayout from "../layouts"
 import Recents from "../components/Recents"
 import Doujin from "../components/Doujin"
@@ -15,28 +14,26 @@ const MainContentsGrid = styled(Grid)`
 
 const IndexPage = () => (
   <IndexLayout>
-    <Page>
-      <Grid container>
-        <MainContentsGrid item>
-          <Typography variant="h5" component="h2">
-            RECENTS
-          </Typography>
-          <Recents />
-        </MainContentsGrid>
-        <MainContentsGrid item>
-          <Typography variant="h5" component="h2">
-            DOUJIN
-          </Typography>
-          <Doujin />
-        </MainContentsGrid>
-        <MainContentsGrid item>
-          <Typography variant="h5" component="h2">
-            ACHEVEMENTS
-          </Typography>
-          <Achivements />
-        </MainContentsGrid>
-      </Grid>
-    </Page>
+    <Grid container>
+      <MainContentsGrid item>
+        <Typography variant="h5" component="h2">
+          RECENTS
+        </Typography>
+        <Recents />
+      </MainContentsGrid>
+      <MainContentsGrid item>
+        <Typography variant="h5" component="h2">
+          DOUJIN
+        </Typography>
+        <Doujin />
+      </MainContentsGrid>
+      <MainContentsGrid item>
+        <Typography variant="h5" component="h2">
+          ACHEVEMENTS
+        </Typography>
+        <Achivements />
+      </MainContentsGrid>
+    </Grid>
   </IndexLayout>
 )
 

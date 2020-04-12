@@ -4,11 +4,12 @@ import Img from "gatsby-image"
 import styled from "@emotion/styled"
 import { GitHub, Twitter, Instagram } from "@material-ui/icons"
 import { Box } from "@material-ui/core"
-import theme from "../../layouts/theme"
+import { useTheme } from "@material-ui/core/styles"
 // import { IconImageQuery } from "../../../types/graphql-types"
 // 型を入れるとundefined可能性でコケるためコメントアウト
 
 const Bio: React.FC = () => {
+  const theme = useTheme()
   const bioQuery = useStaticQuery(
     graphql`
       query bio {

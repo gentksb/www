@@ -2,7 +2,11 @@ import React, { useEffect } from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { Grid, Container, CssBaseline } from "@material-ui/core"
-import { ThemeProvider, StylesProvider } from "@material-ui/styles"
+import {
+  ThemeProvider,
+  StylesProvider,
+  useTheme,
+} from "@material-ui/core/styles"
 import styled from "@emotion/styled"
 import Sidebar from "../components/Sidebar"
 import Footer from "../components/Footer"
@@ -26,16 +30,6 @@ declare global {
     twitter: any
   }
 }
-
-const RootContainer = styled(Container)`
-  background-color: ${theme.palette.background.paper};
-  width: 100vw;
-`
-
-const TopGrid = styled(Grid)``
-const MainGrid = styled(Grid)`
-  min-height: 100vh;
-`
 
 const IndexLayout: React.FC = ({ children }) => {
   useEffect(() => {
@@ -61,6 +55,18 @@ const IndexLayout: React.FC = ({ children }) => {
     `
   )
 
+  const blogTheme = useTheme()
+
+  const RootContainer = styled(Container)`
+    background-color: ${blogTheme.palette.background.paper};
+    width: 100vw;
+  `
+
+  const MainGrid = styled(Grid)`
+    background-color: ${blogTheme.palette.grey[100]};
+    min-height: 100vh;
+  `
+
   return (
     <>
       <Helmet
@@ -84,17 +90,17 @@ const IndexLayout: React.FC = ({ children }) => {
         <StylesProvider injectFirst>
           <ThemeProvider theme={theme}>
             <RootContainer disableGutters fixed>
-              <TopGrid container>
+              <Grid container>
                 <Grid item sm={4} xs="auto">
                   <Sidebar title={data.site.siteMetadata.title} />
                 </Grid>
                 <MainGrid item sm={8} xs={12}>
-                  {children}
+                  <Container>{children}</Container>
                 </MainGrid>
                 <Grid item sm={12} xs={12}>
                   <Footer />
                 </Grid>
-              </TopGrid>
+              </Grid>
             </RootContainer>
           </ThemeProvider>
         </StylesProvider>
