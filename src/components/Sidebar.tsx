@@ -8,6 +8,7 @@ import {
   Drawer,
   IconButton,
   Box,
+  AppBar,
 } from "@material-ui/core"
 import { useTheme } from "@material-ui/core/styles"
 import { MenuOpen } from "@material-ui/icons"
@@ -22,18 +23,14 @@ const Sidebar: React.FC<HeaderProps> = ({ title }) => {
   const [drawerState, setDrawerState] = React.useState(false)
   const theme = useTheme()
 
-  const StyledSidebar = styled.header`
+  const StyledSidebar = styled(AppBar)`
     min-height: 100%;
-    margin: 0;
-    padding: 0;
     background-color: ${theme.palette.primary.main};
     color: white;
     text-decoration: none;
   `
 
   const SidebarInnerGrid = styled(Grid)`
-    display: flex;
-    flex-direction: row;
     align-items: center;
     text-align: center;
   `
@@ -43,6 +40,7 @@ const Sidebar: React.FC<HeaderProps> = ({ title }) => {
 
   const TitleGrid = styled(Grid)`
     min-height: 5vh;
+    margin: 8px;
     width: 100vw;
   `
 
@@ -82,13 +80,14 @@ const Sidebar: React.FC<HeaderProps> = ({ title }) => {
   }
 
   return (
-    <StyledSidebar>
+    <StyledSidebar position="relative" component="header">
       <SidebarInnerGrid container spacing={2}>
         <TitleGrid item sm={12} xs={12}>
           {/* モバイルドロワー部分開始 */}
           <Hidden smUp>
             <MenuButtonBox>
               <IconButton
+                edge="start"
                 color="inherit"
                 style={{ padding: 0 }}
                 aria-label="open drawer"
@@ -118,7 +117,7 @@ const Sidebar: React.FC<HeaderProps> = ({ title }) => {
             </Drawer>
           </Hidden>
           {/* モバイルドロワーここまで */}
-          <Typography variant="h5" component="span">
+          <Typography variant="h5">
             <HomepageLink to="/">{title}</HomepageLink>
           </Typography>
         </TitleGrid>
