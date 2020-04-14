@@ -29,7 +29,7 @@ const postRoop = (edges: PageProps["edges"]) => {
       edge.node.frontmatter?.date != null ? edge.node.frontmatter?.date : ""
 
     return (
-      <Grid item xs={12} key={edge.node.id} spacing={0}>
+      <Grid item xs={12} key={edge.node.id}>
         <PostLink to={postSlug}>
           <TextLinkItem button>
             <ListItemText

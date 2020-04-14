@@ -83,24 +83,25 @@ const Sidebar: React.FC<HeaderProps> = ({ title }) => {
 
   return (
     <StyledSidebar>
-      <SidebarInnerGrid container>
+      <SidebarInnerGrid container spacing={2}>
         <TitleGrid item sm={12} xs={12}>
           {/* モバイルドロワー部分開始 */}
           <Hidden smUp>
             <MenuButtonBox>
-              <IconButton color="inherit" style={{ padding: 0 }}>
-                <MenuOpen
-                  fontSize="large"
-                  aria-label="open drawer"
-                  onClick={toggleDrawer}
-                />
+              <IconButton
+                color="inherit"
+                style={{ padding: 0 }}
+                aria-label="open drawer"
+                onClick={toggleDrawer}
+              >
+                <MenuOpen fontSize="large" />
               </IconButton>
             </MenuButtonBox>
             <Drawer
               anchor="left"
-              elevation={16}
               open={drawerState}
               onClose={toggleDrawer}
+              elevation={16}
             >
               <DrawerGrid
                 container
@@ -122,7 +123,7 @@ const Sidebar: React.FC<HeaderProps> = ({ title }) => {
           </Typography>
         </TitleGrid>
         <Hidden xsDown>
-          <BioGrid item sm={6} xs={6} spacing={2}>
+          <BioGrid item sm={6} xs={6}>
             <Bio />
           </BioGrid>
           <Grid item sm={12} xs={6}>
