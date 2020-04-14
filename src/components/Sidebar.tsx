@@ -23,7 +23,7 @@ const Sidebar: React.FC<HeaderProps> = ({ title }) => {
   const theme = useTheme()
 
   const StyledSidebar = styled.header`
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
     background-color: ${theme.palette.primary.main};

@@ -91,7 +91,7 @@ const IndexLayout: React.FC = ({ children }) => {
           <ThemeProvider theme={theme}>
             <RootContainer disableGutters fixed>
               <Grid container>
-                <Grid item sm={4} xs={12} style={{ minHeight: "100%" }}>
+                <Grid item sm={4} xs={12}>
                   <Sidebar title={data.site.siteMetadata.title} />
                 </Grid>
                 <MainGrid item sm={8} xs={12}>
