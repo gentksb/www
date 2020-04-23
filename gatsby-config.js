@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "幻想サイクル Portal",
     description:
-      "同人サイクル「幻想サイクル」公式WEBサイト兼、代表ゲンのポートフォリオ",
+      "同人サークル「幻想サイクル」公式WEBサイト兼、代表ゲンのポートフォリオ",
     keywords: "シクロクロス, 自転車同人誌, プログラミング, フロントエンド",
     siteUrl: "https://www.gensobunya.net/",
     author: {
