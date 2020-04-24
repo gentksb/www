@@ -37,7 +37,7 @@
     "gatsby-plugin-google-tagmanager": "^2.2.3",
     "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-lodash": "^3.2.3",
-    "gatsby-plugin-material-ui": "^2.1.6",
+    "gatsby-plugin-material-ui": "^2.1.7",
     "gatsby-plugin-preconnect": "^1.1.5",
     "gatsby-plugin-react-helmet": "^3.2.4",
     "gatsby-plugin-sharp": "^2.5.6",
