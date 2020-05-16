@@ -22,3 +22,4 @@ COPY . .
 CMD ["npm", "run", "dev"]
 
 # -oオプションで自動的にブラウザを起動したいけど、npm script内のオプションだとコンテナの世界から出てこれないのでホストを操作できない
+# docker-compose up -d
