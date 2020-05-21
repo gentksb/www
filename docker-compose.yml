@@ -8,8 +8,8 @@ services:
       - "8000:8000"
     volumes:
       # コンテナ内にボリュームを作成する
-      - /app/node_modules
+      - /home/node/node_modules
       # プロジェクトルートを/appにマウントする
-      - .:/app
+      - .:/home/node
     environment:
       - NODE_ENV=development
