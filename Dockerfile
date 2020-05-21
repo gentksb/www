@@ -13,7 +13,7 @@ RUN \
 USER node
 WORKDIR /home/node
 
-# プロジェクトのnpm installをコピーしてnpm installを実施する
+# プロジェクトのpackage.jsonをコピーしてnpm installを実施する
 COPY ./package.json .
 RUN npm install && npm cache clean --force
 
