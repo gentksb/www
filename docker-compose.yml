@@ -7,9 +7,9 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      # コンテナ内にボリュームを作成する
+      # コンテナ内にnpmパッケージ用のボリュームを作成する
       - /home/node/node_modules
-      # プロジェクトルートを/appにマウントする
+      # プロジェクトルートをホームディレクトリにマウントする
       - .:/home/node
     environment:
       - NODE_ENV=development
