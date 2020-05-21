@@ -116,3 +116,8 @@ $RECYCLE.BIN/
 
 # type
 types/
+types/graphql-types.ts
+
+# gatsby-tmp-config
+.config/
+

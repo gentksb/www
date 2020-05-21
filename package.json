@@ -12,8 +12,8 @@
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build",
     "clean": "gatsby clean",
-    "dev": "gatsby clean && gatsby develop -o",
-    "serve": "npm run build && gatsby serve -o",
+    "dev": "gatsby clean && gatsby develop --host=0.0.0.0",
+    "serve": "npm run build && gatsby serve",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "start": "npm run dev",

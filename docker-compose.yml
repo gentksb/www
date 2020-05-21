@@ -1,0 +1,15 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # コンテナ内にボリュームを作成する
+      - /home/node/node_modules
+      # プロジェクトルートを/appにマウントする
+      - .:/home/node
+    environment:
+      - NODE_ENV=development
