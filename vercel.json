@@ -1,0 +1,29 @@
+{
+  "build": {
+    "env": {
+      "GATSBY_TELEMETRY_DISABLED": "1"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/portfolio/md2doujin/",
+      "destination": "https://gensobunya-tech.hatenablog.com/entry/2018/12/20/000000"
+    },
+    {
+      "source": "/portfolio/qiitopset/",
+      "destination": "https://gensobunya-tech.hatenablog.com/entry/2019/11/08/220510"
+    },
+    {
+      "source": "/portfolio/wp2hugo/",
+      "destination": "https://gensobunya-tech.hatenablog.com/entry/2017/10/11/000000"
+    },
+    {
+      "source": "/portfolio/blggrtowp-2/",
+      "destination": "https://gensobunya-tech.hatenablog.com/entry/2017/10/07/211800"
+    },
+    {
+      "source": "/portfolio/blgger-to-wp-to-hugo-1/",
+      "destination": "https://gensobunya-tech.hatenablog.com/entry/2017/10/07/125200"
+    }
+  ]
+}
