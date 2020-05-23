@@ -121,3 +121,5 @@ types/graphql-types.ts
 # gatsby-tmp-config
 .config/
 
+
+.vercel
