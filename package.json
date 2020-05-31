@@ -5,12 +5,12 @@
   "private": true,
   "author": "gensobunya",
   "keywords": [
-    "gatsby, frontend, cycle"
+    "Touhou project", "cycle", "Doujin"
   ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build",
+    "build": "gatsby build",
     "clean": "gatsby clean",
     "dev": "gatsby clean && gatsby develop --host=0.0.0.0",
     "serve": "npm run build && gatsby serve",
@@ -21,7 +21,7 @@
     "type-check": "tsc"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": "12.x"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
