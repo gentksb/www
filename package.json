@@ -5,7 +5,9 @@
   "private": true,
   "author": "gensobunya",
   "keywords": [
-    "Touhou project", "cycle", "Doujin"
+    "Touhou project",
+    "cycle",
+    "Doujin"
   ],
   "license": "MIT",
   "main": "n/a",
@@ -40,6 +42,7 @@
     "gatsby-plugin-material-ui": "^2.1.8",
     "gatsby-plugin-preconnect": "^1.1.44",
     "gatsby-plugin-react-helmet": "^3.3.1",
+    "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sharp": "^2.6.8",
     "gatsby-plugin-typescript": "^2.4.3",
     "gatsby-remark-copy-linked-files": "^2.3.2",
