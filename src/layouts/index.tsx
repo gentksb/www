@@ -81,10 +81,11 @@ const IndexLayout: React.FC = ({ children }) => {
       >
         <script
           async
+          defer
           type="text/javascript"
           src="https://cdn.iframe.ly/embed.js"
         />
-        <script async src="https://platform.twitter.com/widgets.js" />
+        <script async defer src="https://platform.twitter.com/widgets.js" />
       </Helmet>
       <CssBaseline>
         <StylesProvider injectFirst>
