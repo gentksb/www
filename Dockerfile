@@ -17,9 +17,6 @@ WORKDIR /home/node
 COPY ./package.json .
 RUN npm install && npm cache clean --force
 
-# プロジェクトファイルを丸ごとコピー(node_moduleは.dockerignoreで除外済み)
-COPY . .
-
 # npm scriptに従って開発サーバーを起動（docker用にIPを指定）
 CMD ["npm", "run", "dev"]
 
