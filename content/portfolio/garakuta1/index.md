@@ -10,4 +10,4 @@ tags: ["Achivements"]
 
 投稿したレポートの公開ページは[こちら](https://touhougarakuta.com/music-review/200521a)です
 
-<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://touhougarakuta.com/200521a" data-iframely-url="//cdn.iframe.ly/qT29W8K"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://touhougarakuta.com/201225" data-iframely-url="//cdn.iframe.ly/NicAC27?iframe=card-small"></a></div></div>
