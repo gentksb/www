@@ -10,4 +10,4 @@ tags: ["Achivements"]
 
 オンライン活動がメインになるコロナ禍の中で、即売会の魅力を思い出す内容となっています。
 
-<div class="iframely-embed"><div class="iframely-responsive" style="padding-bottom: 52.5%; padding-top: 120px;"><a href="https://touhougarakuta.com/201225" data-iframely-url="//cdn.iframe.ly/NicAC27"></a></div></div>
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://touhougarakuta.com/201225" data-iframely-url="//cdn.iframe.ly/NicAC27?iframe=card-small"></a></div></div>
