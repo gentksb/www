@@ -2,10 +2,11 @@ import React from "react"
 import { Grid, List, ListItem, ListItemText } from "@material-ui/core"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import { RecentPostQuery } from "../../../types/graphql-types"
+// import { RecentPostQuery } from "../../../types/graphql-types"
 // 同じデータ型だけど、名前が分かれてしまっているのでRecentPostQueryを代表で利用
 interface PageProps {
-  edges: RecentPostQuery["allMarkdownRemark"]["edges"]
+  edges: any
+  // edges: RecentPostQuery["allMarkdownRemark"]["edges"]
 }
 
 const PostLink = styled(Link)`
@@ -16,7 +17,7 @@ const TextLinkItem = styled(ListItem)`
 `
 
 const postRoop = (edges: PageProps["edges"]) => {
-  return edges.map((edge) => {
+  return edges.map((edge:any) => {
     const postTitle: string =
       edge.node.frontmatter?.title != null
         ? edge.node.frontmatter.title

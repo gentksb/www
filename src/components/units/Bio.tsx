@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "@emotion/styled"
 import { GitHub, Twitter, Instagram } from "@material-ui/icons"
 import { Box } from "@material-ui/core"
@@ -15,9 +15,7 @@ const Bio: React.FC = () => {
       query bio {
         file(relativePath: { eq: "icon.png" }) {
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED)
           }
         }
         site {
@@ -33,10 +31,11 @@ const Bio: React.FC = () => {
     `
   )
 
-  const IconImage = styled(Img)`
+  const IconImage = styled(GatsbyImage)`
     border-radius: 100%;
     max-width: 15vw;
     margin: auto;
+    object-position: center center;
   `
   const BioBox = styled(Box)`
     text-align: center;
@@ -45,7 +44,9 @@ const Bio: React.FC = () => {
 
   return (
     <BioBox>
-      <IconImage fluid={bioQuery.file.childImageSharp.fluid} />
+      <Box>
+        <IconImage image={bioQuery.file.childImageSharp.gatsbyImageData} alt="avatar" />
+      </Box>
       <a
         href={`https://github.com/${bioQuery.site.siteMetadata.social.github}`}
       >

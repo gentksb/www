@@ -1,4 +1,5 @@
 const path = require("path")
+import redirects from "./redirect.json"
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -49,4 +50,15 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createRedirect } = actions;
+
+  redirects.forEach(redirect =>
+    createRedirect({
+      fromPath: redirect.source,
+      toPath: redirect.destination,
+    })
+  )
 }
