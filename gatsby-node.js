@@ -1,4 +1,5 @@
 const path = require("path")
+const redirects = require("./redirect.json")
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -17,7 +18,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-
+  const { createRedirect } = actions
   const allMarkdown = await graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -49,4 +50,13 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  redirects.forEach(redirect =>
+    createRedirect({
+      fromPath: redirect.source,
+      toPath: redirect.destination,
+      redirectInBrowser: true,
+      isPermanent: true
+    })
+  )
 }

@@ -3,11 +3,12 @@ import { Grid } from "@material-ui/core"
 import { OpenInNew } from "@material-ui/icons"
 import styled from "@emotion/styled"
 import { useTheme } from "@material-ui/core/styles"
-import { ExternalLinkQuery } from "../../../types/graphql-types"
+// import { ExternalLinkQuery } from "../../../types/graphql-types"
 
 interface PageProps {
   color?: string
-  linkData: ExternalLinkQuery["allDataJson"]["edges"]
+  linkData: any
+  // linkData: ExternalLinkQuery["allDataJson"]["edges"]
 }
 
 const linkBoxRoop = (edges: PageProps["linkData"]) => {
@@ -18,7 +19,7 @@ const linkBoxRoop = (edges: PageProps["linkData"]) => {
     color: ${theme.palette.secondary.main};
   `
 
-  return edges?.map((linkdata) => (
+  return edges?.map((linkdata:any) => (
     <Grid item xs={12} key={linkdata.node.id}>
       <ExternalLinkText
         href={linkdata.node.url != null ? linkdata.node.url : "/"}

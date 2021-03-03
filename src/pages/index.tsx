@@ -1,5 +1,4 @@
 import React from "react"
-
 import { Typography, Grid } from "@material-ui/core"
 import styled from "@emotion/styled"
 import IndexLayout from "../layouts"
@@ -12,7 +11,7 @@ const MainContentsGrid = styled(Grid)`
   width: 100%;
 `
 
-const IndexPage = () => (
+const IndexPage:React.VFC = () => (
   <IndexLayout>
     <Grid container>
       <MainContentsGrid item>
