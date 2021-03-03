@@ -1,13 +1,12 @@
 import React from "react"
-// import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import { Grid, Typography } from "@material-ui/core"
 import styled from "@emotion/styled"
 import LinkList from "./units/LinkList"
-import { ExternalLinkQuery } from "../../types/graphql-types"
+// import { ExternalLinkQuery } from "../../types/graphql-types"
 
 const externalLinks: React.FC = () => {
-  const data: ExternalLinkQuery = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
       query ExternalLink {
         allDataJson {
@@ -26,7 +25,7 @@ const externalLinks: React.FC = () => {
   )
 
   const tagLinks = (tagString: string) => {
-    return data.allDataJson.edges.filter((obj) => {
+    return data.allDataJson.edges.filter((obj:any) => {
       return obj.node.tag === tagString
     })
   }

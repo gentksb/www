@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import IndexLayout from "../layouts"
 
-const NotFoundPage = () => (
+const NotFoundPage:React.VFC = () => (
   <IndexLayout>
     <h1>404: Page not found.</h1>
     <p>

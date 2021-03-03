@@ -1,13 +1,14 @@
 import React from "react"
-import { Card, CardHeader, CardMedia, Grid } from "@material-ui/core"
+import { Card, CardHeader, Grid } from "@material-ui/core"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import { useTheme } from "@material-ui/core/styles"
-import { RecentPostQuery } from "../../../types/graphql-types"
+// import { RecentPostQuery } from "../../../types/graphql-types"
 
 // 同じデータ型だけど、名前が分かれてしまっているのでRecentPostQueryを代表で利用
 interface PageProps {
-  edges: RecentPostQuery["allMarkdownRemark"]["edges"]
+  edges: any
+  // edges: RecentPostQuery["allMarkdownRemark"]["edges"]
 }
 
 const postRoop = (edges: PageProps["edges"]) => {
@@ -22,15 +23,11 @@ const postRoop = (edges: PageProps["edges"]) => {
     text-decoration: none;
   `
 
-  return edges.map((edge) => {
+  return edges.map((edge:any) => {
     const postTitle: string =
       edge.node.frontmatter?.title != null
         ? edge.node.frontmatter.title
         : "No POST!"
-    const postCoverSrc: string =
-      edge.node.frontmatter?.cover?.childImageSharp?.fluid?.src != null
-        ? edge.node.frontmatter.cover.childImageSharp.fluid.src
-        : "dummy.jpg"
 
     const postSlug: string =
       edge.node.fields?.slug != null ? edge.node.fields.slug : "/"
@@ -52,7 +49,6 @@ const postRoop = (edges: PageProps["edges"]) => {
               subheader={postDate}
             />
           </BoxLink>
-          <CardMedia src={postCoverSrc} />
         </PostCard>
       </Grid>
     )
