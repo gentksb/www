@@ -1,5 +1,4 @@
 import React from "react"
-
 import { Typography, Grid } from "@material-ui/core"
 import styled from "@emotion/styled"
 import IndexLayout from "../layouts"

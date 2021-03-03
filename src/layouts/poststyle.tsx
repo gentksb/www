@@ -1,5 +1,5 @@
 import React from "react"
-import { Global, css } from "@emotion/core"
+import { Global, css } from "@emotion/react"
 import { useTheme } from "@material-ui/core/styles"
 
 const PostStyle = () => {
