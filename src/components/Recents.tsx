@@ -1,12 +1,11 @@
 import React from "react"
-// import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import { Grid } from "@material-ui/core"
 import PostBoxList from "./units/PostBoxList"
-import { RecentPostQuery } from "../../types/graphql-types"
+// import { RecentPostQuery } from "../../types/graphql-types"
 
 const sportsPost: React.FC = () => {
-  const data: RecentPostQuery = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
       query RecentPost {
         allMarkdownRemark(

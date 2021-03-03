@@ -31,7 +31,7 @@ declare global {
   }
 }
 
-const IndexLayout: React.FC = ({ children }) => {
+const IndexLayout: React.FunctionComponent = ({ children }) => {
   useEffect(() => {
     if (window.iframely) {
       window.iframely.load()
@@ -96,7 +96,7 @@ const IndexLayout: React.FC = ({ children }) => {
                   <Sidebar title={data.site.siteMetadata.title} />
                 </Grid>
                 <MainGrid item sm={8} xs={12}>
-                  <Container>{children}</Container>
+                  <Container>{children ?? "no data"}</Container>
                 </MainGrid>
                 <Grid item sm={12} xs={12}>
                   <Footer />
