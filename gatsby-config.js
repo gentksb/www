@@ -68,29 +68,29 @@ module.exports = {
         id: "GTM-5R7P93N",
       },
     },
-    {
-      resolve: "gatsby-plugin-preconnect",
-      options: {
-        domains: [
-          "https://www.google-analytics.com",
-          "https://stats.g.doubleclick.net",
-          "https://cdn.iframe.ly",
-          "https://platform.twitter.com",
-        ],
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-preconnect",
+    //   options: {
+    //     domains: [
+    //       "https://www.google-analytics.com",
+    //       "https://stats.g.doubleclick.net",
+    //       "https://cdn.iframe.ly",
+    //       "https://platform.twitter.com",
+    //     ],
+    //   },
+    // },
     "gatsby-plugin-typescript",
-    {
-      resolve: `gatsby-plugin-graphql-codegen`,
-      options: {
-        fileName: `types/graphql-types.ts`,
-        documentPaths: [
-          "./src/**/*.{ts,tsx}",
-          "./node_modules/gatsby-*/**/*.js",
-        ],
-        codegenDelay: 200,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-graphql-codegen`,
+    //   options: {
+    //     fileName: `types/graphql-types.ts`,
+    //     documentPaths: [
+    //       "./src/**/*.{ts,tsx}",
+    //       "./node_modules/gatsby-*/**/*.js",
+    //     ],
+    //     codegenDelay: 200,
+    //   },
+    // },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
