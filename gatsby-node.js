@@ -1,5 +1,5 @@
 const path = require("path")
-import redirects from "./redirect.json"
+const redirects = require("./redirect.json")
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-
+  const { createRedirect } = actions
   const allMarkdown = await graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -32,6 +32,14 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
+
+  redirects.forEach(redirect =>
+    createRedirect({
+      fromPath: redirect.source,
+      toPath: redirect.destination,
+    })
+  )
 
   if (allMarkdown.errors) {
     // eslint-disable-next-line no-console
@@ -50,15 +58,4 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-}
-
-exports.createPages = async ({ graphql, actions }) => {
-  const { createRedirect } = actions;
-
-  redirects.forEach(redirect =>
-    createRedirect({
-      fromPath: redirect.source,
-      toPath: redirect.destination,
-    })
-  )
 }

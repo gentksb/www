@@ -1,5 +1,5 @@
 import React from "react"
-import { Card, CardHeader, CardMedia, Grid } from "@material-ui/core"
+import { Card, CardHeader, Grid } from "@material-ui/core"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import { useTheme } from "@material-ui/core/styles"
@@ -28,10 +28,6 @@ const postRoop = (edges: PageProps["edges"]) => {
       edge.node.frontmatter?.title != null
         ? edge.node.frontmatter.title
         : "No POST!"
-    const postCoverSrc: string =
-      edge.node.frontmatter?.cover?.childImageSharp?.fluid?.src != null
-        ? edge.node.frontmatter.cover.childImageSharp.fluid.src
-        : "dummy.jpg"
 
     const postSlug: string =
       edge.node.fields?.slug != null ? edge.node.fields.slug : "/"
@@ -53,7 +49,6 @@ const postRoop = (edges: PageProps["edges"]) => {
               subheader={postDate}
             />
           </BoxLink>
-          <CardMedia src={postCoverSrc} />
         </PostCard>
       </Grid>
     )

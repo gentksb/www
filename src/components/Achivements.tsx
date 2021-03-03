@@ -17,13 +17,6 @@ const sportsPost: React.FC = () => {
               frontmatter {
                 date(formatString: "YYYY/MM/DD")
                 title
-                cover {
-                  childImageSharp {
-                    fluid {
-                      src
-                    }
-                  }
-                }
               }
               id
               fields {
