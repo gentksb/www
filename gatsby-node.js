@@ -33,15 +33,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-
-  redirects.forEach(redirect =>
-    createRedirect({
-      fromPath: redirect.source,
-      toPath: redirect.destination,
-      isPermanent: true
-    })
-  )
-
   if (allMarkdown.errors) {
     // eslint-disable-next-line no-console
     console.error(allMarkdown.errors)
@@ -59,4 +50,13 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  redirects.forEach(redirect =>
+    createRedirect({
+      fromPath: redirect.source,
+      toPath: redirect.destination,
+      redirectInBrowser: true,
+      isPermanent: true
+    })
+  )
 }
