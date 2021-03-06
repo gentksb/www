@@ -25,7 +25,7 @@ const externalLinks: React.FC = () => {
   )
 
   const tagLinks = (tagString: string) => {
-    return data.allDataJson.edges.filter((obj:any) => {
+    return data.allDataJson.edges.filter((obj: any) => {
       return obj.node.tag === tagString
     })
   }

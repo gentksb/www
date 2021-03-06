@@ -19,7 +19,7 @@ const linkBoxRoop = (edges: PageProps["linkData"]) => {
     color: ${theme.palette.secondary.main};
   `
 
-  return edges?.map((linkdata:any) => (
+  return edges?.map((linkdata: any) => (
     <Grid item xs={12} key={linkdata.node.id}>
       <ExternalLinkText
         href={linkdata.node.url != null ? linkdata.node.url : "/"}

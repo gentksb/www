@@ -8,7 +8,7 @@ import {
   Drawer,
   IconButton,
   Box,
-  AppBar,
+  AppBar
 } from "@material-ui/core"
 import { useTheme } from "@material-ui/core/styles"
 import { MenuOpen } from "@material-ui/icons"

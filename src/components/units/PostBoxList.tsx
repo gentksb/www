@@ -23,7 +23,7 @@ const postRoop = (edges: PageProps["edges"]) => {
     text-decoration: none;
   `
 
-  return edges.map((edge:any) => {
+  return edges.map((edge: any) => {
     const postTitle: string =
       edge.node.frontmatter?.title != null
         ? edge.node.frontmatter.title
@@ -44,7 +44,7 @@ const postRoop = (edges: PageProps["edges"]) => {
               title={postTitle}
               subheaderTypographyProps={{
                 variant: "caption",
-                color: "textSecondary",
+                color: "textSecondary"
               }}
               subheader={postDate}
             />

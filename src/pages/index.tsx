@@ -11,7 +11,7 @@ const MainContentsGrid = styled(Grid)`
   width: 100%;
 `
 
-const IndexPage:React.VFC = () => (
+const IndexPage: React.VFC = () => (
   <IndexLayout>
     <Grid container>
       <MainContentsGrid item>

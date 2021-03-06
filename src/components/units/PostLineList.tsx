@@ -17,7 +17,7 @@ const TextLinkItem = styled(ListItem)`
 `
 
 const postRoop = (edges: PageProps["edges"]) => {
-  return edges.map((edge:any) => {
+  return edges.map((edge: any) => {
     const postTitle: string =
       edge.node.frontmatter?.title != null
         ? edge.node.frontmatter.title

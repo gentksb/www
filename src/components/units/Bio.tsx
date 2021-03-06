@@ -45,7 +45,10 @@ const Bio: React.FC = () => {
   return (
     <BioBox>
       <Box>
-        <IconImage image={bioQuery.file.childImageSharp.gatsbyImageData} alt="avatar" />
+        <IconImage
+          image={bioQuery.file.childImageSharp.gatsbyImageData}
+          alt="avatar"
+        />
       </Box>
       <a
         href={`https://github.com/${bioQuery.site.siteMetadata.social.github}`}

@@ -5,7 +5,7 @@ import { Grid, Container, CssBaseline } from "@material-ui/core"
 import {
   ThemeProvider,
   StylesProvider,
-  useTheme,
+  useTheme
 } from "@material-ui/core/styles"
 import styled from "@emotion/styled"
 import Sidebar from "../components/Sidebar"
@@ -74,9 +74,9 @@ const IndexLayout: React.FunctionComponent = ({ children }) => {
         meta={[
           {
             name: "description",
-            content: data.site.siteMetadata.description,
+            content: data.site.siteMetadata.description
           },
-          { name: "keywords", content: data.site.siteMetadata.keywords },
+          { name: "keywords", content: data.site.siteMetadata.keywords }
         ]}
       >
         <script
