@@ -12,7 +12,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --log-pages",
     "clean": "gatsby clean",
     "dev": "gatsby clean && gatsby develop --host=0.0.0.0",
     "serve": "npm run build && gatsby serve",
