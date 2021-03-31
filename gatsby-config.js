@@ -8,13 +8,13 @@ module.exports = {
     author: {
       name: "gensobunya",
       url: "https://www.gensobunya.net/",
-      email: "gen@gensobunya.net",
+      email: "gen@gensobunya.net"
     },
     social: {
       twitter: `gen_sobunya`,
       github: `gentksb`,
-      instagram: `gen_sobunya`,
-    },
+      instagram: `gen_sobunya`
+    }
   },
   plugins: [
     "gatsby-plugin-lodash",
@@ -22,22 +22,22 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "content",
-        path: `${__dirname}/content/portfolio`,
-      },
+        path: `${__dirname}/content/portfolio`
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "linkdata",
-        path: `${__dirname}/content/data`,
-      },
+        path: `${__dirname}/content/data`
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "image",
-        path: `${__dirname}/content/img`,
-      },
+        path: `${__dirname}/content/img`
+      }
     },
     {
       resolve: "gatsby-transformer-remark",
@@ -46,27 +46,27 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 960,
-            },
+              maxWidth: 960
+            }
           },
           {
             resolve: "gatsby-remark-responsive-iframe",
             options: {
-              wrapperStyle: "margin-bottom: 1rem",
-            },
+              wrapperStyle: "margin-bottom: 1rem"
+            }
           },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
-          "gatsby-remark-smartypants",
-        ],
-      },
+          "gatsby-remark-smartypants"
+        ]
+      }
     },
     "gatsby-transformer-json",
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        id: "GTM-5R7P93N",
-      },
+        id: "GTM-5R7P93N"
+      }
     },
     // {
     //   resolve: "gatsby-plugin-preconnect",
@@ -87,12 +87,12 @@ module.exports = {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         stylesProvider: {
-          injectFirst: true,
-        },
-      },
+          injectFirst: true
+        }
+      }
     },
     "gatsby-plugin-emotion",
     "gatsby-plugin-robots-txt",
-    "gatsby-plugin-gatsby-cloud",
-  ],
+    "gatsby-plugin-gatsby-cloud"
+  ]
 }
