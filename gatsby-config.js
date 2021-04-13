@@ -17,6 +17,7 @@ module.exports = {
     }
   },
   plugins: [
+    "gatsby-plugin-image",
     "gatsby-plugin-lodash",
     {
       resolve: "gatsby-source-filesystem",
