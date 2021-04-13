@@ -26,8 +26,6 @@ declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     iframely: any
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    twitter: any
   }
 }
 
@@ -35,10 +33,6 @@ const IndexLayout: React.FunctionComponent = ({ children }) => {
   useEffect(() => {
     if (window.iframely) {
       window.iframely.load()
-    }
-    // ツイート内容を埋め込みたい場合
-    if (window.twitter) {
-      window.twitter.widgets.load()
     }
   })
 
@@ -85,7 +79,6 @@ const IndexLayout: React.FunctionComponent = ({ children }) => {
           type="text/javascript"
           src="https://cdn.iframe.ly/embed.js"
         />
-        <script async defer src="https://platform.twitter.com/widgets.js" />
       </Helmet>
       <CssBaseline>
         <StylesProvider injectFirst>
