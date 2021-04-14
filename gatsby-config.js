@@ -34,13 +34,6 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "image",
-        path: `${__dirname}/content/img`
-      }
-    },
-    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
