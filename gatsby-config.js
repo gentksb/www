@@ -69,18 +69,8 @@ module.exports = {
         id: "GTM-5R7P93N"
       }
     },
-    // {
-    //   resolve: "gatsby-plugin-preconnect",
-    //   options: {
-    //     domains: [
-    //       "https://www.google-analytics.com",
-    //       "https://stats.g.doubleclick.net",
-    //       "https://cdn.iframe.ly",
-    //       "https://platform.twitter.com",
-    //     ],
-    //   },
-    // },
     "gatsby-plugin-typescript",
+    "gatsby-plugin-typegen",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",

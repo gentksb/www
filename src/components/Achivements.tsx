@@ -5,7 +5,7 @@ import PostLineList from "./units/PostLineList"
 // import { SportsPostQuery } from "../../types/graphql-types"
 
 const sportsPost: React.FC = () => {
-  const data = useStaticQuery(
+  const data = useStaticQuery<GatsbyTypes.SportsPostQuery>(
     graphql`
       query SportsPost {
         allMarkdownRemark(

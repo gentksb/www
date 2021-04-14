@@ -1,55 +1,32 @@
 import React from "react"
 import { graphql } from "gatsby"
-
 import IndexLayout from "../layouts"
-
 import PostStyle from "../layouts/poststyle"
 
-interface PageTemplateProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-        description: string
-        author: {
-          name: string
-          url: string
-        }
-      }
-    }
-    markdownRemark: {
-      html: string
-      excerpt: string
-      frontmatter: {
-        title: string
-      }
-    }
-  }
+interface Props {
+  data: GatsbyTypes.PageTemplateQuery
 }
 
-const PageTemplate: React.SFC<PageTemplateProps> = ({ data }) => (
-  <IndexLayout>
-    <PostStyle />
-    <h1>{data.markdownRemark.frontmatter.title}</h1>
-    {/* eslint-disable-next-line react/no-danger */}
-    <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-  </IndexLayout>
-)
+const PageTemplate: React.FunctionComponent<Props> = (props) => {
+  const { data } = props
+  return (
+    <IndexLayout>
+      <PostStyle />
+      <h1>{data.markdownRemark?.frontmatter?.title}</h1>
+      <div
+        /* eslint-disable-next-line react/no-danger */
+        dangerouslySetInnerHTML={{
+          __html: data.markdownRemark?.html ?? "no data"
+        }}
+      />
+    </IndexLayout>
+  )
+}
 
 export default PageTemplate
 
 export const query = graphql`
-  query PageTemplateQuery($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        description
-        author {
-          name
-          url
-        }
-      }
-    }
+  query PageTemplate($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt

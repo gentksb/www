@@ -2,7 +2,7 @@ import React from "react"
 import { Global, css } from "@emotion/react"
 import { useTheme } from "@material-ui/core/styles"
 
-const PostStyle = () => {
+const PostStyle: React.FunctionComponent = () => {
   const theme = useTheme()
 
   return (

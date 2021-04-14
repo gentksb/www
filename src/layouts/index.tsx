@@ -12,16 +12,6 @@ import Sidebar from "../components/Sidebar"
 import Footer from "../components/Footer"
 import theme from "./theme"
 
-interface StaticQueryProps {
-  site: {
-    siteMetadata: {
-      title: string
-      description: string
-      keywords: string
-    }
-  }
-}
-
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -36,7 +26,7 @@ const IndexLayout: React.FunctionComponent = ({ children }) => {
     }
   })
 
-  const data: StaticQueryProps = useStaticQuery(
+  const data: GatsbyTypes.IndexLayoutQuery = useStaticQuery<GatsbyTypes.IndexLayoutQuery>(
     graphql`
       query IndexLayout {
         site {
@@ -48,6 +38,8 @@ const IndexLayout: React.FunctionComponent = ({ children }) => {
       }
     `
   )
+
+  const sitemetadata = data?.site?.siteMetadata
 
   const blogTheme = useTheme()
 
@@ -64,13 +56,12 @@ const IndexLayout: React.FunctionComponent = ({ children }) => {
   return (
     <>
       <Helmet
-        title={data.site.siteMetadata.title}
+        title={sitemetadata?.title}
         meta={[
           {
             name: "description",
-            content: data.site.siteMetadata.description
-          },
-          { name: "keywords", content: data.site.siteMetadata.keywords }
+            content: sitemetadata?.description
+          }
         ]}
       >
         <script
@@ -86,7 +77,7 @@ const IndexLayout: React.FunctionComponent = ({ children }) => {
             <RootContainer disableGutters fixed>
               <Grid container>
                 <Grid item sm={4} xs={12}>
-                  <Sidebar title={data.site.siteMetadata.title} />
+                  <Sidebar title={sitemetadata?.title ?? "幻想サイクル"} />
                 </Grid>
                 <MainGrid item sm={8} xs={12}>
                   <Container>{children ?? "no data"}</Container>
