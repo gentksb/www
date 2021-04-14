@@ -41,8 +41,10 @@ const Bio: React.FC = () => {
           src="../../images/icon.png"
           alt="avatar"
           placeholder="blurred"
+          style={{
+            borderRadius: "100%"
+          }}
           imgStyle={{
-            borderRadius: "100%",
             maxWidth: "15vw",
             margin: "auto",
             objectPosition: "center center"
