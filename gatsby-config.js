@@ -17,9 +17,9 @@ module.exports = {
     }
   },
   plugins: [
+    "gatsby-plugin-no-sourcemaps",
     "gatsby-plugin-image",
     "gatsby-plugin-twitter",
-    "gatsby-plugin-lodash",
     {
       resolve: "gatsby-source-filesystem",
       options: {
