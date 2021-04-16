@@ -3566,11 +3566,6 @@ type SitePluginSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type ExternalLinkQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type ExternalLinkQuery = { readonly allDataJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<DataJson, 'id' | 'name' | 'rank' | 'tag' | 'url'> }> } };
-
 type DoujinPostQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3579,18 +3574,18 @@ type DoujinPostQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyA
         & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title'>>, readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>> }
       ) }> } };
 
-type RecentPostQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type RecentPostQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MarkdownRemark, 'id'>
-        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title'>>, readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>> }
-      ) }> } };
-
 type IndexLayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type IndexLayoutQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
+type SportsPostQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SportsPostQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MarkdownRemark, 'id'>
+        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title'>>, readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>> }
+      ) }> } };
 
 type PageTemplateQueryVariables = Exact<{
   slug: Scalars['String'];
@@ -3602,10 +3597,15 @@ type PageTemplateQuery = { readonly markdownRemark: Maybe<(
     & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title'>> }
   )> };
 
-type SportsPostQueryVariables = Exact<{ [key: string]: never; }>;
+type ExternalLinkQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SportsPostQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
+type ExternalLinkQuery = { readonly allDataJson: { readonly edges: ReadonlyArray<{ readonly node: Pick<DataJson, 'id' | 'name' | 'rank' | 'tag' | 'url'> }> } };
+
+type RecentPostQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type RecentPostQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
         Pick<MarkdownRemark, 'id'>
         & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title'>>, readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>> }
       ) }> } };
@@ -3635,5 +3635,10 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type bioQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type bioQuery = { readonly file: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }>, readonly site: Maybe<{ readonly siteMetadata: Maybe<{ readonly social: Maybe<Pick<SiteSiteMetadataSocial, 'github' | 'instagram' | 'twitter'>> }> }> };
 
 }
