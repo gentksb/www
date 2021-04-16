@@ -6,7 +6,7 @@ import LinkList from "./units/LinkList"
 // import { ExternalLinkQuery } from "../../types/graphql-types"
 
 const externalLinks: React.FC = () => {
-  const data = useStaticQuery(
+  const data = useStaticQuery<GatsbyTypes.ExternalLinkQuery>(
     graphql`
       query ExternalLink {
         allDataJson {

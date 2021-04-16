@@ -11,7 +11,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value
     })
   }
 }
@@ -46,12 +46,12 @@ exports.createPages = async ({ graphql, actions }) => {
       path: slug,
       component: path.resolve(`./src/templates/page.tsx`),
       context: {
-        slug,
-      },
+        slug
+      }
     })
   })
 
-  redirects.forEach(redirect =>
+  redirects.forEach((redirect) =>
     createRedirect({
       fromPath: redirect.source,
       toPath: redirect.destination,

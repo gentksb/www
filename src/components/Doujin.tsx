@@ -5,7 +5,7 @@ import PostLineList from "./units/PostLineList"
 // import { DoujinPostQuery } from "../../types/graphql-types"
 
 const sportsPost: React.FC = () => {
-  const data = useStaticQuery(
+  const data = useStaticQuery<GatsbyTypes.DoujinPostQuery>(
     graphql`
       query DoujinPost {
         allMarkdownRemark(

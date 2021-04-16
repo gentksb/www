@@ -5,7 +5,7 @@ import PostBoxList from "./units/PostBoxList"
 // import { RecentPostQuery } from "../../types/graphql-types"
 
 const sportsPost: React.FC = () => {
-  const data = useStaticQuery(
+  const data = useStaticQuery<GatsbyTypes.RecentPostQuery>(
     graphql`
       query RecentPost {
         allMarkdownRemark(
