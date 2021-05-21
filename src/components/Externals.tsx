@@ -42,6 +42,7 @@ const externalLinks: React.FC = () => {
       </Grid>
       <LinkList linkData={tagLinks("blog")} />
       <LinkList linkData={tagLinks("shop")} />
+      <LinkList linkData={tagLinks("service")} />
     </RootGrid>
   )
 }
