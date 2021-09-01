@@ -28,5 +28,11 @@
     "name": "booth",
     "url": "https://gensobunya.booth.pm/",
     "rank": 2
+  },
+  {
+    "tag": "service",
+    "name": "AJOCCランクカードジェネレーター",
+    "url": "https://jpcx-rank-card-loem08zux-gentksb.vercel.app/",
+    "rank": 1
   }
 ]
