@@ -1,6 +1,6 @@
 ---
 title: "東方我楽多叢誌で「東方オトハナビ」全曲レビュー企画に参加しました"
-date: 2020-08-26
+date: 2021-08-26
 draft: false
 tags: ["Achivements"]
 # cover: ""
