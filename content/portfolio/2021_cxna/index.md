@@ -1,6 +1,6 @@
 ---
 title: "2021-22年シクロクロス全日本選手権　男子エリートに出場します"
-date: 2020-11-24
+date: 2021-11-24
 draft: false
 tags: ["Achivements"]
 # cover: ""
