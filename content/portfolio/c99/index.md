@@ -34,7 +34,7 @@ cover: "./c99cover.png"
 
 ### 通販・電子版
 
-委託通販は[メロンブックス](https://www.melonbooks.co.jp/detail/detail.php?product_id=595340)様、電子版は[Kindle](https://amzn.to/34jEM5w)でそれぞれ頒布・配信予定です。（現在はサークルページにリンクしています）
+委託通販は[メロンブックス](https://www.melonbooks.co.jp/circle/index.php?circle_id=45540)様、電子版は[Kindle](https://amzn.to/3I9zj6l)でそれぞれ頒布・配信予定です。（現在はサークルページにリンクしています）
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://amzn.to/38qJYqq" data-iframely-url="//cdn.iframe.ly/JSNdCGn?iframe=card-small"></a></div></div>
 
