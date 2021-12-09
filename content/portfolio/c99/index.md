@@ -30,7 +30,9 @@ cover: "./c99cover.png"
 
 ### Special Thanks
 
-[Vivliostyle](https://vivliostyle.org/)
+- [Vivliostyle](https://vivliostyle.org/)
+- [Typora](https://typora.io/)
+- [Inkscape](https://inkscape.org/)
 
 ### 通販・電子版
 
