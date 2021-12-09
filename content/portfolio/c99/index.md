@@ -12,11 +12,11 @@ cover: "./c99cover.png"
 
 ## 【新刊】週末洗車部
 
+日本のシクロクロスを参戦し、観戦し、ネタにして楽しむための情報を可能な限り詰め込みました。国内のルール・機材運用・練習方法・観戦のコツ・レース当日の流れ・ネタ集など、C1エリートレーサー2人でお送りするシクロクロス同人誌決定版。**本文100ページ**。
+
+会場価格1000円
+
 ![新刊カバー](./c99cover.png)
-
-日本のシクロクロスを参戦し、観戦し、ネタにして楽しむための情報を可能な限り詰め込みました。国内のルール・機材運用・練習方法・観戦のコツ・レース当日の流れ・ネタ集など、C1エリートレーサー2人でお送りするシクロクロス同人誌決定版。
-
-会場価格1000円～1500円（最終ページ数により確定見込み）
 
 以下のサンプルは執筆中のものです
 
@@ -36,7 +36,7 @@ cover: "./c99cover.png"
 
 委託通販は[メロンブックス](https://www.melonbooks.co.jp/circle/index.php?circle_id=45540)様、電子版は[Kindle](https://amzn.to/3I9zj6l)でそれぞれ頒布・配信予定です。（現在はサークルページにリンクしています）
 
-<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://amzn.to/38qJYqq" data-iframely-url="//cdn.iframe.ly/JSNdCGn?iframe=card-small"></a></div></div>
+なお、弊サークルの同人誌は全て[Kindle Unlimited](https://amzn.to/3GsXhaT)にて読み放題の対象となっています。複数冊購入の場合は非常にお得となっておりますのでご検討ください。
 
 ## 【既刊】週末洗車部
 
@@ -52,3 +52,5 @@ cover: "./c99cover.png"
 ![サンプル1](./c97sample1.jpg)
 
 ![サンプル2](./c97sample2.jpg)
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://amzn.to/38qJYqq" data-iframely-url="//cdn.iframe.ly/JSNdCGn?iframe=card-small"></a></div></div>
