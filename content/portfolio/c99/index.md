@@ -36,9 +36,11 @@ cover: "./c99cover.png"
 
 ### 通販・電子版
 
-委託通販は[メロンブックス](https://www.melonbooks.co.jp/circle/index.php?circle_id=45540)様、電子版は[Kindle](https://amzn.to/3I9zj6l)でそれぞれ頒布・配信予定です。（現在はサークルページにリンクしています）
+委託通販は[メロンブックス](https://www.melonbooks.co.jp/detail/detail.php?product_id=1163552)様、電子版は[Kindle](https://amzn.to/3I9zj6l)でそれぞれ頒布・配信予定です。
 
 なお、弊サークルの同人誌は全て[Kindle Unlimited](https://amzn.to/3GsXhaT)にて読み放題の対象となっています。複数冊購入の場合は非常にお得となっておりますのでご検討ください。
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 170px; padding-bottom: 0;"><a href="https://www.melonbooks.co.jp/detail/detail.php?product_id=1163552" data-iframely-url="//cdn.iframe.ly/eijSAfP"></a></div></div>
 
 ## 【既刊】週末洗車部
 
