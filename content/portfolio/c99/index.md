@@ -20,8 +20,6 @@ cover: "./c99cover.png"
 
 以下のサンプルは執筆中のものです
 
-![サンプル1](./c99sample1.jpg)
-
 ![サンプル2](./c99sample2.jpg)
 
 ![サンプル3](./c99sample3.jpg)
