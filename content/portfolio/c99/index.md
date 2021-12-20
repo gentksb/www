@@ -44,6 +44,8 @@ cover: "./c99cover.png"
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 170px; padding-bottom: 0;"><a href="https://www.melonbooks.co.jp/detail/detail.php?product_id=1163552" data-iframely-url="//cdn.iframe.ly/eijSAfP"></a></div></div>
 
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.amazon.co.jp/dp/B09NWBGVJD" data-iframely-url="//cdn.iframe.ly/tabMxQV?card=small"></a></div></div>
+
 ## 【既刊】週末洗車部
 
 ![既刊カバー](./c97cover.jpg)
@@ -58,5 +60,7 @@ cover: "./c99cover.png"
 ![サンプル1](./c97sample1.jpg)
 
 ![サンプル2](./c97sample2.jpg)
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 170px; padding-bottom: 0;"><a href="https://www.melonbooks.co.jp/detail/detail.php?product_id=595340" data-iframely-url="//cdn.iframe.ly/tzN1qTA"></a></div></div>
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://amzn.to/38qJYqq" data-iframely-url="//cdn.iframe.ly/JSNdCGn?iframe=card-small"></a></div></div>
