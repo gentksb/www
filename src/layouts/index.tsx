@@ -26,18 +26,19 @@ const IndexLayout: React.FunctionComponent = ({ children }) => {
     }
   })
 
-  const data: GatsbyTypes.IndexLayoutQuery = useStaticQuery<GatsbyTypes.IndexLayoutQuery>(
-    graphql`
-      query IndexLayout {
-        site {
-          siteMetadata {
-            title
-            description
+  const data: GatsbyTypes.IndexLayoutQuery =
+    useStaticQuery<GatsbyTypes.IndexLayoutQuery>(
+      graphql`
+        query IndexLayout {
+          site {
+            siteMetadata {
+              title
+              description
+            }
           }
         }
-      }
-    `
-  )
+      `
+    )
 
   const sitemetadata = data?.site?.siteMetadata
 
