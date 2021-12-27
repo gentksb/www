@@ -1,15 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: "幻想サイクル Portal",
+    title: "幻想サイクル サークル公式Webサイト",
     description:
       "同人サークル「幻想サイクル」公式WEBサイト兼、代表ゲンのポートフォリオ",
     keywords: "シクロクロス, 自転車同人誌, プログラミング, フロントエンド",
     siteUrl: "https://www.gensobunya.net/",
-    author: {
-      name: "gensobunya",
-      url: "https://www.gensobunya.net/",
-      email: "gen@gensobunya.net"
-    },
+    image: "/image/logo.jpg",
+    author: "gen",
     social: {
       twitter: `gen_sobunya`,
       github: `gentksb`,
@@ -17,7 +14,7 @@ module.exports = {
     }
   },
   plugins: [
-    "gatsby-plugin-no-sourcemaps",
+    "gatsby-plugin-typegen",
     "gatsby-plugin-image",
     "gatsby-plugin-twitter",
     {
@@ -63,8 +60,6 @@ module.exports = {
         id: "GTM-5R7P93N"
       }
     },
-    "gatsby-plugin-typescript",
-    "gatsby-plugin-typegen",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
