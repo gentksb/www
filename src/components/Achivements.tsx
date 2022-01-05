@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Grid } from "@material-ui/core"
 import PostLineList from "./units/PostLineList"
-// import { SportsPostQuery } from "../../types/graphql-types"
 
 const sportsPost: React.FC = () => {
   const data = useStaticQuery<GatsbyTypes.SportsPostQuery>(

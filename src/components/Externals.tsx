@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Grid, Typography } from "@material-ui/core"
 import styled from "@emotion/styled"
 import LinkList from "./units/LinkList"
-// import { ExternalLinkQuery } from "../../types/graphql-types"
 
 const externalLinks: React.FC = () => {
   const data = useStaticQuery<GatsbyTypes.ExternalLinkQuery>(
