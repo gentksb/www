@@ -47,7 +47,9 @@ const SEO: React.FunctionComponent<Props> = (props) => {
     `
   )
 
-  const siteUrl = site?.siteMetadata?.siteUrl
+  const siteUrl = site?.siteMetadata?.siteUrl ?? "siteUrl is not found"
+  const twitterId = site?.siteMetadata?.social?.twitter
+  const metaProps = meta ?? []
   const currentHost =
     process.env.NODE_ENV === "production" ? siteUrl : location.origin
   const metaDescription = description ?? site?.siteMetadata?.description
@@ -160,13 +162,13 @@ const SEO: React.FunctionComponent<Props> = (props) => {
         },
         {
           name: `twitter:site`,
-          content: `@${site?.siteMetadata?.social.twitter}`
+          content: `@${twitterId}`
         },
         {
           name: `twitter:domain`,
           content: location.host
         }
-      ].concat(meta)}
+      ].concat(metaProps)}
     >
       <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
