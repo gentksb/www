@@ -73,7 +73,6 @@ module.exports = {
       }
     },
     "gatsby-plugin-emotion",
-    "gatsby-plugin-robots-txt",
-    "gatsby-plugin-gatsby-cloud"
+    "gatsby-plugin-robots-txt"
   ]
 }
