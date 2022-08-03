@@ -14,6 +14,7 @@ module.exports = {
     }
   },
   plugins: [
+    `gatsby-plugin-gatsby-cloud`,
     "gatsby-plugin-typegen",
     "gatsby-plugin-image",
     "gatsby-plugin-twitter",
@@ -72,7 +73,6 @@ module.exports = {
       }
     },
     "gatsby-plugin-emotion",
-    "gatsby-plugin-robots-txt",
-    "gatsby-plugin-gatsby-cloud"
+    "gatsby-plugin-robots-txt"
   ]
 }
