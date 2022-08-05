@@ -8,7 +8,7 @@ cover: "./c100cover.png"
 
 ## スペース
 
-**1 日目(8/33) 東5ホール ル 15a**です
+**1 日目(8/13) 東5ホール ル 15a**です
 
 [コミケWebカタログサークルページ](https://webcatalog.circle.ms/Perma/Circle/10349446/)
 
