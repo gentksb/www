@@ -31,9 +31,13 @@ cover: "./c100cover.png"
 
 以下のサンプルは執筆中のものです
 
-![サンプル2](./c100outline1.png)
+![サンプル1](./c100outline1.png)
 
 ![サンプル2](./c100outline2.png)
+
+![サンプル3](./c100sample1.png)
+
+![サンプル4](./c100sample2.png)
 
 ### Special Thanks
 
