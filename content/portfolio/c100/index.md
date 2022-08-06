@@ -58,6 +58,8 @@ cover: "./c100cover.png"
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 170px; padding-bottom: 0;"><a href="https://www.melonbooks.co.jp/detail/detail.php?product_id=1579831" data-iframely-url="//iframely.net/inNDou0"></a></div></div>
 
+<div class="iframely-embed"><div class="iframely-responsive" style="padding-bottom: 58.3333%; padding-top: 120px;"><a href="https://www.amazon.co.jp/dp/B0B8VVTTSJ?&linkCode=sl1&tag=gensobunya-22&linkId=4bae5c3dc045640d99fe1b84cef84f10&language=ja_JP&ref_=as_li_ss_tl" data-iframely-url="//iframely.net/h5tdVs4"></a></div></div>
+
 ## 【既刊】Cyclocross Deep Dive
 
 日本のシクロクロスを参戦し、観戦し、ネタにして楽しむための情報を可能な限り詰め込みました。国内のルール・機材運用・練習方法・観戦のコツ・レース当日の流れ・ネタ集など、C1エリートレーサー2人でお送りするシクロクロス同人誌決定版。**本文100ページ**。
