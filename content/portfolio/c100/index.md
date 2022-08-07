@@ -6,15 +6,19 @@ tags: ["comicmarket", "C100", "Doujin"]
 cover: "./c100cover.png"
 ---
 
-## スペース
+## スペース・LINK
 
 **1 日目(8/13) 東5ホール ル 15a**です
 
+![おしながき](./oshina.png)
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 170px; padding-bottom: 0;"><a href="https://www.melonbooks.co.jp/detail/detail.php?product_id=1579831" data-iframely-url="//iframely.net/inNDou0"></a></div></div>
+
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.amazon.co.jp/dp/B0B8VVTTSJ?" data-iframely-url="//iframely.net/1Uq8kPF?card=small&language=ja-JP"></a></div></div>
+
 [コミケWebカタログサークルページ](https://webcatalog.circle.ms/Perma/Circle/10349446/)
 
-[Circle.msサークルページ](https://portal.circle.ms/Circle/Index/10349446)]
-
-![おしながき](./oshina.png)
+[Circle.msサークルページ](https://portal.circle.ms/Circle/Index/10349446)
 
 ## 【新刊】サイクリング・デジタルトランスフォーメーション
 
@@ -58,7 +62,7 @@ cover: "./c100cover.png"
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 170px; padding-bottom: 0;"><a href="https://www.melonbooks.co.jp/detail/detail.php?product_id=1579831" data-iframely-url="//iframely.net/inNDou0"></a></div></div>
 
-<div class="iframely-embed"><div class="iframely-responsive" style="padding-bottom: 58.3333%; padding-top: 120px;"><a href="https://www.amazon.co.jp/dp/B0B8VVTTSJ?&linkCode=sl1&tag=gensobunya-22&linkId=4bae5c3dc045640d99fe1b84cef84f10&language=ja_JP&ref_=as_li_ss_tl" data-iframely-url="//iframely.net/h5tdVs4"></a></div></div>
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.amazon.co.jp/dp/B0B8VVTTSJ?" data-iframely-url="//iframely.net/1Uq8kPF?card=small&language=ja-JP"></a></div></div>
 
 ## 【既刊】Cyclocross Deep Dive
 
