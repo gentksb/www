@@ -4,7 +4,7 @@
   "description": "This is repository for gensobunya's portfolio website w/o blog.",
   "main": "index.js",
   "private": true,
- "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "astro dev",
     "start": "astro dev",
@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/gentksb/www#readme",
   "dependencies": {
-    "astro": "^1.6.10"
+    "@astrojs/react": "^1.2.2",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "astro": "^1.6.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
