@@ -30,7 +30,7 @@
     "@material-ui/styles": "^4.11.5",
     "babel-plugin-styled-components": "^2.0.7",
     "classnames": "^2.3.1",
-    "gatsby": "^4.20.0",
+    "gatsby": "^4.24.8",
     "gatsby-plugin-emotion": "^7.20.0",
     "gatsby-plugin-gatsby-cloud": "^4.20.0",
     "gatsby-plugin-google-tagmanager": "^4.20.0",
