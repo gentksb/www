@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/gentksb/www#readme",
   "dependencies": {
+    "@astrojs/mdx": "^0.11.6",
     "@astrojs/react": "^1.2.2",
     "@astrojs/tailwind": "^2.1.2",
     "@types/react": "^18.0.25",
@@ -31,6 +32,7 @@
     "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.8",
     "textlint": "^12.2.3"
   }
 }

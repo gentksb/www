@@ -4,6 +4,7 @@ date: 2020-05-20
 draft: false
 tags: ["Achivements"]
 # cover: ""
+layout: /src/layouts/MarkdownLayout.astro
 ---
 
 [東方我楽多叢誌](https://touhougarakuta.com/)の[東方アレンジ曲レビュー企画](https://touhougarakuta.com/news/200421a)に投稿したレビューが全文で掲載されました。
