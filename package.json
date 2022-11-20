@@ -4,8 +4,12 @@
   "description": "This is repository for gensobunya's portfolio website w/o blog.",
   "main": "index.js",
   "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+ "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/gentksb/www/issues"
   },
-  "homepage": "https://github.com/gentksb/www#readme"
+  "homepage": "https://github.com/gentksb/www#readme",
+  "dependencies": {
+    "astro": "^1.6.10"
+  }
 }
