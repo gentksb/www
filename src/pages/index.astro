@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+<Layout title="幻想サイクル">
+	<main class="prose bg-gradient-to-tr from-blue-600 to-slate-400 mx-auto p-2 place-content-center">
+		<div >
+		<h1>幻想サイクル</h1>
 		<div class="card bg-base-200">
 			<div class="card-body">
 				<div class="card-title">This is Title</div>
@@ -35,20 +36,11 @@ import Card from '../components/Card.astro';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
+		</div>
 	</main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
