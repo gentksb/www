@@ -14,9 +14,14 @@ cover: "./c93_sample01.jpg"
 
 大阪北部の飯ポタスポットを、エネルギー消費のためのライド情報と一緒に紹介。\
 おまけとして、「神奈川県民でも満足できる大阪の家系ラーメン屋」を収録。\
-全 32 ページ、頒布価格￥ 500
+全 32 ページ、~~頒布価格￥ 500~~
 
-<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://amzn.to/30Elg3j" data-iframely-url="//cdn.iframe.ly/i2ZWPew?iframe=card-small"></a></div></div>
+**本作品は掲載店舗の閉店が多くなったため、終売しました**
+
+紹介していた家系ラーメン
+
+- [らーめん武双家](https://twitter.com/iekeimusouya1)
+- [そらの星](https://twitter.com/soranohoshi2009)
 
 ## 2017 冬王滝　現場レポート
 
