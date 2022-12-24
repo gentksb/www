@@ -4,6 +4,7 @@ date: 2020-12-25
 draft: false
 tags: ["Achivements"]
 # cover: ""
+layout: /src/layouts/MarkdownLayout.astro
 ---
 
 [東方我楽多叢誌](https://touhougarakuta.com/)にて「新たな出会いにつながるシングル CD の魅力」と題した記事を書かせていただきました。

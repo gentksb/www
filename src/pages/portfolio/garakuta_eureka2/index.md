@@ -4,6 +4,7 @@ date: 2022-12-15
 draft: false
 tags: ["Achivements"]
 # cover: ""
+layout: /src/layouts/MarkdownLayout.astro
 ---
 
 [東方我楽多叢誌](https://touhougarakuta.com/)の[ユレカ vol.2ライブレポート](https://touhougarakuta.com/article/eureka-vol2)で、[モジャン棒](https://soundcloud.com/tanakawakame)・[少年ヴィヴィッド](https://syounenvivid.yu-nagi.com/)の章でライターを担当しました

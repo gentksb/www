@@ -4,11 +4,12 @@ date: 2018-03-09T23:06:02+09:00
 draft: false
 tags: ["meshiket", "meshiket3", "Doujin"]
 cover: "./meshiket3_cierclecut.png"
+layout: /src/layouts/MarkdownLayout.astro
 ---
 
 ## 関西めしけっと 3
 
-![image](./meshiket3_cierclecut.png)
+![image](/images/meshiket/meshiket3_cierclecut.png)
 
 A06「なんとか技研」で[関西めしけっと 3](http://meshiket.dojin.com/sanka)に参加します。
 

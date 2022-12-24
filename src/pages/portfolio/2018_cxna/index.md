@@ -4,6 +4,7 @@ date: 2018-12-20
 draft: false
 tags: ["Achivements"]
 # cover: ""
+layout: /src/layouts/MarkdownLayout.astro
 ---
 
 JCF ランキング 100 位以内に入ることができたので、2018-19 年度のシクロクロス全日本選手権に出場することができました。

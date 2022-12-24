@@ -4,6 +4,7 @@ date: 2020-08-06
 draft: false
 tags: ["Achivements"]
 # cover: ""
+layout: /src/layouts/MarkdownLayout.astro
 ---
 
 [東方我楽多叢誌](https://touhougarakuta.com/)の Flowering Night 2020 のライブレポート企画にて、岸田教団&THE 明星ロケッツの記事を担当いたしました。

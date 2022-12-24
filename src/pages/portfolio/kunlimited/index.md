@@ -4,9 +4,10 @@ date: 2018-09-14
 draft: false
 tags: ["kindle", "Doujin"]
 cover: "./kindleunlimitedlogo.png"
+layout: /src/layouts/MarkdownLayout.astro
 ---
 
-![image](./kindleunlimitedlogo.png)
+![image](/images/ebook/kindleunlimitedlogo.png)
 
 ## 電子書籍販売元を Kindle に一本化しました
 

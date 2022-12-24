@@ -4,13 +4,14 @@ date: 2018-07-17T21:00:21+09:00
 draft: false
 tags: ["kindle", "bookwalker", "Doujin"]
 cover: "./amazon-kindle.png"
+layout: /src/layouts/MarkdownLayout.astro
 ---
 
 ## 既刊の電子書籍版を発行しました
 
-[![image](./amazon-kindle.png)](https://amzn.to/2uyzRNW)
+[![image](/images/ebook/amazon-kindle.png)](https://amzn.to/2uyzRNW)
 
-[![image](./bookwalker_logo.png)](https://bookwalker.jp/author/114298/)
+[![image](/images/ebook/bookwalker_logo.png)](https://bookwalker.jp/author/114298/)
 
 これまで、書籍で売り切れた既刊については[Booth](https://gensobunya.booth.pm/)にて PDF 版の頒布を行っていましたが、この度既存の電子書籍プラットフォーム上でも購入できるようになりました。
 

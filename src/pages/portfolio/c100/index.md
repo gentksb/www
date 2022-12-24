@@ -4,13 +4,14 @@ date: 2022-08-01
 draft: false
 tags: ["comicmarket", "C100", "Doujin"]
 cover: "./c100cover.png"
+layout: /src/layouts/MarkdownLayout.astro
 ---
 
 ## スペース・LINK
 
 **1 日目(8/13) 東5ホール ル 15a**です
 
-![おしながき](./oshina.png)
+![おしながき](/images/c100/oshina.png)
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 170px; padding-bottom: 0;"><a href="https://www.melonbooks.co.jp/detail/detail.php?product_id=1579831" data-iframely-url="//iframely.net/inNDou0"></a></div></div>
 
@@ -35,19 +36,19 @@ cover: "./c100cover.png"
 
 会場価格1000円
 
-![新刊カバー](./c100cover.png)
+![新刊カバー](/images/c100/c100cover.png)
 
 ### 目次
 
 以下のサンプルは執筆中のものです
 
-![サンプル1](./c100outline1.png)
+![サンプル1](/images/c100/c100outline1.png)
 
-![サンプル2](./c100outline2.png)
+![サンプル2](/images/c100/c100outline2.png)
 
-![サンプル3](./c100sample1.png)
+![サンプル3](/images/c100/c100sample1.png)
 
-![サンプル4](./c100sample2.png)
+![サンプル4](/images/c100/c100sample2.png)
 
 ### Special Thanks
 
@@ -70,15 +71,15 @@ cover: "./c100cover.png"
 
 会場価格1000円
 
-![CCDD](./c99cover.png)
+![CCDD](/images/c99/c99cover.png)
 
 ### サンプル
 
-![サンプル2](./c99sample2.jpg)
+![サンプル2](/images/c99/c99sample2.jpg)
 
-![サンプル3](./c99sample3.jpg)
+![サンプル3](/images/c99/c99sample3.jpg)
 
-![サンプル4](./c99sample4.jpg)
+![サンプル4](/images/c99/c99sample4.jpg)
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 170px; padding-bottom: 0;"><a href="https://www.melonbooks.co.jp/detail/detail.php?product_id=1163552" data-iframely-url="//cdn.iframe.ly/eijSAfP"></a></div></div>
 
@@ -86,7 +87,7 @@ cover: "./c100cover.png"
 
 ## 【既刊】週末洗車部
 
-![既刊カバー](./c97cover.jpg)
+![既刊カバー](/images/c97/c97cover.jpg)
 
 自宅でできる洗車方法を、フルサービス洗車から水無し洗車までバリエーション深く解説しつつ、汚れの質に応じた洗い方をおすすめする本です。
 アパートぐらしにも関わらず毎週の洗車を運命づけられたシクロクロッサーによるノウハウを大公開します。
@@ -95,9 +96,9 @@ cover: "./c100cover.png"
 
 会場価格500円
 
-![サンプル1](./c97sample1.jpg)
+![サンプル1](/images/c97/c97sample1.jpg)
 
-![サンプル2](./c97sample2.jpg)
+![サンプル2](/images/c97/c97sample2.jpg)
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 170px; padding-bottom: 0;"><a href="https://www.melonbooks.co.jp/detail/detail.php?product_id=595340" data-iframely-url="//cdn.iframe.ly/tzN1qTA"></a></div></div>
 
