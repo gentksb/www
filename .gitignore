@@ -112,8 +112,9 @@ $RECYCLE.BIN/
 types/
 types/graphql-types.ts
 
-# gatsby-tmp-config
-.config/
+# astro output
+dist/**
+dist/
 
 
 .vercel
