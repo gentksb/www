@@ -1,4 +1,5 @@
 ---
+import Layout from '../layouts/Layout.astro';
 export interface Props {
 	title: string;
 }
@@ -6,31 +7,6 @@ export interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{frontmatter.title}</title>
-		<script
-          async
-          defer
-          type="text/javascript"
-          src="https://cdn.iframe.ly/embed.js"
-        />
-
-	</head>
-	<body class="prose">
-<section>
-    <div class=" flex flex-col items-center px-5 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="flex flex-col w-full max-w-3xl mx-auto prose text-left prose-blue">
-            <div class="w-full mx-auto">
-							<slot />
-            </div>
-        </div>
-    </div>
-</section>
-	</body>
-</html>
+<Layout title="幻想サイクル">
+ <slot />
+</Layout>
