@@ -1,5 +1,4 @@
 ---
-import { Paper } from '../components/Paper';
 import Layout from '../layouts/Layout.astro';
 
 export interface Props {
@@ -10,8 +9,12 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title="幻想サイクル">
-	<Paper>
+	<div class="bg-slate-300 p-4 rounded-md">
+		<h2 class="m-6">{frontmatter.title}</h2>
+		<div>
+
+		</div>
 		<slot slot="blog"/>
-	</Paper>
-	<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+	</div>
+		<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 </Layout>

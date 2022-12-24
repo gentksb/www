@@ -11,18 +11,20 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-			<main class="prose">
-				<div class="w-screen h-screen bg-gradient-to-tr from-blue-600 to-slate-400">
-			<div class="md:container md:mx-auto">
-						<h1>{title}</h1>
-		<slot />
+		<main class="prose">
+			<div class="w-screen h-screen bg-gradient-to-tr from-blue-600 to-slate-400">
+				<div class="md:container md:mx-auto">
+					<div class="text-center py-6 my-0">
+						<h1 class="my-0"><a href="/" class="no-underline">{title}</a></h1>
+					</div>
+					<slot />
 				</div>
-		</div>
+			</div>
 		</main>
 	</body>
 </html>
