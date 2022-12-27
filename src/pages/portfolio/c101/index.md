@@ -3,14 +3,14 @@ title: "C101: 限界車載ナレッジ"
 date: 2022-12-27
 draft: false
 tags: ["comicmarket", "C101", "Doujin"]
-cover: "./c101cover.png"
+cover: "/images/c101/c101cover.png"
 ---
 
 ## スペース・LINK
 
 **2 日目(12/31) 東2ホール Z-15b**です
 
-![おしながき](./list.png)
+![おしながき](/images/c101/list.png)
 
 ### 関連リンク
 
@@ -21,7 +21,7 @@ cover: "./c101cover.png"
 
 ## 【新刊】限界車載ナレッジ
 
-![新刊カバー](./c101_cover.png)
+![新刊カバー](/images/c101/c101_cover.png)
 
 ロードバイクなどの車載、なんとなくやっていませんか?
 
@@ -38,9 +38,9 @@ cover: "./c101cover.png"
 
 以下のサンプルは執筆中のものです
 
-![c101サンプル1](./c101_sample01.png)
+![c101サンプル1](/images/c101/c101_sample01.png)
 
-![c101サンプル2](./c101_sample02.png)
+![c101サンプル2](/images/c101/c101_sample02.png)
 
 ### Special Thanks
 
