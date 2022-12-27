@@ -4,6 +4,7 @@ date: 2022-12-27
 draft: false
 tags: ["comicmarket", "C101", "Doujin"]
 cover: "/images/c101/c101cover.png"
+layout: /src/layouts/MarkdownLayout.astro
 ---
 
 ## スペース・LINK
