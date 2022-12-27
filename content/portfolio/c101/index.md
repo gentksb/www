@@ -16,8 +16,8 @@ cover: "./c101cover.png"
 
 - [コミケWebカタログサークルページ](https://webcatalog.circle.ms/Perma/Circle/10349446/)
 - [Circle.msサークルページ](https://portal.circle.ms/Circle/Index/10349446)
-- 既刊1: [サイクリング・デジタルトランスフォーメーション](/portfolio/c100/)
-- 既刊2: [Cyclocross Deep Dive](/portfolio/c99/)
+- 既刊1: [サイクリング・デジタルトランスフォーメーション](/c100/)
+- 既刊2: [Cyclocross Deep Dive](/c99/)
 
 ## 【新刊】限界車載ナレッジ
 
