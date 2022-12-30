@@ -3,14 +3,19 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 interface Frontmatter {
   title: string;
-  description?: string;
 	date?: string
 	tags?: string[]
 	draft?: boolean
 }
 const mdPages = await Astro.glob<Frontmatter>('../pages/*/*.md')
-const achivementPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Achivements'))
-const doujinPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Doujin'))
+const compareMdDateDesc = (a,b) => {
+	const aDate = new Date(a.frontmatter.date)
+	const bDate = new Date(b.frontmatter.date)
+	return bDate.getTime() - aDate.getTime()
+}
+
+const achivementPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Achivements')).sort((a,b)=>compareMdDateDesc(a,b))
+const doujinPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Doujin')).sort((a,b)=>compareMdDateDesc(a,b))
 ---
 
 <Layout title="幻想サイクル">
@@ -18,7 +23,7 @@ const doujinPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Doujin')
 			<div class="card-body">
 				<div class="card-title">This is Title</div>
 				<p>To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>title:{doujinPages[0].frontmatter.title}</strong> {doujinPages[0].frontmatter.date}</p>
+			<strong>title:{doujinPages[0].frontmatter.title}</strong> at {doujinPages[0].frontmatter.date}</p>
 			</div>
 		</div>
 		<ul role="list" class="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-3 pl-0">
