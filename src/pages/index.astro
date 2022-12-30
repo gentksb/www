@@ -1,6 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+interface Frontmatter {
+  title: string;
+  description?: string;
+	date?: string
+	tags?: string[]
+	draft?: boolean
+}
+const mdPages = await Astro.glob<Frontmatter>('../pages/*/*.md')
+const achivementPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Achivements'))
+const doujinPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Doujin'))
 ---
 
 <Layout title="幻想サイクル">
@@ -8,10 +18,10 @@ import Card from '../components/Card.astro';
 			<div class="card-body">
 				<div class="card-title">This is Title</div>
 				<p>To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.</p>
+			<strong>title:{doujinPages[0].frontmatter.title}</strong> {doujinPages[0].frontmatter.date}</p>
 			</div>
 		</div>
-		<ul role="list" class="link-card-grid">
+		<ul role="list" class="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-3 pl-0">
 			<Card
 				href="https://blog.gensobunya.net/"
 				title="幻想サイクルブログ"
@@ -39,12 +49,3 @@ import Card from '../components/Card.astro';
 			/>
 		</ul>
 </Layout>
-
-<style>
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
