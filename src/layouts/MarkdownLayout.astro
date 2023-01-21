@@ -8,7 +8,7 @@ export interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title="幻想サイクル">
+<Layout title={`Gen's Portfolio | ${frontmatter.title}`}>
 	<div class="card card-normal bg-neutral-content p-4 rounded-md">
 		<h2 class="card-title m-6">{frontmatter.title}</h2>
 		<div>

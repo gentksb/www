@@ -3,7 +3,7 @@ title: "C100: サイクリング・デジタルトランスフォーメーショ
 date: 2022-08-01
 draft: false
 tags: ["comicmarket", "C100", "Doujin"]
-cover: "./c100cover.png"
+cover: "/images/c100/c100cover.png"
 layout: /src/layouts/MarkdownLayout.astro
 ---
 

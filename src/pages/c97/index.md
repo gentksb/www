@@ -3,7 +3,7 @@ title: "C97:週末洗車部"
 date: 2019-12-13
 draft: false
 tags: ["comicmarket", "C97", "Doujin"]
-cover: "./c97cover.jpg"
+cover: "/images/c97/c97cover.jpg"
 layout: /src/layouts/MarkdownLayout.astro
 ---
 
