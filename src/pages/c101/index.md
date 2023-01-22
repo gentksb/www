@@ -3,7 +3,7 @@ title: "C101: 限界車載ナレッジ"
 date: 2022-12-27
 draft: false
 tags: ["comicmarket", "C101", "Doujin"]
-cover: "/images/c101/c101cover.png"
+cover: "/images/c101/c101_cover.png"
 layout: /src/layouts/MarkdownLayout.astro
 ---
 

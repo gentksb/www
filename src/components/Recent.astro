@@ -1,0 +1,18 @@
+---
+import { MarkdownInstance } from 'astro';
+import { compareMdDateDesc, Frontmatter } from '../pages/index.astro';
+import { RecentCards } from './units/RecentCards';
+
+interface Props {
+  mdPages: MarkdownInstance<Frontmatter>[]
+}
+
+const { mdPages } = Astro.props
+const topArticle = mdPages.sort((a,b)=>compareMdDateDesc(a,b))[0]
+---
+
+<div class="py-2">
+  <h2 class="w-full text-center text-xl md:text-4xl font-extrabold">Latest Activity</h2>
+  <RecentCards articleData={topArticle} />
+</div>
+

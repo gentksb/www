@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-interface Frontmatter {
+import Recent from '../components/Recent.astro';
+export interface Frontmatter {
   title: string;
 	date?: string
 	tags?: string[]
@@ -9,7 +10,7 @@ interface Frontmatter {
 	cover?: string
 }
 const mdPages = await Astro.glob<Frontmatter>('../pages/*/*.md')
-const compareMdDateDesc = (a,b) => {
+export const compareMdDateDesc = (a,b) => {
 	const aDate = new Date(a.frontmatter.date)
 	const bDate = new Date(b.frontmatter.date)
 	return bDate.getTime() - aDate.getTime()
@@ -20,13 +21,8 @@ const doujinPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Doujin')
 ---
 
 <Layout title="Gen's Portfolio">
+	<Recent mdPages={mdPages} />
 	<div>
-		<div class="card bg-neutral-content">
-			<div class="card-body">
-				<p>同人サークル「幻想サイクル」及びゲン(<a href="https://twitter.com/gen_sobunta" target="_blank">@gen_sobunya</a>)個人の活動をまとめています<br />
-			<strong>title:{doujinPages[0].frontmatter.cover}</strong> at {doujinPages[0].frontmatter.date}</p>
-			</div>
-		</div>
 		<ul role="list" class="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-3 pl-0">
 			<Card
 				href="https://blog.gensobunya.net/"
