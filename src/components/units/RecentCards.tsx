@@ -19,9 +19,9 @@ export const RecentCards: React.FC<Props> = ({ articleData }) => {
   })
 
   return (
-    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96" key={articleData.url}>
       <a href={articleData.url}>
-        <div className="card card-side bg-base-100 shadow-xl">
+        <div className="card card-side bg-base-200 shadow-lg shadow-primary rounded-none md:rounded-lg">
           <figure>
             <img
               src={articleData.frontmatter.cover}
@@ -30,7 +30,9 @@ export const RecentCards: React.FC<Props> = ({ articleData }) => {
             />
           </figure>
           <div className="card-body p-4 items-center justify-center">
-            <h2 className="card-title">{articleData.frontmatter.title}</h2>
+            <h2 className="card-title text-primary-content">
+              {articleData.frontmatter.title}
+            </h2>
             <div className="flex flex-row gap-x-2">{tagBadges}</div>
           </div>
         </div>

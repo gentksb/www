@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Recent from '../components/Recent.astro';
+import Services from '../components/Services.astro';
 export interface Frontmatter {
   title: string;
 	date?: string
@@ -22,33 +22,5 @@ const doujinPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Doujin')
 
 <Layout title="Gen's Portfolio">
 	<Recent mdPages={mdPages} />
-	<div>
-		<ul role="list" class="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:gap-3 pl-0">
-			<Card
-				href="https://blog.gensobunya.net/"
-				title="幻想サイクルBlog"
-				body="シクロクロスレースを中心とした自転車ブログ"
-			/>
-			<Card
-				href="https://gensobunya-tech.hatenablog.com/"
-				title="gensobunya tech blog"
-				body="クラウドサービス・Javascript・ポイ活やクレジットカード・おうちハックなどのブログ"
-			/>
-			<Card
-				href="https://amzn.to/2Ls8KPj"
-				title="幻想サイクル kindle著者ページ"
-				body="発行した同人誌のKindle電子版"
-			/>
-			<Card
-				href="https://www.melonbooks.co.jp/circle/index.php?circle_id=45540"
-				title="幻想サイクル メロンブックスサークルページ"
-				body="発行した同人誌の委託通販"
-			/>
-			<Card
-				href="https://jpcx-rank-card.vercel.app/"
-				title="AJOCCランクカードジェネレーター"
-				body="自分のAJOCCランキングをバッジ画像・URLとして生成するWEBサービス"
-			/>
-		</ul>
-	</div>
+	<Services />
 </Layout>
