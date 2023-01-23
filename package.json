@@ -30,6 +30,7 @@
     "astro": "^1.9.2",
     "astro-icon": "^0.8.0",
     "daisyui": "^2.47.0",
+    "flowbite": "^1.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",

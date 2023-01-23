@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Recent from '../components/Recent.astro';
 import Services from '../components/Services.astro';
+import Books from '../components/Books.astro';
 export interface Frontmatter {
   title: string;
 	date?: string
@@ -23,4 +24,5 @@ const doujinPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Doujin')
 <Layout title="Gen's Portfolio">
 	<Recent mdPages={mdPages} />
 	<Services />
+	<Books />
 </Layout>
