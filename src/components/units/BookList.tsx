@@ -1,9 +1,28 @@
 import "@splidejs/react-splide/css"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
+import { MarkdownInstance } from "astro"
+import { Frontmatter } from "./frontmatter"
 
-export const BookList: React.FC = () => {
+interface Props {
+  newBookPages: MarkdownInstance<Frontmatter>[]
+}
+
+export const BookList: React.FC<Props> = ({ newBookPages: newBookPages }) => {
+  const bookSlides = newBookPages.map((newBookPage) => (
+    <SplideSlide>
+      <div>
+        <a href={newBookPage.url}>
+          <img src={newBookPage.frontmatter.cover} alt="Bookcover" />
+        </a>
+        <figcaption className="text-md absolute bottom-0 h-1/4 w-full bg-primary/75 px-4 text-base-100 md:text-xl">
+          {newBookPage.frontmatter.title}
+        </figcaption>
+      </div>
+    </SplideSlide>
+  ))
+
   return (
-    <>
+    <div>
       <Splide
         aria-label="お気に入りの写真"
         options={{
@@ -18,22 +37,8 @@ export const BookList: React.FC = () => {
           gap: "0.5rem"
         }}
       >
-        <SplideSlide>
-          <img src="/images/c101/c101_cover.png" alt="Image 1" />
-        </SplideSlide>
-        <SplideSlide>
-          <img src="/images/c100/c100cover.png" alt="Image 2" />
-        </SplideSlide>
-        <SplideSlide>
-          <img src="/images/c99/c99cover.png" alt="Image 2" />
-        </SplideSlide>
-        <SplideSlide>
-          <img src="/images/c97/c97cover.jpg" alt="Image 2" />
-        </SplideSlide>
-        <SplideSlide>
-          <img src="/images/c95/deirin_senden.jpg" alt="Image 2" />
-        </SplideSlide>
+        {bookSlides}
       </Splide>
-    </>
+    </div>
   )
 }

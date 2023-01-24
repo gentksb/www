@@ -1,13 +1,7 @@
 import { MarkdownInstance } from "astro"
+import { Frontmatter } from "./frontmatter"
 
 //astroとReactコンポーネントで型を共有したいけどどうやるんだ
-interface Frontmatter {
-  title: string
-  date?: string
-  tags?: string[]
-  draft?: boolean
-  cover?: string
-}
 
 interface Props {
   articleData: MarkdownInstance<Frontmatter>

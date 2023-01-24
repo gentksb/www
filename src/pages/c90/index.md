@@ -2,7 +2,7 @@
 title: "C90：ホビーレースのすゝめ"
 date: 2016-12-01T21:49:59+09:00
 draft: false
-tags: ["comicmarket", "C90", "Doujin"]
+tags: ["comicmarket", "C90", "Doujin", "New"]
 cover: "/images/c90/c90_sample01.png"
 layout: /src/layouts/MarkdownLayout.astro
 ---

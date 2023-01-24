@@ -2,14 +2,14 @@
 title: "C100: サイクリング・デジタルトランスフォーメーション"
 date: 2022-08-01
 draft: false
-tags: ["comicmarket", "C100", "Doujin"]
+tags: ["comicmarket", "C100", "Doujin", "New"]
 cover: "/images/c100/c100cover.png"
 layout: /src/layouts/MarkdownLayout.astro
 ---
 
 ## スペース・LINK
 
-**1 日目(8/13) 東5ホール ル 15a**です
+**1 日目(8/13) 東 5 ホール ル 15a**です
 
 ![おしながき](/images/c100/oshina.png)
 
@@ -17,24 +17,24 @@ layout: /src/layouts/MarkdownLayout.astro
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://www.amazon.co.jp/dp/B0B8VVTTSJ?" data-iframely-url="//iframely.net/1Uq8kPF?card=small&language=ja-JP"></a></div></div>
 
-[コミケWebカタログサークルページ](https://webcatalog.circle.ms/Perma/Circle/10349446/)
+[コミケ Web カタログサークルページ](https://webcatalog.circle.ms/Perma/Circle/10349446/)
 
-[Circle.msサークルページ](https://portal.circle.ms/Circle/Index/10349446)
+[Circle.ms サークルページ](https://portal.circle.ms/Circle/Index/10349446)
 
 ## 【新刊】サイクリング・デジタルトランスフォーメーション
 
 デジタル機器でサイクリングライフを変革しよう！
-**自転車YouTuberへの試行錯誤ノウハウと、各種ログを全力活用したコンディション管理ノウハウ**を詰め込んだ1冊。
+**自転車 YouTuber への試行錯誤ノウハウと、各種ログを全力活用したコンディション管理ノウハウ**を詰め込んだ 1 冊。
 
-前半はアクションカメラ5機種のレビューと、マウント方法8種類をそれぞれの使い勝手・画角サンプルを交えた解説と、底辺自転車YouTuberが収益化するまでの体験談を掲載。
+前半はアクションカメラ 5 機種のレビューと、マウント方法 8 種類をそれぞれの使い勝手・画角サンプルを交えた解説と、底辺自転車 YouTuber が収益化するまでの体験談を掲載。
 
-後半は、サイクルコンピューター・スマートウォッチの使いこなし・WEBサービスの連携設定をして、自分のコンディションを徹底的に可視化して、自分だけのデジタルトレーナー化する現代のサイクリングログ活用について。おすすめのWEBサービス・デバイスと合わせて説明。
+後半は、サイクルコンピューター・スマートウォッチの使いこなし・WEB サービスの連携設定をして、自分のコンディションを徹底的に可視化して、自分だけのデジタルトレーナー化する現代のサイクリングログ活用について。おすすめの WEB サービス・デバイスと合わせて説明。
 
-ライド動画とライドログはもちろん、ライフログも合わせてあなたのサイクリングをDXしましょう
+ライド動画とライドログはもちろん、ライフログも合わせてあなたのサイクリングを DX しましょう
 
-**本文70ページ**。
+**本文 70 ページ**。
 
-会場価格1000円
+会場価格 1000 円
 
 ![新刊カバー](/images/c100/c100cover.png)
 
@@ -57,7 +57,7 @@ layout: /src/layouts/MarkdownLayout.astro
 
 ### 通販・電子版
 
-委託通販は[メロンブックス](https://www.melonbooks.co.jp/detail/detail.php?product_id=1579831)様、電子版はKindleでそれぞれ頒布・配信予定です。
+委託通販は[メロンブックス](https://www.melonbooks.co.jp/detail/detail.php?product_id=1579831)様、電子版は Kindle でそれぞれ頒布・配信予定です。
 
 なお、弊サークルの同人誌は全て[Kindle Unlimited](https://amzn.to/3GsXhaT)にて読み放題の対象となっています。複数冊購入の場合は非常にお得となっておりますのでご検討ください。
 
@@ -67,9 +67,9 @@ layout: /src/layouts/MarkdownLayout.astro
 
 ## 【既刊】Cyclocross Deep Dive
 
-日本のシクロクロスを参戦し、観戦し、ネタにして楽しむための情報を可能な限り詰め込みました。国内のルール・機材運用・練習方法・観戦のコツ・レース当日の流れ・ネタ集など、C1エリートレーサー2人でお送りするシクロクロス同人誌決定版。**本文100ページ**。
+日本のシクロクロスを参戦し、観戦し、ネタにして楽しむための情報を可能な限り詰め込みました。国内のルール・機材運用・練習方法・観戦のコツ・レース当日の流れ・ネタ集など、C1 エリートレーサー 2 人でお送りするシクロクロス同人誌決定版。**本文 100 ページ**。
 
-会場価格1000円
+会場価格 1000 円
 
 ![CCDD](/images/c99/c99cover.png)
 
@@ -94,7 +94,7 @@ layout: /src/layouts/MarkdownLayout.astro
 
 家人に宅内洗車を禁止された男に取材を敢行した「闇洗車」についてもコラムを書いています。必見！
 
-会場価格500円
+会場価格 500 円
 
 ![サンプル1](/images/c97/c97sample1.jpg)
 

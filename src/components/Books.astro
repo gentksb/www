@@ -1,5 +1,13 @@
 ---
 import { BookList } from "./units/BookList"
+import { MarkdownInstance } from "astro"
+import { Frontmatter } from "../pages/index.astro"
+
+export interface Props {
+  newBookPages: MarkdownInstance<Frontmatter>[]
+}
+
+const { newBookPages } = Astro.props
 ---
 
 <script
@@ -8,8 +16,8 @@ import { BookList } from "./units/BookList"
 ></script>
 
 <div>
-  <h2 class="text-primary-content text-xl md:text-4xl font-extrabold mb-2">
+  <h2 class="mb-2 text-xl font-extrabold text-primary-content md:text-4xl">
     Books
   </h2>
-  <BookList client:only="react" />
+  <BookList newBookPages={newBookPages} client:only="react" />
 </div>
