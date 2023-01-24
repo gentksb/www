@@ -1,14 +1,15 @@
 ---
-
-import { BookList } from "./units/BookList";
+import { BookList } from "./units/BookList"
 ---
 
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"
+></script>
 
 <div>
-    <h2 class="text-primary-content text-xl md:text-4xl font-extrabold mb-2">Books</h2>
-    <BookList client:only="react" />
+  <h2 class="text-primary-content text-xl md:text-4xl font-extrabold mb-2">
+    Books
+  </h2>
+  <BookList client:only="react" />
 </div>
-
-
-
