@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro"
+import { MarkdownInstance } from "astro"
+import { Frontmatter } from "../pages/index.astro"
+
+interface Props {
+  mdPages: MarkdownInstance<Frontmatter>[]
+}
+---
+
+<Layout title="Gen's Portfolio" />

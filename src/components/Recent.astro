@@ -1,6 +1,6 @@
 ---
 import { MarkdownInstance } from "astro"
-import { compareMdDateDesc, Frontmatter } from "../pages/index.astro"
+import { Frontmatter } from "../pages/index.astro"
 import { RecentCards } from "./units/RecentCards"
 
 interface Props {
@@ -8,14 +8,19 @@ interface Props {
 }
 
 const { mdPages } = Astro.props
-const topArticle = mdPages.sort((a, b) => compareMdDateDesc(a, b))[0]
+const topArticle = mdPages[0]
 ---
 
-<div class="py-2 mb-4">
+<div class="py-2">
   <h2
-    class="w-full h-auto text-primary-content text-center text-xl md:text-4xl font-extrabold md:rounded-lg mb-2"
+    class="mb-2 h-auto w-full text-center text-xl font-extrabold text-primary-content md:rounded-lg md:text-4xl"
   >
     Latest Activity
   </h2>
   <RecentCards articleData={topArticle} />
+  <div class="flex w-full justify-end px-2">
+    <div class="btn-accent btn-sm btn md:btn">
+      <a href="/activities/">全ての活動を見る→</a>
+    </div>
+  </div>
 </div>

@@ -10,6 +10,7 @@ export const BookList: React.FC = () => {
           tag: "section",
           perPage: 4,
           breakpoints: {
+            // Tailwind CSSと逆でBreakPoint以下の指定数値
             768: {
               perPage: 2
             }

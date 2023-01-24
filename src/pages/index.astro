@@ -1,28 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Recent from '../components/Recent.astro';
-import Services from '../components/Services.astro';
-import Books from '../components/Books.astro';
+import Layout from "../layouts/Layout.astro"
+import Recent from "../components/Recent.astro"
+import Services from "../components/Services.astro"
+import Books from "../components/Books.astro"
 export interface Frontmatter {
-  title: string;
-	date?: string
-	tags?: string[]
-	draft?: boolean
-	cover?: string
+  title: string
+  date?: string
+  tags?: string[]
+  draft?: boolean
+  cover?: string
 }
-const mdPages = await Astro.glob<Frontmatter>('../pages/*/*.md')
-export const compareMdDateDesc = (a,b) => {
-	const aDate = new Date(a.frontmatter.date)
-	const bDate = new Date(b.frontmatter.date)
-	return bDate.getTime() - aDate.getTime()
+const compareMdDateDesc = (a, b) => {
+  const aDate = new Date(a.frontmatter.date)
+  const bDate = new Date(b.frontmatter.date)
+  return bDate.getTime() - aDate.getTime()
 }
 
-const achivementPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Achivements')).sort((a,b)=>compareMdDateDesc(a,b))
-const doujinPages = mdPages.filter((md)=>md.frontmatter.tags?.includes('Doujin')).sort((a,b)=>compareMdDateDesc(a,b))
+const rawMdPages = await Astro.glob<Frontmatter>("../pages/*/*.md")
+export const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
+
+const doujinPages = mdPages.filter((md) =>
+  md.frontmatter.tags?.includes("Doujin")
+)
 ---
 
 <Layout title="Gen's Portfolio">
-	<Recent mdPages={mdPages} />
-	<Services />
-	<Books />
+  <Recent mdPages={mdPages} />
+  <Services />
+  <Books />
 </Layout>
