@@ -1,14 +1,12 @@
 ---
-import { Socials } from "./units/Socials"
-interface Props {
-  title: string
-}
+import Socials from "./units/Socials.astro"
+
 const { title } = Astro.props
 ---
 
-<div class="flex flex-row items-center py-6 my-0 px-2 md:px-0">
-  <div class="text-xl md:text-6xl basis-1/2 md:basis-3/4">
-    <h1 class="font-extrabold justify-center my-0">
+<div class="my-0 flex flex-row items-center py-6 px-2 md:px-0">
+  <div class="basis-1/2 text-xl md:basis-3/4 md:text-6xl">
+    <h1 class="my-0 justify-center font-extrabold">
       <a href="/" class="no-underline">{title}</a>
     </h1>
   </div>

@@ -1,11 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import { MarkdownInstance } from "astro"
-import { Frontmatter } from "../pages/index.astro"
+import { compareMdDateDesc, Frontmatter } from "./index.astro"
 
-interface Props {
-  mdPages: MarkdownInstance<Frontmatter>[]
-}
+const rawMdPages = await Astro.glob<Frontmatter>("../pages/*/*.md")
+const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
 ---
 
-<Layout title="Gen's Portfolio" />
+<Layout title="Gen's Portfolio">
+  <div class="overflow-x-auto">
+    <div class="mb-2 flex w-full px-2">
+      <div class="btn-accent btn-sm btn md:btn-accent md:btn">
+        <a href="/">←トップページへ</a>
+      </div>
+    </div>
+    <table class="table-zebra table w-full">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Title</th>
+          <th>Tag</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          mdPages.map((pageInfo) => (
+            <tr>
+              <td>{pageInfo.frontmatter.date.slice(0, 10)}</td>
+              <>
+                <th>
+                  <a href={pageInfo.url}>{pageInfo.frontmatter.title}</a>
+                </th>
+                <td>
+                  {pageInfo.frontmatter.tags.map((tag) => (
+                    <div class="badge-primary badge mr-1">{tag}</div>
+                  ))}
+                </td>
+              </>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</Layout>
