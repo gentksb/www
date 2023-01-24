@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro"
+import { daisyTheme } from "../theme"
 
 export interface Props {
   title: string
@@ -9,7 +10,7 @@ const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="ja" data-theme="cupcake">
+<html lang="ja" data-theme={daisyTheme}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -19,7 +20,7 @@ const { title } = Astro.props
   </head>
   <body>
     <main>
-      <div class="h-screen w-screen bg-base-300">
+      <div class="h-full w-full bg-base-300">
         <div class="max-lg container mx-auto">
           <Header title={title} />
           <div class="divider my-2"></div>
@@ -29,18 +30,3 @@ const { title } = Astro.props
     </main>
   </body>
 </html>
-<style is:global>
-  :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background-color: #f6f6f6;
-  }
-</style>

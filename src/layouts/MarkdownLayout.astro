@@ -1,22 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BacktoHome from "../components/units/BacktoHome.astro"
+import Layout from "../layouts/Layout.astro"
 
 export interface Props {
-	title: string;
+  title: string
 }
 
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props
 ---
 
 <Layout title={`Gen's Portfolio | ${frontmatter.title}`}>
-	<div class="card card-normal bg-neutral-content p-4 rounded-md">
-		<h2 class="card-title m-6">{frontmatter.title}</h2>
-		<div>
-
-		</div>
-		<article class="prose">
-		<slot slot="blog"/>
-		</article>
-	</div>
-		<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+  <div class="card card-normal rounded-md bg-neutral-content p-4">
+    <BacktoHome />
+    <h2 class="card-title m-6">{frontmatter.title}</h2>
+    <div></div>
+    <article class="prose">
+      <slot slot="blog" />
+    </article>
+  </div>
+  <script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 </Layout>
