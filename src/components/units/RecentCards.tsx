@@ -1,19 +1,15 @@
 import { MarkdownInstance } from "astro"
 import { Frontmatter } from "./frontmatter"
-
-//astroとReactコンポーネントで型を共有したいけどどうやるんだ
+import { TagBadges } from "./tagBadges"
 
 interface Props {
   articleData: MarkdownInstance<Frontmatter>
 }
 
 export const RecentCards: React.FC<Props> = ({ articleData }) => {
-  const tagBadges = articleData.frontmatter.tags.map((tag) => {
-    return <div className="badge-primary badge">{tag}</div>
-  })
-
+  const date = articleData.frontmatter.date.slice(0, 10)
   return (
-    <div className="mb-4 h-56 sm:h-64 xl:h-80 2xl:h-96" key={articleData.url}>
+    <div className="mb-4 h-56 sm:h-64 xl:h-80 2xl:h-96">
       <a href={articleData.url}>
         <div className="card card-side rounded-none bg-base-200 shadow-lg shadow-primary md:rounded-lg">
           <figure>
@@ -27,7 +23,12 @@ export const RecentCards: React.FC<Props> = ({ articleData }) => {
             <h2 className="card-title text-primary-content">
               {articleData.frontmatter.title}
             </h2>
-            <div className="flex flex-row gap-x-2">{tagBadges}</div>
+            <div className="flex flex-row gap-x-2">
+              <TagBadges tags={articleData.frontmatter.tags} />
+            </div>
+            <div className="text-center text-sm text-secondary-content">
+              <time dateTime={date}>{date}</time>
+            </div>
           </div>
         </div>
       </a>

@@ -1,5 +1,6 @@
 ---
 import BacktoHome from "../components/units/BacktoHome.astro"
+import { TagBadges } from "../components/units/tagBadges"
 import Layout from "../layouts/Layout.astro"
 
 export interface Props {
@@ -7,17 +8,25 @@ export interface Props {
 }
 
 const { frontmatter } = Astro.props
+const date = frontmatter.date.slice(0, 10)
 ---
 
 <Layout title="Gen's Portfolio">
   <BacktoHome />
-  <div class="card-normal card rounded-md bg-base-200 p-4">
+  <div class="card card-normal rounded-md bg-base-200 p-4">
     <h2 class="card-title m-6 text-3xl md:text-5xl">{frontmatter.title}</h2>
+    <div class="mx-auto flex flex-col space-y-2">
+      <TagBadges tags={frontmatter.tags} />
+      <div class="text-center text-sm text-secondary-content">
+        <time datetime={date}>{date}</time>
+      </div>
+    </div>
     <div class="divider"></div>
     <article class="prose m-auto max-w-3xl md:max-w-5xl">
       <slot slot="blog" />
     </article>
   </div>
+
   <div class="divider"></div>
   <BacktoHome />
   <script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>

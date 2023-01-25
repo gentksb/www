@@ -26,6 +26,7 @@ export const BookList: React.FC<Props> = ({ newBookPages: newBookPages }) => {
       <Splide
         aria-label="お気に入りの写真"
         options={{
+          type: "loop",
           tag: "section",
           perPage: 4,
           breakpoints: {

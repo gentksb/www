@@ -1,5 +1,6 @@
 ---
 import BacktoHome from "../components/units/BacktoHome.astro"
+import { TagBadges } from "../components/units/tagBadges"
 import Layout from "../layouts/Layout.astro"
 import { compareMdDateDesc, Frontmatter } from "./index.astro"
 
@@ -29,9 +30,7 @@ const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
                   <a href={pageInfo.url}>{pageInfo.frontmatter.title}</a>
                 </th>
                 <td>
-                  {pageInfo.frontmatter.tags.map((tag) => (
-                    <div class="badge-primary badge mr-1">{tag}</div>
-                  ))}
+                  <TagBadges tags={pageInfo.frontmatter.tags} />
                 </td>
               </>
             </tr>
