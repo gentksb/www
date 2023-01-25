@@ -1,0 +1,38 @@
+---
+export interface Props {
+	title: string;
+	body: string;
+	href: string;
+}
+import { Icon } from 'astro-icon'
+const { href, title, body } = Astro.props;
+---
+
+<li class="card card-compact rounded-md p-2 border-solid border-2 border-secondary text-secondary-content min-h-full">
+	<a href={href} target="_blank">
+		<h2 class="card-title">
+			{title}
+			<Icon pack="mdi" name="open-in-new" class="w-5 h-5" />
+		</h2>
+		<p>
+			{body}
+		</p>
+	</a>
+</li>
+<style>
+	h2 {
+		margin: 0;
+		font-size: 1.25rem;
+		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+	}
+	.link-card:is(:hover, :focus-within) {
+		background-position: 0;
+	}
+	.link-card:is(:hover, :focus-within) h2 {
+		color: rgb(var(--accent));
+	}
+</style>

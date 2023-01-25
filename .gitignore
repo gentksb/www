@@ -2,12 +2,6 @@
 # Node.js-Specific Ignores
 # =========================
 
-# Build directory
-public/
-
-# Gatsby cache
-.cache/
-
 # Logs
 logs
 *.log
@@ -114,12 +108,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# type
-types/
-types/graphql-types.ts
-
-# gatsby-tmp-config
-.config/
+# astro output
+dist/**
+dist/
 
 
 .vercel

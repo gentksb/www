@@ -1,0 +1,42 @@
+---
+import BacktoHome from "../components/units/BacktoHome.astro"
+import { TagBadges } from "../components/units/tagBadges"
+import Layout from "../layouts/Layout.astro"
+import { compareMdDateDesc, Frontmatter } from "./index.astro"
+
+const rawMdPages = await Astro.glob<Frontmatter>("../pages/*/*.md")
+const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
+---
+
+<Layout title="Gen's Portfolio">
+  <div class="overflow-x-auto">
+    <BacktoHome />
+    <table class="table-zebra table w-full">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Title</th>
+          <th>Tag</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          mdPages.map((pageInfo) => (
+            <tr>
+              <td>{pageInfo.frontmatter.date.slice(0, 10)}</td>
+              <>
+                <th>
+                  <a href={pageInfo.url}>{pageInfo.frontmatter.title}</a>
+                </th>
+                <td>
+                  <TagBadges tags={pageInfo.frontmatter.tags} />
+                </td>
+              </>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</Layout>

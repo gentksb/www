@@ -1,0 +1,23 @@
+---
+import { BookList } from "./units/BookList"
+import { MarkdownInstance } from "astro"
+import { Frontmatter } from "../pages/index.astro"
+
+export interface Props {
+  newBookPages: MarkdownInstance<Frontmatter>[]
+}
+
+const { newBookPages } = Astro.props
+---
+
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"
+></script>
+
+<div>
+  <h2 class="mb-2 text-xl font-extrabold text-primary-content md:text-4xl">
+    Books
+  </h2>
+  <BookList newBookPages={newBookPages} client:only="react" />
+</div>

@@ -1,0 +1,26 @@
+---
+import { MarkdownInstance } from "astro"
+import { Frontmatter } from "../pages/index.astro"
+import { RecentCards } from "./units/RecentCards"
+
+export interface Props {
+  mdPages: MarkdownInstance<Frontmatter>[]
+}
+
+const { mdPages } = Astro.props
+const topArticle = mdPages[0]
+---
+
+<div class="py-2">
+  <h2
+    class="mb-2 h-auto w-full text-center text-xl font-extrabold text-primary-content md:rounded-lg md:text-4xl"
+  >
+    Latest Activity
+  </h2>
+  <RecentCards articleData={topArticle} />
+  <div class="flex w-full justify-end px-2">
+    <div class="btn-accent btn-sm btn md:btn-accent md:btn">
+      <a href="/activities/">全ての活動を見る→</a>
+    </div>
+  </div>
+</div>
