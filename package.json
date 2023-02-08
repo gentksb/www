@@ -21,16 +21,16 @@
   },
   "homepage": "https://github.com/gentksb/www#readme",
   "dependencies": {
-    "@astrojs/mdx": "^0.15.0",
-    "@astrojs/prefetch": "^0.1.1",
-    "@astrojs/react": "^2.0.0",
-    "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "^3.0.0",
+    "@astrojs/mdx": "^0.16.0",
+    "@astrojs/prefetch": "^0.1.2",
+    "@astrojs/react": "^2.0.2",
+    "@astrojs/sitemap": "^1.0.1",
+    "@astrojs/tailwind": "^3.0.1",
     "@splidejs/react-splide": "^0.7.12",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.0.1",
+    "astro": "^2.0.8",
     "astro-icon": "^0.8.0",
-    "daisyui": "^2.47.1",
+    "daisyui": "^2.50.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.2.4"
@@ -38,16 +38,16 @@
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.49.0",
-    "@typescript-eslint/parser": "^5.49.0",
-    "eslint": "^8.32.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-astro": "^0.23.0",
-    "eslint-plugin-tailwindcss": "^3.8.2",
-    "prettier": "^2.8.3",
-    "prettier-plugin-astro": "^0.7.2",
+    "eslint-plugin-tailwindcss": "^3.8.3",
+    "prettier": "^2.8.4",
+    "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-tailwindcss": "^0.2.2",
-    "textlint": "^12.6.1",
-    "typescript": "^4.9.4"
+    "textlint": "^13.2.0",
+    "typescript": "^4.9.5"
   }
 }
