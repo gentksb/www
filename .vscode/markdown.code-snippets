@@ -9,9 +9,10 @@
       "draft: false",
       "tags: [\"${5:tag1}\"]",
       "cover: \"./cover.jpg\"",
-      "layout: /src/layouts/MarkdownLayout.astro",
       "---",
-      ""
+      "",
+      "import { MdxSampleSlide } from \"/src/components/mdx/SampleSlide\"",
+      "export const samples = []"
     ],
     "description": "make frontmatter"
   },
