@@ -4,7 +4,6 @@ date: 2021-12-01
 draft: false
 tags: ["comicmarket", "C99", "Doujin", "New"]
 cover: "/images/c99/c99cover.png"
-layout: /src/layouts/MarkdownLayout.astro
 ---
 
 ## スペース

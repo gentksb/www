@@ -4,7 +4,6 @@ date: 2020-12-01
 draft: false
 tags: ["Achivements"]
 # cover: ""
-layout: /src/layouts/MarkdownLayout.astro
 ---
 
 2020-21 年度のシクロクロス全日本選手権に出場することができました。

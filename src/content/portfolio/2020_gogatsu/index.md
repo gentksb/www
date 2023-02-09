@@ -4,7 +4,6 @@ date: 2020-12-18
 draft: false
 tags: ["Achivements"]
 # cover: ""
-layout: /src/layouts/MarkdownLayout.astro
 ---
 
 [東方我楽多叢誌](https://touhougarakuta.com/)にて投資家・馬主その他の肩書を持つ「五月」氏に取材を行い、その内容を書かせて頂きました。

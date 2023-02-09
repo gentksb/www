@@ -4,7 +4,6 @@ date: 2018-03-09T23:06:02+09:00
 draft: false
 tags: ["meshiket", "meshiket3", "Doujin"]
 cover: "./meshiket3_cierclecut.png"
-layout: /src/layouts/MarkdownLayout.astro
 ---
 
 ## 関西めしけっと 3

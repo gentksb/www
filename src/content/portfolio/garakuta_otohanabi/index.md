@@ -4,7 +4,6 @@ date: 2021-08-26
 draft: false
 tags: ["Achivements"]
 # cover: ""
-layout: /src/layouts/MarkdownLayout.astro
 ---
 
 [東方我楽多叢誌](https://touhougarakuta.com/)の[『東方オトハナビ』全曲レビュー ！！](https://touhougarakuta.com/index_interview/otohanabi_review)に参加し、数曲のレビューを書かせていただきました。

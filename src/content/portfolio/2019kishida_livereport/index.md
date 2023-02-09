@@ -4,7 +4,6 @@ date: 2019-11-06
 draft: false
 tags: ["Achivements"]
 # cover: ""
-layout: /src/layouts/MarkdownLayout.astro
 ---
 
 [SPICE 様のライブレポート企画](https://spice.eplus.jp/articles/254798)に応募したところ、大賞を頂きました。

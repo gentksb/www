@@ -4,7 +4,6 @@ date: 2018-12-07T20:00:29+09:00
 draft: false
 tags: ["comicmarket", "C95", "Doujin", "New"]
 cover: "/images/c95/deirin_senden.jpg"
-layout: /src/layouts/MarkdownLayout.astro
 ---
 
 ## スペース

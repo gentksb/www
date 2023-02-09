@@ -4,7 +4,6 @@ date: 2018-09-14
 draft: false
 tags: ["kindle", "Doujin"]
 cover: "./kindleunlimitedlogo.png"
-layout: /src/layouts/MarkdownLayout.astro
 ---
 
 ![image](/images/ebook/kindleunlimitedlogo.png)

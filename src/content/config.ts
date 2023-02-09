@@ -7,8 +7,7 @@ const portfolioCollection = defineCollection({
     date: z.date(),
     draft: z.boolean(),
     tags: z.array(z.string()),
-    cover: z.string().optional(),
-    layout: z.string().optional()
+    cover: z.string().optional()
   })
 })
 // 3. Export a single `collections` object to register your collection(s)
