@@ -16,7 +16,8 @@
         "extraFileExtensions": [".astro"]
       },
       "rules": {
-        "tailwindcss/no-custom-classname": "off"
+        "tailwindcss/no-custom-classname": "off",
+        "@typescript-eslint/triple-slash-reference": "off"
       }
     }
   ]

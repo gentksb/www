@@ -111,6 +111,5 @@ $RECYCLE.BIN/
 # astro output
 dist/**
 dist/
-
-
-.vercel
+.astro
+.astro/**
