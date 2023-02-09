@@ -1,21 +1,20 @@
 import "@splidejs/react-splide/css"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
-import { MarkdownInstance } from "astro"
-import { Frontmatter } from "./frontmatter"
+import { CollectionEntry } from "astro:content"
 
 interface Props {
-  newBookPages: MarkdownInstance<Frontmatter>[]
+  newBookPages: CollectionEntry<"portfolio">[]
 }
 
 export const BookList: React.FC<Props> = ({ newBookPages: newBookPages }) => {
   const bookSlides = newBookPages.map((newBookPage) => (
     <SplideSlide>
       <div>
-        <a href={newBookPage.url}>
-          <img src={newBookPage.frontmatter.cover} alt="Bookcover" />
+        <a href={`/${newBookPage.slug}`}>
+          <img src={newBookPage.data.cover} alt="Bookcover" />
         </a>
         <figcaption className="text-md absolute bottom-0 h-1/4 w-full bg-primary/75 px-4 text-base-100 md:text-xl">
-          {newBookPage.frontmatter.title}
+          {newBookPage.data.title}
         </figcaption>
       </div>
     </SplideSlide>

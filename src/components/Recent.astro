@@ -1,10 +1,9 @@
 ---
-import { MarkdownInstance } from "astro"
-import { Frontmatter } from "../pages/index.astro"
+import { CollectionEntry } from "astro:content"
 import { RecentCards } from "./units/RecentCards"
 
 export interface Props {
-  mdPages: MarkdownInstance<Frontmatter>[]
+  mdPages: CollectionEntry<"portfolio">[]
 }
 
 const { mdPages } = Astro.props

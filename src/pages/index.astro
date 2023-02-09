@@ -3,25 +3,20 @@ import Layout from "../layouts/Layout.astro"
 import Recent from "../components/Recent.astro"
 import Services from "../components/Services.astro"
 import Books from "../components/Books.astro"
-export interface Frontmatter {
-  title: string
-  date?: string
-  tags?: string[]
-  draft?: boolean
-  cover?: string
-}
+import { getCollection } from "astro:content"
+
 export const compareMdDateDesc = (a, b) => {
-  const aDate = new Date(a.frontmatter.date)
-  const bDate = new Date(b.frontmatter.date)
-  return bDate.getTime() - aDate.getTime()
+  //  a: CollectionEntry<"portfolio">,
+  // b: CollectionEntry<"portfolio">
+  return b.data.date.getTime() - a.data.date.getTime()
 }
 
-const rawMdPages = await Astro.glob<Frontmatter>("../pages/*/*.md")
+const rawMdPages = await getCollection("portfolio", ({ data }) => {
+  return data.draft !== true
+})
 const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
 
-const newBookPages = mdPages.filter((md) =>
-  md.frontmatter.tags?.includes("New")
-)
+const newBookPages = mdPages.filter((md) => md.data.tags?.includes("New"))
 ---
 
 <Layout title="Gen's Portfolio">

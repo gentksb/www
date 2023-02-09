@@ -1,10 +1,13 @@
 ---
+import { getCollection } from "astro:content"
 import BacktoHome from "../components/units/BacktoHome.astro"
 import { TagBadges } from "../components/units/tagBadges"
 import Layout from "../layouts/Layout.astro"
-import { compareMdDateDesc, Frontmatter } from "./index.astro"
+import { compareMdDateDesc } from "./index.astro"
 
-const rawMdPages = await Astro.glob<Frontmatter>("../pages/*/*.md")
+const rawMdPages = await getCollection("portfolio", ({ data }) => {
+  return data.draft !== true
+})
 const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
 ---
 
@@ -24,13 +27,13 @@ const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
         {
           mdPages.map((pageInfo) => (
             <tr>
-              <td>{pageInfo.frontmatter.date.slice(0, 10)}</td>
+              <td>{pageInfo.data.date.toLocaleDateString("ja-JP")}</td>
               <>
                 <th>
-                  <a href={pageInfo.url}>{pageInfo.frontmatter.title}</a>
+                  <a href={`/${pageInfo.slug}/`}>{pageInfo.data.title}</a>
                 </th>
                 <td>
-                  <TagBadges tags={pageInfo.frontmatter.tags} />
+                  <TagBadges tags={pageInfo.data.tags} />
                 </td>
               </>
             </tr>
