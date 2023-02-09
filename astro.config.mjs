@@ -17,11 +17,5 @@ import prefetch from "@astrojs/prefetch"
 export default defineConfig({
   site: "https://www.gensobunya.net/",
   trailingSlash: "always",
-  integrations: [
-    react(),
-    mdx({ extendMarkdownConfig: false, smartypants: true, gfm: true }),
-    tailwind(),
-    sitemap(),
-    prefetch()
-  ]
+  integrations: [react(), mdx(), tailwind(), sitemap(), prefetch()]
 })

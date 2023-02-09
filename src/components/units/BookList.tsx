@@ -6,7 +6,7 @@ interface Props {
   newBookPages: CollectionEntry<"portfolio">[]
 }
 
-export const BookList: React.FC<Props> = ({ newBookPages: newBookPages }) => {
+export const BookList: React.FC<Props> = ({ newBookPages }) => {
   const bookSlides = newBookPages.map((newBookPage) => (
     <SplideSlide>
       <div>
