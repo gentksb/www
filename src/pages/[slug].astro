@@ -1,6 +1,10 @@
 ---
 import { getCollection } from "astro:content"
 
+import BacktoHome from "../components/units/BacktoHome.astro"
+import { TagBadges } from "../components/units/tagBadges"
+import Layout from "../layouts/Layout.astro"
+
 export async function getStaticPaths() {
   const entries = await getCollection("portfolio")
   return entries.map((entry) => ({
@@ -13,4 +17,28 @@ const { entry } = Astro.props
 const { Content } = await entry.render()
 ---
 
-<Content />
+<Layout
+  title={`${entry.data.title} - Gen's Portfolio(幻想サイクルサークル公式WEB)`}
+  og_image={entry.data.cover}
+>
+  <BacktoHome />
+  <div class="card card-normal rounded-md bg-base-200 p-4">
+    <h2 class="card-title m-6 text-3xl md:text-5xl">{entry.data.title}</h2>
+    <div class="mx-auto flex flex-col space-y-2">
+      <TagBadges tags={entry.data.tags} />
+      <div class="text-center text-sm text-secondary-content">
+        <time datetime={entry.data.date.toISOString()}
+          >{entry.data.date.toLocaleDateString("ja-JP")}</time
+        >
+      </div>
+    </div>
+    <div class="divider"></div>
+    <article class="prose m-auto max-w-3xl md:max-w-5xl">
+      <Content />
+    </article>
+  </div>
+
+  <div class="divider"></div>
+  <BacktoHome />
+  <script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+</Layout>

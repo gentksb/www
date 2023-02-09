@@ -11,7 +11,7 @@ const rawMdPages = await getCollection("portfolio", ({ data }) => {
 const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
 ---
 
-<Layout title="Gen's Portfolio">
+<Layout title="Gen's Portfolio - History">
   <div class="overflow-x-auto">
     <BacktoHome />
     <table class="table-zebra table w-full">
