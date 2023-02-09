@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content"
+import { CollectionEntry, getCollection } from "astro:content"
 
 import BacktoHome from "../components/units/BacktoHome.astro"
 import { TagBadges } from "../components/units/tagBadges"
@@ -15,20 +15,21 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props
 const { Content } = await entry.render()
+const frontmatter: CollectionEntry<"portfolio">["data"] = entry.data
 ---
 
 <Layout
-  title={`${entry.data.title} - Gen's Portfolio(幻想サイクルサークル公式WEB)`}
-  og_image={entry.data.cover}
+  title={`${frontmatter.title} - Gen's Portfolio(幻想サイクルサークル公式WEB)`}
+  og_image={frontmatter.cover}
 >
   <BacktoHome />
   <div class="card card-normal rounded-md bg-base-200 p-4">
-    <h2 class="card-title m-6 text-3xl md:text-5xl">{entry.data.title}</h2>
+    <h2 class="card-title m-6 text-3xl md:text-5xl">{frontmatter.title}</h2>
     <div class="mx-auto flex flex-col space-y-2">
-      <TagBadges tags={entry.data.tags} />
+      <TagBadges tags={frontmatter.tags} />
       <div class="text-center text-sm text-secondary-content">
-        <time datetime={entry.data.date.toISOString()}
-          >{entry.data.date.toLocaleDateString("ja-JP")}</time
+        <time datetime={frontmatter.date.toISOString()}
+          >{frontmatter.date.toLocaleDateString("ja-JP")}</time
         >
       </div>
     </div>
