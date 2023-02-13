@@ -1,0 +1,11 @@
+---
+import { MdxSampleSlide } from "../units/MdxSampleSlide"
+
+export interface Props {
+  sampleImageUrls: string[]
+}
+
+const { sampleImageUrls } = Astro.props
+---
+
+<MdxSampleSlide sampleImageUrls={sampleImageUrls} client:only="react" />

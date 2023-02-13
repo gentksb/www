@@ -6,7 +6,7 @@ tags: ["comicmarket", "C100", "Doujin", "New"]
 cover: "/images/c100/c100cover.png"
 ---
 
-import { MdxSampleSlide } from "../../../components/mdx/SampleSlide.tsx"
+import SampleSlide from "../../../components/mdx/SampleSlide.astro"
 export const samples = [
   "/images/c100/c100outline1.png",
   "/images/c100/c100outline2.png",
@@ -63,7 +63,7 @@ export const samples = [
 
 以下のサンプルは執筆中のものです
 
-<MdxSampleSlide sampleImageUrls={samples} client:only="react" />
+<SampleSlide sampleImageUrls={samples} />
 
 ### Special Thanks
 

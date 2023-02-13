@@ -6,7 +6,7 @@ tags: ["comicmarket", "C101", "Doujin", "New"]
 cover: "/images/c101/c101_cover.png"
 ---
 
-import { MdxSampleSlide } from "../../../components/mdx/SampleSlide.tsx"
+import SampleSlide from "../../../components/mdx/SampleSlide.astro"
 export const samples = [
   "/images/c101/c101_cover.png",
   "/images/c101/c101_sample01.png",
@@ -28,7 +28,7 @@ export const samples = [
 
 ## 【新刊】限界車載ナレッジ
 
-<MdxSampleSlide sampleImageUrls={samples} client:only="react" />
+<SampleSlide sampleImageUrls={samples} />
 
 ロードバイクなどの車載、なんとなくやっていませんか?
 

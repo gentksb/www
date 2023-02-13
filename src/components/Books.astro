@@ -1,7 +1,6 @@
 ---
 import { BookList } from "./units/BookList"
 import { CollectionEntry } from "astro:content"
-import { MdxSampleSlide } from "./mdx/SampleSlide"
 
 export interface Props {
   newBookPages: CollectionEntry<"portfolio">[]
@@ -20,12 +19,4 @@ const { newBookPages } = Astro.props
     Books
   </h2>
   <BookList newBookPages={newBookPages} client:only="react" />
-  <MdxSampleSlide
-    sampleImageUrls={[
-      "/images/c101/c101_cover.png",
-      "/images/c101/c101_sample01.png",
-      "/images/c101/c101_sample02.png"
-    ]}
-    client:only="react"
-  />
 </div>
