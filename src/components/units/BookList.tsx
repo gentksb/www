@@ -11,7 +11,7 @@ export const BookList: React.FC<Props> = ({ newBookPages }) => {
     <SplideSlide>
       <div>
         <a href={`/${newBookPage.slug}`}>
-          <img src={newBookPage.data.cover} alt="Bookcover" />
+          <img src={newBookPage.data.cover?.src} alt="Bookcover" />
         </a>
         <figcaption className="text-md absolute bottom-0 h-1/4 w-full bg-primary/75 px-4 text-base-100 md:text-xl">
           {newBookPage.data.title}

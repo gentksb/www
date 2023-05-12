@@ -13,7 +13,7 @@ export const RecentCards: React.FC<Props> = ({ articleData }) => {
         <div className="card card-side rounded-none bg-base-200 shadow-lg shadow-primary md:rounded-lg">
           <figure>
             <img
-              src={articleData.data.cover}
+              src={articleData.data.cover?.src}
               alt="Top Article Cover"
               className="min-h-56 max-h-56 sm:max-h-64 xl:max-h-80 2xl:max-h-96"
             />
