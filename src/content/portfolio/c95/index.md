@@ -15,9 +15,9 @@ cover: "/images/c95/deirin_senden.jpg"
 
 ![image](/images/c95/deirin_senden.jpg)
 
-![image](/images/c95/page.PNG)
+![image](/images/c95/page.png)
 
-![image](/images/c95/page2.PNG)
+![image](/images/c95/page2.png)
 
 シクロクロスの魅力をあらゆる面からアピールし、シクロクロス人口を爆増させる事を目的とした本です。気合が入りすぎてまずページ数が普段の 1.5 倍以上になってしまいました。
 
