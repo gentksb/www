@@ -8,7 +8,7 @@ interface Props {
 export const MdxSampleSlide: React.FC<Props> = ({ sampleImageUrls }) => {
   const sampleSlides = sampleImageUrls.map((imageUrl) => (
     <SplideSlide>
-      <img src={imageUrl} alt="sample" className="mx-auto" />
+      <img src={imageUrl} alt="sample" className="mx-auto md:max-h-[60vh]" />
     </SplideSlide>
   ))
 
