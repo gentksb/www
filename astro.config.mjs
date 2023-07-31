@@ -15,7 +15,7 @@ import prefetch from "@astrojs/prefetch"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.gensobunya.net/",
+  site: "https://www.gensobunya.net",
   trailingSlash: "always",
   integrations: [react(), mdx(), tailwind(), sitemap(), prefetch()]
 })

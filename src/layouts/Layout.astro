@@ -10,6 +10,7 @@ export interface Props {
 
 const { title, description, og_image } = Astro.props
 const isTopPage = Astro.url.pathname === "/"
+const site = Astro.url.origin
 ---
 
 <!DOCTYPE html>
@@ -26,7 +27,7 @@ const isTopPage = Astro.url.pathname === "/"
         basic: {
           title: title,
           type: isTopPage ? "website" : "article",
-          image: og_image ?? "/images/logo.jpg"
+          image: site + (og_image ?? "/images/logo.jpg")
         },
         image: {
           alt: "gen_sobunya icon"
@@ -36,7 +37,7 @@ const isTopPage = Astro.url.pathname === "/"
         card: isTopPage ? "summary" : "summary_large_image",
         site: "@gen_sobunya",
         title: title,
-        image: og_image ?? "/images/logo.jpg",
+        image: site + (og_image ?? "/images/logo.jpg"),
         imageAlt: "article cover image",
         description:
           description ??
