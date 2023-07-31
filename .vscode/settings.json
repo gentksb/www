@@ -21,7 +21,9 @@
     "javascriptreact",
     "astro", // Enable .astro
     "typescript", // Enable .ts
-    "typescriptreact" // Enable .tsx
+    "typescriptreact", // Enable .tsx
+    "markdown",
+    "mdx"
   ],
   "[markdown]": {
     "editor.wordWrap": "on",
@@ -34,6 +36,8 @@
   },
   "files.associations": {
     "*.mdx": "markdown"
+  },
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".md", ".mdx", ".ts", ".tsx"]
   }
 }
-
