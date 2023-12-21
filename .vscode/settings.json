@@ -12,19 +12,9 @@
     "node_modules/**": true
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
-  "prettier.documentSelectors": ["**/*.astro"],
   "files.eol": "\n",
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "astro", // Enable .astro
-    "typescript", // Enable .ts
-    "typescriptreact", // Enable .tsx
-    "markdown",
-    "mdx"
-  ],
   "[markdown]": {
     "editor.wordWrap": "on",
     "editor.quickSuggestions": {
@@ -37,7 +27,4 @@
   "files.associations": {
     "*.mdx": "markdown"
   },
-  "eslint.options": {
-    "extensions": [".js", ".jsx", ".md", ".mdx", ".ts", ".tsx"]
-  }
 }
