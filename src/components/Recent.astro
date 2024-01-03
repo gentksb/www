@@ -1,6 +1,6 @@
 ---
-import { CollectionEntry } from "astro:content"
-import { RecentCards } from "./units/RecentCards"
+import type { CollectionEntry } from "astro:content"
+import RecentCards from "./units/RecentCards.astro"
 
 export interface Props {
   mdPages: CollectionEntry<"portfolio">[]

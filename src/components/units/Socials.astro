@@ -1,11 +1,13 @@
 ---
 import { Icon } from "astro-icon/components"
+import logoImage from "../../images/logo.jpg"
+import { Picture } from "astro:assets"
 ---
 
 <nav>
   <div class="flex items-center justify-end space-x-2 md:space-x-4">
-    <img
-      src="/images/logo.jpg"
+    <Picture
+      src={logoImage}
       alt="author logo"
       class="h-10 w-10 rounded-full md:h-16 md:w-16"
     />
