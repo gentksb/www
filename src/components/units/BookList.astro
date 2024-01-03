@@ -1,0 +1,35 @@
+---
+import { Picture } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+import dummyImage from "../../images/dummy.jpg"
+
+interface Props {
+  newBookPages: CollectionEntry<"portfolio">[]
+}
+
+const { newBookPages } = Astro.props
+const pageLength = newBookPages.length
+---
+
+<div class="carousel w-full gap-x-2">
+  {
+    newBookPages.map((newBookPage, index) => (
+      <div
+        id={`slide${index}`}
+        class="carousel-item w-[calc(50%-0.25rem)] md:w-[calc(25%-0.375rem)] relative"
+      >
+        <a href={`/${newBookPage.slug}/`}>
+          <Picture
+            src={newBookPage.data.cover || dummyImage}
+            widths={[150, 300]}
+            alt="Bookcover"
+            class="w-full"
+          />
+          <figcaption class="text-md absolute bottom-0 h-1/4 w-full bg-primary/75 px-4 text-base-100 md:text-xl">
+            {newBookPage.data.title}
+          </figcaption>
+        </a>
+      </div>
+    ))
+  }
+</div>
