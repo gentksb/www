@@ -8,9 +8,9 @@ cover: "./amazon-kindle.png"
 
 ## 既刊の電子書籍版を発行しました
 
-[![image](/images/ebook/amazon-kindle.png)](https://amzn.to/2uyzRNW)
+[![image](./2uyzRNW)
 
-[![image](/images/ebook/bookwalker_logo.png)](https://bookwalker.jp/author/114298/)
+[![image](./)
 
 これまで、書籍で売り切れた既刊については[Booth](https://gensobunya.booth.pm/)にて PDF 版の頒布を行っていましたが、この度既存の電子書籍プラットフォーム上でも購入できるようになりました。
 

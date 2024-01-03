@@ -8,7 +8,7 @@ cover: "./c90_sample01.png"
 
 ## ホビーレースのすゝめ
 
-![image](/images/c90/c90_sample01.png)
+![image](./c90_sample01.png)
 
 自転車買ってレースに興味あるけどどうしよう？という方や草レースの仕組みが気になる方に向けた、ホビーレース参戦ノウハウ本！クリテリウム・ロードレース・シクロクロスをメインにレースの選び方、エントリー方法からレースへ向けての準備、当日の移動手段や、レース後のアフターケア(ビールクズ含む)までまるっと一冊に濃縮！
 
@@ -19,6 +19,6 @@ cover: "./c90_sample01.png"
 
 ### サンプル
 
-![image](/images/c90/c90_sample02.png)
+![image](./c90_sample02.png)
 
-![image](/images/c90/c90_sample03.jpg)
+![image](./c90_sample03.jpg)

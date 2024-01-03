@@ -13,11 +13,11 @@ cover: "./deirin_senden.jpg"
 
 ## 【新刊】泥輪事情
 
-![image](/images/c95/deirin_senden.jpg)
+![image](./deirin_senden.jpg)
 
-![image](/images/c95/page.png)
+![image](./page.png)
 
-![image](/images/c95/page2.png)
+![image](./page2.png)
 
 シクロクロスの魅力をあらゆる面からアピールし、シクロクロス人口を爆増させる事を目的とした本です。気合が入りすぎてまずページ数が普段の 1.5 倍以上になってしまいました。
 
@@ -36,8 +36,8 @@ cover: "./deirin_senden.jpg"
 
 ## 【既刊】大阪北部飯ポタ本＋
 
-![image](/images/c93/c93_sample01.jpg)
-![image](/images/c93/c93_sample02.jpg)
+![image](./c93_sample01.jpg)
+![image](./c93_sample02.jpg)
 
 大阪北部の飯ポタスポットを、エネルギー消費のためのライド情報と一緒に紹介。\
 おまけとして、「神奈川県民でも満足できる大阪の家系ラーメン屋」を収録。\
@@ -47,7 +47,7 @@ cover: "./deirin_senden.jpg"
 
 ## 【既刊】2017 冬王滝　現場レポート
 
-![image](/images/c93/c93_sample03.jpg)
+![image](./c93_sample03.jpg)
 
 氷点下のスタート、過去最長の 100km コース、凍りつく機材…11 月の王滝で何が起こっていたのか？完走率 25%のアドベンチャーレースの記憶をたどる。\
 会場限定。全 44 ページ、頒布価格￥ 500
@@ -56,9 +56,9 @@ cover: "./deirin_senden.jpg"
 
 ## 既刊電子版　 DL カード
 
-![image](/images/c93/c93_dlcard01.png)
+![image](./c93_dlcard01.png)
 
-![image](/images/c93/c93_dlcard02.png)
+![image](./c93_dlcard02.png)
 
 過去作のイラスト・写真をフルカラーにした PDF ファイルの DL コード付きカード。\
 購入すると 2018/12/31 までオリジナルファイルをダウンロード可能です。
