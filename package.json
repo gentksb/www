@@ -28,6 +28,7 @@
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.4",
     "@astrojs/tailwind": "^5.1.0",
+    "@iconify-json/mdi": "^1.1.64",
     "@splidejs/react-splide": "^0.7.12",
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^4.0.8",
