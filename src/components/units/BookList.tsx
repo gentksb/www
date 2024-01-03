@@ -1,6 +1,6 @@
 import "@splidejs/react-splide/css"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
-import { CollectionEntry } from "astro:content"
+import type { CollectionEntry } from "astro:content"
 
 interface Props {
   newBookPages: CollectionEntry<"portfolio">[]
@@ -8,7 +8,7 @@ interface Props {
 
 export const BookList: React.FC<Props> = ({ newBookPages }) => {
   const bookSlides = newBookPages.map((newBookPage) => (
-    <SplideSlide>
+    <SplideSlide key={newBookPage.id}>
       <div>
         <a href={`/${newBookPage.slug}/`}>
           <img src={newBookPage.data.cover} alt="Bookcover" />
