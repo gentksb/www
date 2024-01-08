@@ -11,7 +11,7 @@ const rewriter = new HTMLRewriter((outputChunk) => {
 
 rewriter.on("img", {
   element(element) {
-    element.before('<div class="carousel-item">', { html: true })
+    element.before('<div class="carousel-item w-4/5">', { html: true })
     element.after("</div>", { html: true })
     element.setAttribute("class", "rounded-box")
   }
@@ -20,14 +20,13 @@ rewriter.on("img", {
 try {
   await rewriter.write(encoder.encode(insideSlotHtml))
   await rewriter.end()
-  console.log(modifiedSlotHtmlString)
 } finally {
   rewriter.free() // Remember to free memory
 }
 ---
 
 <div
-  class="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box"
+  class="carousel carousel-center max-w-md p-4 space-x-2 bg-neutral rounded-box"
 >
   <Fragment set:html={modifiedSlotHtmlString} />
 </div>
