@@ -1,11 +1,33 @@
 ---
-import { MdxSampleSlide } from "../units/MdxSampleSlide"
+import { HTMLRewriter } from "html-rewriter-wasm"
 
-export interface Props {
-  sampleImageUrls: string[]
+const insideSlotHtml = await Astro.slots.render("default")
+const encoder = new TextEncoder()
+const decoder = new TextDecoder()
+let modifiedSlotHtmlString = ""
+const rewriter = new HTMLRewriter((outputChunk) => {
+  modifiedSlotHtmlString += decoder.decode(outputChunk)
+})
+
+rewriter.on("img", {
+  element(element) {
+    element.before('<div class="carousel-item">', { html: true })
+    element.after("</div>", { html: true })
+    element.setAttribute("class", "rounded-box")
+  }
+})
+
+try {
+  await rewriter.write(encoder.encode(insideSlotHtml))
+  await rewriter.end()
+  console.log(modifiedSlotHtmlString)
+} finally {
+  rewriter.free() // Remember to free memory
 }
-
-const { sampleImageUrls } = Astro.props
 ---
 
-<MdxSampleSlide sampleImageUrls={sampleImageUrls} client:only="react" />
+<div
+  class="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box"
+>
+  <Fragment set:html={modifiedSlotHtmlString} />
+</div>
