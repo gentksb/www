@@ -10,7 +10,7 @@ const rewriter = new HTMLRewriter((outputChunk) => {
   modifiedSlotHtmlString += decoder.decode(outputChunk)
 })
 
-rewriter.on("img", {
+rewriter.on("figure", {
   element(element) {
     element.before(
       `<div id="slide${elementCounter}" class="carousel-item w-full">`,
