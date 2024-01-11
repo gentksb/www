@@ -5,15 +5,20 @@ const insideSlotHtml = await Astro.slots.render("default")
 const encoder = new TextEncoder()
 const decoder = new TextDecoder()
 let modifiedSlotHtmlString = ""
+let elementCounter = 0
 const rewriter = new HTMLRewriter((outputChunk) => {
   modifiedSlotHtmlString += decoder.decode(outputChunk)
 })
 
 rewriter.on("img", {
   element(element) {
-    element.before('<div class="carousel-item w-4/5">', { html: true })
-    element.after("</div>", { html: true })
-    element.setAttribute("class", "rounded-box")
+    element.before(
+      `<div id="slide${elementCounter}" class="carousel-item w-full">`,
+      { html: true }
+    )
+    element.after(`</div>`, { html: true })
+    element.setAttribute("class", "box border-2 border-neutral-content")
+    elementCounter++
   }
 })
 
@@ -25,8 +30,28 @@ try {
 }
 ---
 
-<div
-  class="carousel carousel-center max-w-md p-4 space-x-2 bg-neutral rounded-box"
->
-  <Fragment set:html={modifiedSlotHtmlString} />
+<div class="w-full flex items-center">
+  <div
+    class="carousel carousel-center mx-auto max-w-lg p-2 space-x-2 bg-neutral rounded-box"
+  >
+    <Fragment set:html={modifiedSlotHtmlString} />
+  </div>
+</div>
+<div class="flex justify-center w-full py-2 gap-2">
+  {
+    () => {
+      const slideNavi = []
+      for (let i = 0; i < elementCounter; i++) {
+        slideNavi.push(
+          <a
+            href={`#slide${i}`}
+            class="btn bg-neutral-content btn-xs md:btn-md"
+          >
+            {i + 1}
+          </a>
+        )
+      }
+      return slideNavi
+    }
+  }
 </div>
