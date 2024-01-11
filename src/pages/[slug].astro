@@ -25,7 +25,11 @@ const frontmatter: CollectionEntry<"portfolio">["data"] = entry.data
 >
   <BacktoHome />
   <div class="card card-normal rounded-md bg-base-200 p-4">
-    <h2 class="card-title m-6 text-3xl md:text-5xl">{frontmatter.title}</h2>
+    <div class="card-title p-6 text-center w-full">
+      <h2 transition:name="title" class="text-3xl md:text-5xl w-full">
+        {frontmatter.title}
+      </h2>
+    </div>
     <div class="mx-auto flex flex-col space-y-2">
       <TagBadges tags={frontmatter.tags} />
       <div class="text-center text-sm text-secondary-content">
