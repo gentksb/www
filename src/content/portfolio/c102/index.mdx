@@ -9,13 +9,7 @@ cover: "./c102_cover.jpg"
 {/* <!-- textlint-disable --> */}
 
 import SampleSlide from "../../../components/mdx/SampleSlide.astro"
-export const samples = [
-  "/images/c102/c102_cover.jpg",
-  "/images/c102/c102_sample1.png",
-  "/images/c102/c102_sample2.png",
-  "/images/c102/c102_sample3.png",
-  "/images/c102/c102_sample4.png"
-]
+
 export const samples_c101 = [
   "/images/c101/c101_cover.png",
   "/images/c101/c101_sample01.png",
@@ -36,7 +30,19 @@ export const samples_c101 = [
 
 ## 【新刊】限界自転車部屋
 
-<SampleSlide sampleImageUrls={samples} />
+<SampleSlide>
+
+![cover](./c102_cover.jpg)
+
+![sample01](./c102_sample1.png)
+
+![sample02](./c102_sample2.png)
+
+![sample03](./c102_sample3.png)
+
+![sample04](./c102_sample4.png)
+
+</SampleSlide>
 
 ### 新刊アブストラクト
 
@@ -128,7 +134,15 @@ GARMINのサイクルコンピューターに付けるストラップ、その�
 
 ## 既刊: 限界車載ナレッジ
 
-<SampleSlide sampleImageUrls={samples_c101} />
+<SampleSlide>
+
+![cover](../c101/c101_cover.png)
+
+![sample01](../c101/c101_sample01.png)
+
+![sample02](../c101/c101_sample02.png)
+
+</SampleSlide>
 
 中積み・ルーフキャリア・トランクキャリア・吸盤キャリアなど、基本的な積み方のメリット・デメリットを比較して、レンタカーでも使えるノウハウを紹介しています。
 

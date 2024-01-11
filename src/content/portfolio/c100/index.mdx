@@ -7,12 +7,6 @@ cover: "./c100cover.png"
 ---
 
 import SampleSlide from "../../../components/mdx/SampleSlide.astro"
-export const samples =[
-  "/images/c100/c100outline1.png",
-  "/images/c100/c100outline2.png",
-  "/images/c100/c100sample1.png",
-  "/images/c100/c100sample2.png"
-]
 
 ## スペース・LINK
 
@@ -62,7 +56,17 @@ export const samples =[
 
 以下のサンプルは執筆中のものです
 
-<SampleSlide sampleImageUrls={samples} />
+<SampleSlide>
+
+![サンプル1](./c100outline1.png)
+
+![サンプル2](./c100outline2.png)
+
+![サンプル3](./c100sample2.png)
+
+![サンプル4](./c100sample1.png)
+
+</SampleSlide>
 
 ### Special Thanks
 
