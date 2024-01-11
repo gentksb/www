@@ -1,11 +1,57 @@
 ---
-import { MdxSampleSlide } from "../units/MdxSampleSlide"
+import { HTMLRewriter } from "html-rewriter-wasm"
 
-export interface Props {
-  sampleImageUrls: string[]
+const insideSlotHtml = await Astro.slots.render("default")
+const encoder = new TextEncoder()
+const decoder = new TextDecoder()
+let modifiedSlotHtmlString = ""
+let elementCounter = 0
+const rewriter = new HTMLRewriter((outputChunk) => {
+  modifiedSlotHtmlString += decoder.decode(outputChunk)
+})
+
+rewriter.on("figure", {
+  element(element) {
+    element.before(
+      `<div id="slide${elementCounter}" class="carousel-item w-full">`,
+      { html: true }
+    )
+    element.after(`</div>`, { html: true })
+    element.setAttribute("class", "box border-2 border-neutral-content")
+    elementCounter++
+  }
+})
+
+try {
+  await rewriter.write(encoder.encode(insideSlotHtml))
+  await rewriter.end()
+} finally {
+  rewriter.free() // Remember to free memory
 }
-
-const { sampleImageUrls } = Astro.props
 ---
 
-<MdxSampleSlide sampleImageUrls={sampleImageUrls} client:only="react" />
+<div class="w-full flex items-center">
+  <div
+    class="carousel carousel-center mx-auto max-w-lg p-2 space-x-2 bg-neutral rounded-box"
+  >
+    <Fragment set:html={modifiedSlotHtmlString} />
+  </div>
+</div>
+<div class="flex justify-center w-full py-2 gap-2">
+  {
+    () => {
+      const slideNavi = []
+      for (let i = 0; i < elementCounter; i++) {
+        slideNavi.push(
+          <a
+            href={`#slide${i}`}
+            class="btn bg-neutral-content btn-xs md:btn-md"
+          >
+            {i + 1}
+          </a>
+        )
+      }
+      return slideNavi
+    }
+  }
+</div>

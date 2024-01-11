@@ -13,9 +13,11 @@ import sitemap from "@astrojs/sitemap"
 // https://astro.build/config
 import prefetch from "@astrojs/prefetch"
 
+import icon from "astro-icon"
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.gensobunya.net",
   trailingSlash: "always",
-  integrations: [react(), mdx(), tailwind(), sitemap(), prefetch()]
+  integrations: [react(), mdx(), tailwind(), sitemap(), prefetch(), icon()]
 })

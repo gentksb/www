@@ -6,7 +6,7 @@ tags: ["kindle", "Doujin"]
 cover: "./kindleunlimitedlogo.png"
 ---
 
-![image](/images/ebook/kindleunlimitedlogo.png)
+![image](./kindleunlimitedlogo.png)
 
 ## 電子書籍販売元を Kindle に一本化しました
 

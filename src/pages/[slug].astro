@@ -1,9 +1,10 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content"
+import { type CollectionEntry, getCollection } from "astro:content"
 
 import BacktoHome from "../components/units/BacktoHome.astro"
 import { TagBadges } from "../components/units/tagBadges"
 import Layout from "../layouts/Layout.astro"
+import Mdxpicture from "../components/units/mdx/mdxpicture.astro"
 
 export async function getStaticPaths() {
   const entries = await getCollection("portfolio")
@@ -20,11 +21,15 @@ const frontmatter: CollectionEntry<"portfolio">["data"] = entry.data
 
 <Layout
   title={`${frontmatter.title} - Gen's Portfolio(幻想サイクルサークル公式WEB)`}
-  og_image={frontmatter.cover}
+  og_image={frontmatter.cover?.src}
 >
   <BacktoHome />
   <div class="card card-normal rounded-md bg-base-200 p-4">
-    <h2 class="card-title m-6 text-3xl md:text-5xl">{frontmatter.title}</h2>
+    <div class="card-title p-6 text-center w-full">
+      <h2 transition:name="title" class="text-3xl md:text-5xl w-full">
+        {frontmatter.title}
+      </h2>
+    </div>
     <div class="mx-auto flex flex-col space-y-2">
       <TagBadges tags={frontmatter.tags} />
       <div class="text-center text-sm text-secondary-content">
@@ -34,14 +39,16 @@ const frontmatter: CollectionEntry<"portfolio">["data"] = entry.data
       </div>
     </div>
     <div class="divider"></div>
-    <article class="prose prose-h2:before:content-['##_'] prose-h2:before:text-primary prose-h3:before:content-['###_'] prose-h3:before:text-primary m-auto max-w-3xl md:max-w-5xl">
-      <Content />
+    <article
+      class="prose prose-h2:before:content-['##_'] prose-h2:before:text-primary prose-h3:before:content-['###_'] prose-h3:before:text-primary m-auto max-w-3xl md:max-w-5xl"
+    >
+      <Content components={{ img: Mdxpicture }} />
     </article>
   </div>
 
   <div class="divider"></div>
   <BacktoHome />
   <script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
+  ></script>
 </Layout>

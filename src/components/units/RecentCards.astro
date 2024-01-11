@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from "astro:content"
+import { TagBadges } from "./tagBadges"
+import { Picture } from "astro:assets"
+import dummyCover from "../../images/dummy.jpg"
+
+export interface Props {
+  articleData: CollectionEntry<"portfolio">
+}
+
+const { articleData } = Astro.props
+const date = articleData.data.date
+---
+
+<div class="mb-4 h-56 sm:h-64 xl:h-80 2xl:h-96">
+  <a href={`/${articleData.slug}/`}>
+    <div
+      class="card card-side rounded-none bg-base-200 shadow-lg shadow-primary md:rounded-lg"
+    >
+      <figure>
+        <Picture
+          src={articleData.data.cover || dummyCover}
+          alt="Top Article Cover"
+          class="object-contain w-auto max-h-56 sm:max-h-64 xl:max-h-80 2xl:max-h-96"
+        />
+      </figure>
+      <div class="card-body items-center justify-center p-4">
+        <h2 transition:name="title" class="card-title text-primary-content">
+          {articleData.data.title}
+        </h2>
+        <div class="flex flex-row gap-x-2">
+          <TagBadges tags={articleData.data.tags} />
+        </div>
+        <div class="text-center text-sm text-secondary-content">
+          <time datetime={date.toISOString()}>
+            {date.toLocaleDateString("ja-JP")}
+          </time>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

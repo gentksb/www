@@ -4,7 +4,7 @@ export interface Props {
 	body: string;
 	href: string;
 }
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 const { href, title, body } = Astro.props;
 ---
 
@@ -12,7 +12,7 @@ const { href, title, body } = Astro.props;
 	<a href={href} target="_blank">
 		<h2 class="card-title">
 			{title}
-			<Icon pack="mdi" name="open-in-new" class="w-5 h-5" />
+			<Icon name="mdi:open-in-new" class="w-5 h-5" />
 		</h2>
 		<p>
 			{body}

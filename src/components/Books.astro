@@ -1,6 +1,6 @@
 ---
-import { BookList } from "./units/BookList"
-import { CollectionEntry } from "astro:content"
+import BookList from "./units/BookList.astro"
+import type { CollectionEntry } from "astro:content"
 
 export interface Props {
   newBookPages: CollectionEntry<"portfolio">[]
@@ -9,14 +9,9 @@ export interface Props {
 const { newBookPages } = Astro.props
 ---
 
-<script
-  is:inline
-  src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"
-></script>
-
 <div>
   <h2 class="mb-2 text-xl font-extrabold text-primary-content md:text-4xl">
-    Books
+    Books(side scroll to see more)
   </h2>
-  <BookList newBookPages={newBookPages} client:only="react" />
+  <BookList newBookPages={newBookPages} />
 </div>
