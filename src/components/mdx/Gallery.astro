@@ -1,16 +1,18 @@
 ---
 // CSS scroll-snap ベースのギャラリーコンポーネント
+// Custom Element で実装し、DOM 接続時に自己初期化する。
 ---
 
-<div class="gallery" role="region" aria-label="サンプルページ" tabindex="0">
+<gallery-viewer role="region" aria-label="サンプルページ" tabindex="0">
   <div class="gallery-track">
     <slot />
   </div>
   <div class="gallery-indicator" aria-hidden="true"></div>
-</div>
+</gallery-viewer>
 
 <style>
-  .gallery {
+  gallery-viewer {
+    display: block;
     position: relative;
     margin: 2rem calc(-1 * var(--content-padding, 0px));
   }
@@ -29,7 +31,6 @@
     display: none;
   }
 
-  /* JS が付与する .gallery-slide を1枚分の幅にする */
   .gallery-track > :global(.gallery-slide) {
     flex: 0 0 100%;
     scroll-snap-align: start;
@@ -61,10 +62,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap はゼロ — ドットボタン側の padding で間隔を確保 */
   }
 
-  /* ドットの視覚要素 (.dot-inner) */
   .gallery-indicator :global(.dot-inner) {
     width: 6px;
     height: 6px;
@@ -74,7 +73,6 @@
     pointer-events: none;
   }
 
-  /* ドットのクリック領域 (.dot-btn): 44×44px の透明ボタン */
   .gallery-indicator :global(.dot-btn) {
     width: 44px;
     height: 44px;
@@ -98,7 +96,7 @@
   }
 
   @media (max-width: 640px) {
-    .gallery {
+    gallery-viewer {
       margin-left: calc(-1 * var(--content-padding, 20px));
       margin-right: calc(-1 * var(--content-padding, 20px));
     }
@@ -106,28 +104,28 @@
 </style>
 
 <script>
-  function initGalleries() {
-    document.querySelectorAll('.gallery').forEach(gallery => {
-      // 二重初期化を防ぐ
-      if ((gallery as HTMLElement).dataset.initialized === '1') return
-      ;(gallery as HTMLElement).dataset.initialized = '1'
+  class GalleryViewer extends HTMLElement {
+    connectedCallback() {
+      // 子要素のパースを確実に待つ
+      requestAnimationFrame(() => this.init())
+    }
 
-      const track = gallery.querySelector('.gallery-track') as HTMLElement | null
-      const indicator = gallery.querySelector('.gallery-indicator') as HTMLElement | null
+    private init() {
+      const track = this.querySelector('.gallery-track') as HTMLElement | null
+      const indicator = this.querySelector('.gallery-indicator') as HTMLElement | null
       if (!track || !indicator) return
 
-      // MDX が生成する空 <p> を除外し、img / picture を含む要素だけをスライドとして扱う
+      // 空 <p> を除外し、画像を含む要素だけをスライドとして扱う
       const items = Array.from(track.children).filter(el =>
         el.querySelector('img, picture') !== null
       )
       if (items.length === 0) return
 
-      // スライドクラスを付与して CSS を適用
       items.forEach(el => el.classList.add('gallery-slide'))
 
       if (items.length <= 1) return
 
-      // ── インジケータードット生成 ──
+      // ── インジケータードット ──
       items.forEach((_, i) => {
         const btn = document.createElement('button')
         btn.type = 'button'
@@ -142,42 +140,28 @@
 
       const btns = Array.from(indicator.querySelectorAll<HTMLButtonElement>('.dot-btn'))
 
-      // ── スクロール連動でドットをアクティブにする ──
-      const slideObserver = new IntersectionObserver(
+      // ── スクロール連動 ──
+      const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) return
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue
             const idx = items.indexOf(entry.target as Element)
-            if (idx === -1) return
+            if (idx === -1) continue
             btns.forEach((b, i) => b.classList.toggle('active', i === idx))
-          })
+          }
         },
         { root: track, threshold: 0.5 }
       )
-      items.forEach(item => slideObserver.observe(item))
+      items.forEach(item => observer.observe(item))
 
-      // ── ドットクリックでスライド移動 ──
+      // ── ドットクリック ──
       btns.forEach((btn, i) => {
         btn.addEventListener('click', () => {
-          items[i]?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'start',
-          })
+          items[i]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
         })
       })
-    })
+    }
   }
 
-  // 初回ロード（通常のページ表示）
-  initGalleries()
-
-  // ClientRouter (View Transitions) でのページ遷移後も再実行
-  document.addEventListener('astro:page-load', () => {
-    // data-initialized をリセットして再初期化できるようにする
-    document.querySelectorAll('.gallery[data-initialized]').forEach(el => {
-      delete (el as HTMLElement).dataset.initialized
-    })
-    initGalleries()
-  })
+  customElements.define('gallery-viewer', GalleryViewer)
 </script>
