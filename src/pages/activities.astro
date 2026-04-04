@@ -1,45 +1,55 @@
 ---
 import { getCollection } from "astro:content"
-import BacktoHome from "../components/units/BacktoHome.astro"
-import { TagBadges } from "../components/units/tagBadges"
-import Layout from "../layouts/Layout.astro"
-import { compareMdDateDesc } from "./index.astro"
+import Layout from "@/layouts/Layout.astro"
 
 const rawMdPages = await getCollection("portfolio", ({ data }) => {
   return data.draft !== true
 })
-const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
+const mdPages = rawMdPages.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 ---
 
 <Layout title="Gen's Portfolio - History">
-  <div class="overflow-x-auto">
-    <BacktoHome />
-    <table class="table-zebra table w-full">
-      <!-- head -->
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Title</th>
-          <th>Tag</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          mdPages.map((pageInfo) => (
-            <tr>
-              <td>{pageInfo.data.date.toLocaleDateString("ja-JP")}</td>
-              <>
-                <th>
-                  <a href={`/${pageInfo.id}/`}>{pageInfo.data.title}</a>
-                </th>
-                <td>
-                  <TagBadges tags={pageInfo.data.tags} />
-                </td>
-              </>
+  <div style="max-width:960px;margin:0 auto;padding:80px var(--content-padding)">
+    <a href="/" style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:40px;transition:color 0.2s" class="back-link">
+      ← トップへ戻る
+    </a>
+    <h1 style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.14em;margin-bottom:32px">ALL ACTIVITIES</h1>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);text-align:left;padding:8px 16px 8px 0;font-weight:500">Date</th>
+            <th style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);text-align:left;padding:8px 16px 8px 0;font-weight:500">Title</th>
+            <th style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);text-align:left;padding:8px 0;font-weight:500">Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          {mdPages.map(pageInfo => (
+            <tr style="border-bottom:1px solid var(--border)" class="activity-row">
+              <td style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);padding:12px 16px 12px 0;white-space:nowrap">
+                {pageInfo.data.date.toLocaleDateString("ja-JP")}
+              </td>
+              <td style="padding:12px 16px 12px 0">
+                <a href={`/${pageInfo.id}/`} style="font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--text-body);text-decoration:none;transition:color 0.2s" class="activity-link">
+                  {pageInfo.data.title}
+                </a>
+              </td>
+              <td style="padding:12px 0">
+                <div style="display:flex;gap:4px;flex-wrap:wrap">
+                  {pageInfo.data.tags?.map(tag => (
+                    <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);padding:2px 6px;border:1px solid var(--border)">{tag}</span>
+                  ))}
+                </div>
+              </td>
             </tr>
-          ))
-        }
-      </tbody>
-    </table>
+          ))}
+        </tbody>
+      </table>
+    </div>
   </div>
 </Layout>
+
+<style>
+  .back-link:hover { color: var(--text-primary); }
+  .activity-link:hover { color: var(--text-primary); }
+</style>

@@ -1,0 +1,26 @@
+---
+import SectionHeading from "@/components/ui/SectionHeading.astro"
+import ProductCard from "@/components/cards/ProductCard.astro"
+import { PRODUCTS, RETIRED_PRODUCTS } from "@/data/products"
+---
+
+<section id="products" class="section-pad" style="padding:100px var(--content-padding);max-width:960px;margin:0 auto">
+  <SectionHeading label="PRODUCTS" sub="公開中のWebサービス・ツール" count={`${PRODUCTS.length} product`} />
+  <div style="display:flex;flex-direction:column;gap:20px">
+    {PRODUCTS.map(p => <ProductCard product={p} />)}
+  </div>
+  {RETIRED_PRODUCTS.length > 0 && (
+    <div style="margin-top:40px">
+      <h3 style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-subtle);letter-spacing:0.1em;margin-bottom:12px">RETIRED</h3>
+      {RETIRED_PRODUCTS.map(p => (
+        <div style="padding:16px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span style="font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--text-subtle)">{p.name}</span>
+            <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);margin-left:12px">{p.period}</span>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-subtle);font-weight:500;padding:2px 8px;border:1px solid var(--border)">END OF LIFE</span>
+        </div>
+      ))}
+    </div>
+  )}
+</section>

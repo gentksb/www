@@ -4,6 +4,8 @@ date: 2021-12-01
 draft: false
 tags: ["comicmarket", "C99", "Doujin", "New"]
 cover: "./c99cover.png"
+category: "doujin"
+availability: "soldout"
 ---
 
 ## スペース

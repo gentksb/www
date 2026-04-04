@@ -1,0 +1,12 @@
+---
+import SectionHeading from "@/components/ui/SectionHeading.astro"
+import WritingRow from "@/components/cards/WritingRow.astro"
+import { WRITING_WORKS } from "@/data/about"
+---
+
+<section id="writing" class="section-pad" style="padding:100px var(--content-padding);max-width:960px;margin:0 auto">
+  <SectionHeading label="WRITING" sub="東方同人音楽メディアでのライター活動" count={`${WRITING_WORKS.length} articles`} />
+  <div>
+    {WRITING_WORKS.map((w, i) => <WritingRow item={w} index={i} />)}
+  </div>
+</section>

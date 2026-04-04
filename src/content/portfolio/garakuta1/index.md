@@ -2,6 +2,7 @@
 title: "東方我楽多叢誌に東方アレンジ曲レビューが掲載されました"
 date: 2020-05-20
 draft: false
+category: "writing"
 tags: ["Achivements"]
 # cover: ""
 ---

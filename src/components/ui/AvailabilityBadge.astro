@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+type Props = {
+  availability?: CollectionEntry<"portfolio">["data"]["availability"]
+  purchase?: CollectionEntry<"portfolio">["data"]["purchase"]
+}
+
+const { availability, purchase } = Astro.props
+
+function getLabel(): string | null {
+  if (!availability) return null
+  if (availability === "soldout") return "頒布終了"
+  if (availability === "upcoming") return "準備中"
+  if (!purchase || purchase.length === 0) return null
+
+  const labels = purchase.map(p => {
+    if (p.label === "Kindle") return "Kindle"
+    if (p.label.includes("メロン")) return "委託中"
+    return p.label
+  })
+  return [...new Set(labels)].join(" / ")
+}
+
+const label = getLabel()
+---
+
+{label && (
+  <span class="availability-badge" style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.06em;color:var(--text-subtle);background:rgba(0,0,0,0.55);padding:3px 8px;white-space:nowrap">
+    {label}
+  </span>
+)}

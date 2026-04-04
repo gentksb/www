@@ -1,0 +1,44 @@
+---
+interface Props {
+  item: {
+    year: number
+    title: string
+    outlet: string
+    desc: string
+    url: string
+    highlight?: boolean
+  }
+  index?: number
+}
+const { item, index = 0 } = Astro.props
+---
+
+<a
+  href={item.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="writing-row slide-in"
+  style={`display:grid;grid-template-columns:48px 1fr auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition-delay:${index * 0.04}s`}
+>
+  <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-subtle);font-weight:500">{item.year}</span>
+  <div style="min-width:0">
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <span class="writing-title" style="font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--text-body);transition:color 0.2s">
+        {item.title}
+      </span>
+      {item.highlight && (
+        <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.1em;color:var(--accent);padding:2px 6px;border:1px solid var(--accent-border);font-weight:600">AWARD</span>
+      )}
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;margin-top:3px">
+      <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);font-weight:500">{item.outlet}</span>
+      <span style="font-family:var(--font-body);font-size:12px;color:var(--text-muted)">— {item.desc}</span>
+    </div>
+  </div>
+  <span class="writing-arrow" style="font-size:14px;color:var(--text-subtle);transition:all 0.2s;flex-shrink:0">↗</span>
+</a>
+
+<style>
+  .writing-row:hover .writing-title { color: var(--text-primary); }
+  .writing-row:hover .writing-arrow { color: var(--text-muted); transform: translateX(3px); }
+</style>

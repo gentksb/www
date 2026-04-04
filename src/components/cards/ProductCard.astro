@@ -1,0 +1,62 @@
+---
+import type { Product } from "@/data/products"
+
+interface Props {
+  product: Product
+}
+const { product } = Astro.props
+---
+
+<div class="product-card fade-in">
+  <div class="product-inner" style="border:1px solid var(--border);background:var(--surface);transition:all 0.35s ease;overflow:hidden">
+    <div class="accent-bar" style="height:3px;background:linear-gradient(90deg,var(--accent-teal),transparent);opacity:0.5;transition:opacity 0.3s ease" />
+    <div style="padding:32px 32px 28px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap">
+        <div style="flex:1;min-width:200px">
+          <div style="margin-bottom:12px">
+            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;color:var(--accent-teal);padding:3px 10px;border:1px solid rgba(78,205,196,0.4);text-transform:uppercase;font-weight:600">
+              {product.status}
+            </span>
+          </div>
+          <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--text-primary);margin:0;line-height:1.3">
+            {product.name}
+          </h3>
+          <p style="font-family:var(--font-body);font-size:14px;color:var(--text-muted);margin:6px 0 0;line-height:1.4">
+            {product.tagline}
+          </p>
+        </div>
+        <a
+          href={product.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          style="font-family:var(--font-mono);font-size:12px;color:var(--text-body);background:var(--surface);border:1px solid var(--border);padding:10px 20px;text-decoration:none;transition:all 0.25s ease;white-space:nowrap;display:inline-flex;align-items:center;gap:8px"
+          class="product-link"
+        >
+          {product.cta}<span style="font-size:14px">↗</span>
+        </a>
+      </div>
+      <p style="font-family:var(--font-body);font-size:14px;color:var(--text-muted);margin:20px 0 0;line-height:1.8;max-width:560px">
+        {product.desc}
+      </p>
+      <div style="display:flex;gap:6px;margin-top:20px;flex-wrap:wrap">
+        {product.stack.map(t => (
+          <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);padding:3px 10px;border:1px solid var(--border)">{t}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .product-card:hover .product-inner {
+    border-color: var(--border-hover);
+    background: var(--surface-hover);
+  }
+  .product-card:hover .accent-bar {
+    opacity: 1;
+  }
+  .product-link:hover {
+    border-color: var(--border-hover);
+    color: var(--text-primary);
+  }
+</style>

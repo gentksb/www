@@ -1,0 +1,16 @@
+---
+interface Props {
+  label: string
+  count?: string
+  sub?: string
+}
+const { label, count, sub } = Astro.props
+---
+
+<div class="section-heading fade-in" style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:36px;padding-bottom:16px;border-bottom:1px solid var(--border)">
+  <div>
+    <h2 style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.14em;margin:0">{label}</h2>
+    {sub && <p style="font-family:var(--font-body);font-size:13px;color:var(--text-muted);margin:6px 0 0">{sub}</p>}
+  </div>
+  {count && <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);font-weight:500">{count}</span>}
+</div>

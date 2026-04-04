@@ -1,26 +1,38 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Recent from "../components/Recent.astro"
-import Services from "../components/Services.astro"
-import Books from "../components/Books.astro"
-import { getCollection } from "astro:content"
+import Layout from "@/layouts/Layout.astro"
+import Hero from "@/components/Hero.astro"
+import FloatingNav from "@/components/FloatingNav.astro"
+import Products from "@/components/sections/Products.astro"
+import Publications from "@/components/sections/Publications.astro"
+import Writing from "@/components/sections/Writing.astro"
+import About from "@/components/sections/About.astro"
+import Links from "@/components/sections/Links.astro"
+import { SOCIALS } from "@/data/socials"
 
-export const compareMdDateDesc = (a, b) => {
-  //  a: CollectionEntry<"portfolio">,
-  // b: CollectionEntry<"portfolio">
-  return b.data.date.getTime() - a.data.date.getTime()
-}
-
-const rawMdPages = await getCollection("portfolio", ({ data }) => {
-  return data.draft !== true
-})
-const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
-
-const newBookPages = mdPages.filter((md) => md.data.tags?.includes("New"))
 ---
 
 <Layout title="Gen's Portfolio">
-  <Recent mdPages={mdPages} />
-  <Services />
-  <Books newBookPages={newBookPages} />
+  <FloatingNav />
+  <Hero />
+  <Products />
+  <Publications />
+  <Writing />
+  <About />
+  <Links />
+  <footer class="section-pad" style="border-top:1px solid var(--border);padding:28px var(--content-padding);display:flex;justify-content:space-between;align-items:center;max-width:960px;margin:0 auto;flex-wrap:wrap;gap:12px">
+    <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);letter-spacing:0.06em">© 2025 Gen / 幻想サイクル</span>
+    <div style="display:flex;gap:16px">
+      {SOCIALS.map(s => (
+        <a href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.name}
+          style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-decoration:none;transition:color 0.2s"
+          class="footer-social">
+          {s.name}
+        </a>
+      ))}
+    </div>
+  </footer>
 </Layout>
+
+<style>
+  .footer-social:hover { color: var(--text-primary); }
+</style>

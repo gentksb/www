@@ -2,6 +2,7 @@
 title: "東方我楽多叢誌で五月氏の取材記事を公開しました"
 date: 2020-12-18
 draft: false
+category: "writing"
 tags: ["Achivements"]
 # cover: ""
 ---

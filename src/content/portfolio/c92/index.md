@@ -4,6 +4,8 @@ date: 2017-08-01T21:49:59+09:00
 draft: false
 tags: ["comicmarket", "C92", "Doujin", "New"]
 cover: "./c92_sample01.jpg"
+category: "doujin"
+availability: "soldout"
 ---
 
 ## 銀輪練之概略
