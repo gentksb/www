@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content"
+import { Picture } from "astro:assets"
+
+type Props = {
+  currentId: string
+  category?: string
+}
+const { currentId, category } = Astro.props
+
+if (!category) return
+
+const allWorks = await getCollection("portfolio", ({ data }) =>
+  !data.draft && data.category === category
+)
+const related = allWorks
+  .filter(w => w.id !== currentId)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
+---
+
+{related.length > 0 && (
+  <div style="margin-top:64px;padding-top:40px;border-top:1px solid var(--border)">
+    <h2 style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.14em;margin-bottom:28px">OTHER WORKS</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      {related.map(work => (
+        <a href={`/${work.id}/`} class="related-card" style="display:block;text-decoration:none;color:inherit">
+          <div style="position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--surface);margin-bottom:10px;border:1px solid var(--border)">
+            {work.data.cover ? (
+              <Picture
+                src={work.data.cover}
+                alt={work.data.title}
+                widths={[200, 400]}
+                loading="lazy"
+                style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s cubic-bezier(0.16,1,0.3,1)"
+                class="related-img"
+              />
+            ) : (
+              <div style="width:100%;height:100%;background:var(--surface-hover)" />
+            )}
+          </div>
+          <h3 class="related-title" style="font-family:var(--font-display);font-size:13px;font-weight:600;color:var(--text-body);transition:color 0.2s;margin:0;line-height:1.5">
+            {work.data.title}
+          </h3>
+        </a>
+      ))}
+    </div>
+  </div>
+)}
+
+<style>
+  .related-card:hover .related-img { transform: scale(1.04); }
+  .related-card:hover .related-title { color: var(--text-primary); }
+</style>

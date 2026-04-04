@@ -1,10 +1,10 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content"
-
-import BacktoHome from "../components/units/BacktoHome.astro"
-import { TagBadges } from "../components/units/tagBadges"
-import Layout from "../layouts/Layout.astro"
-import Mdxpicture from "../components/units/mdx/mdxpicture.astro"
+import { Picture } from "astro:assets"
+import Layout from "@/layouts/Layout.astro"
+import Mdxpicture from "@/components/units/mdx/mdxpicture.astro"
+import PurchaseBar from "@/components/detail/PurchaseBar.astro"
+import RelatedWorks from "@/components/detail/RelatedWorks.astro"
 
 export async function getStaticPaths() {
   const entries = await getCollection("portfolio")
@@ -16,39 +16,90 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props
 const { Content } = await render(entry)
-const frontmatter: CollectionEntry<"portfolio">["data"] = entry.data
+const data: CollectionEntry<"portfolio">["data"] = entry.data
+
+// JSON-LD for doujinshi
+const jsonLd = data.category === "doujin" ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": data.title,
+  "author": { "@type": "Person", "name": "Gen" },
+  "datePublished": data.date.toISOString().split("T")[0],
+  ...(data.cover ? { "image": data.cover.src } : {}),
+  ...(data.price ? { "offers": { "@type": "Offer", "price": data.price, "priceCurrency": "JPY" } } : {}),
+}) : null
 ---
 
 <Layout
-  title={`${frontmatter.title} - Gen's Portfolio(幻想サイクルサークル公式WEB)`}
-  og_image={frontmatter.cover?.src}
+  title={`${data.title} - Gen's Portfolio`}
+  og_image={data.cover?.src}
 >
-  <BacktoHome />
-  <div class="card card-normal rounded-md bg-base-200 p-4">
-    <div class="card-title p-6 text-center w-full">
-      <h2 transition:name="title" class="text-3xl md:text-5xl w-full">
-        {frontmatter.title}
-      </h2>
-    </div>
-    <div class="mx-auto flex flex-col space-y-2">
-      <TagBadges tags={frontmatter.tags} />
-      <div class="text-center text-sm text-secondary-content">
-        <time datetime={frontmatter.date.toISOString()}
-          >{frontmatter.date.toLocaleDateString("ja-JP")}</time
-        >
+  {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
+
+  <div style="max-width:768px;margin:0 auto;padding:80px var(--content-padding) 120px">
+    <!-- Back link -->
+    <a href="/" style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:48px;transition:color 0.2s" class="back-link">
+      ← トップへ戻る
+    </a>
+
+    <!-- Cover image -->
+    {data.cover && (
+      <div style="margin-bottom:40px;border:1px solid var(--border);overflow:hidden">
+        <Picture
+          src={data.cover}
+          alt={data.title}
+          widths={[400, 800]}
+          style="width:100%;height:auto;display:block"
+        />
       </div>
+    )}
+
+    <!-- Title & meta -->
+    <h1 style="font-family:var(--font-display);font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--text-primary);line-height:1.2;margin-bottom:20px">
+      {data.title}
+    </h1>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px">
+      {data.tags?.map(tag => (
+        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;color:var(--text-muted);padding:3px 10px;border:1px solid var(--border)">{tag}</span>
+      ))}
+      <time datetime={data.date.toISOString()} style="font-family:var(--font-mono);font-size:12px;color:var(--text-subtle)">
+        {data.date.toLocaleDateString("ja-JP")}
+      </time>
     </div>
-    <div class="divider"></div>
-    <article
-      class="prose prose-h2:before:content-['##_'] prose-h2:before:text-primary prose-h3:before:content-['###_'] prose-h3:before:text-primary m-auto max-w-3xl md:max-w-5xl"
-    >
+
+    {(data.pages || data.price) && (
+      <p style="font-family:var(--font-mono);font-size:13px;color:var(--text-muted);margin-bottom:8px">
+        {data.pages && <span>{data.pages}ページ</span>}
+        {data.pages && data.price && <span style="margin:0 8px">/</span>}
+        {data.price && <span>¥{data.price.toLocaleString()}</span>}
+      </p>
+    )}
+
+    <!-- Purchase CTA -->
+    <PurchaseBar purchase={data.purchase} availability={data.availability} />
+
+    <!-- MDX content -->
+    <article class="prose prose-neutral max-w-none" style="margin-top:32px">
       <Content components={{ img: Mdxpicture }} />
     </article>
+
+    <!-- Related works -->
+    <RelatedWorks currentId={entry.id} category={data.category} />
+
+    <!-- Back link (bottom) -->
+    <div style="margin-top:64px">
+      <a href="/" style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color 0.2s" class="back-link">
+        ← トップへ戻る
+      </a>
+    </div>
   </div>
 
-  <div class="divider"></div>
-  <BacktoHome />
-  <script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
-  ></script>
+  <!-- External embed scripts -->
+  <script async src="//cdn.iframe.ly/embed.js" charset="utf-8" is:inline></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" is:inline></script>
 </Layout>
+
+<style>
+  .back-link:hover { color: var(--text-primary); }
+</style>
