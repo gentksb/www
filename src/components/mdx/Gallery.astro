@@ -1,8 +1,5 @@
 ---
 // CSS scroll-snap ベースのギャラリーコンポーネント
-// 注意: MDX が <p><figure>...</figure></p> という無効 HTML を生成するため、
-// ブラウザが <p> と <figure> を別要素に分解する。
-// → JS でイメージを含む要素だけをスライドとして扱い、空 <p> を無視する。
 ---
 
 <div class="gallery" role="region" aria-label="サンプルページ" tabindex="0">
@@ -27,13 +24,12 @@
   }
   .gallery-track::-webkit-scrollbar { display: none; }
 
-  /* MDX が生成する空 <p> を非表示にして flex アイテムから除外 */
+  /* MDX + Mdxpicture が生成する空 <p> を非表示 */
   .gallery-track > :global(p) {
     display: none;
   }
 
-  /* figure や img が直接 track の子になった場合もスライドとして機能する */
-  .gallery-track > :global(figure),
+  /* JS が付与する .gallery-slide を1枚分の幅にする */
   .gallery-track > :global(.gallery-slide) {
     flex: 0 0 100%;
     scroll-snap-align: start;
@@ -45,7 +41,6 @@
     min-height: 200px;
   }
 
-  .gallery-track > :global(figure) :global(img),
   .gallery-track > :global(.gallery-slide) :global(img) {
     max-height: 70vh;
     width: auto;
@@ -54,32 +49,52 @@
     display: block;
   }
 
-  /* Astro Picture コンポーネントが生成する <picture> も対応 */
-  .gallery-track > :global(figure) :global(picture),
   .gallery-track > :global(.gallery-slide) :global(picture) {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-height: 70vh;
   }
 
+  /* ── インジケーター ── */
   .gallery-indicator {
     display: flex;
     justify-content: center;
-    gap: 6px;
-    padding: 12px 0;
+    align-items: center;
+    /* gap はゼロ — ドットボタン側の padding で間隔を確保 */
   }
-  .gallery-indicator :global(.dot) {
+
+  /* ドットの視覚要素 (.dot-inner) */
+  .gallery-indicator :global(.dot-inner) {
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background: var(--text-subtle);
-    transition: background 0.2s;
-    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+    pointer-events: none;
   }
-  .gallery-indicator :global(.dot.active) {
+
+  /* ドットのクリック領域 (.dot-btn): 44×44px の透明ボタン */
+  .gallery-indicator :global(.dot-btn) {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .gallery-indicator :global(.dot-btn.active) :global(.dot-inner) {
     background: var(--text-primary);
+    transform: scale(1.35);
+  }
+
+  .gallery-indicator :global(.dot-btn:hover) :global(.dot-inner) {
+    background: var(--text-body);
   }
 
   @media (max-width: 640px) {
@@ -91,57 +106,78 @@
 </style>
 
 <script>
-  document.querySelectorAll('.gallery').forEach(gallery => {
-    const track = gallery.querySelector('.gallery-track') as HTMLElement | null
-    const indicator = gallery.querySelector('.gallery-indicator') as HTMLElement | null
-    if (!track || !indicator) return
+  function initGalleries() {
+    document.querySelectorAll('.gallery').forEach(gallery => {
+      // 二重初期化を防ぐ
+      if ((gallery as HTMLElement).dataset.initialized === '1') return
+      ;(gallery as HTMLElement).dataset.initialized = '1'
 
-    // MDX が生成する空 <p> を除外し、img/picture を含む要素だけをスライドとして使う
-    const items = Array.from(track.children).filter(el =>
-      el.querySelector('img, picture') !== null
-    )
+      const track = gallery.querySelector('.gallery-track') as HTMLElement | null
+      const indicator = gallery.querySelector('.gallery-indicator') as HTMLElement | null
+      if (!track || !indicator) return
 
-    if (items.length === 0) return
+      // MDX が生成する空 <p> を除外し、img / picture を含む要素だけをスライドとして扱う
+      const items = Array.from(track.children).filter(el =>
+        el.querySelector('img, picture') !== null
+      )
+      if (items.length === 0) return
 
-    // スライドに CSS クラスを付与（figure や直接の img にも適用される）
-    items.forEach(el => {
-      if (!el.classList.contains('gallery-slide')) {
-        el.classList.add('gallery-slide')
-      }
-    })
+      // スライドクラスを付与して CSS を適用
+      items.forEach(el => el.classList.add('gallery-slide'))
 
-    if (items.length <= 1) return
+      if (items.length <= 1) return
 
-    // インジケータードットを生成
-    items.forEach((_, i) => {
-      const dot = document.createElement('span')
-      dot.className = i === 0 ? 'dot active' : 'dot'
-      indicator.appendChild(dot)
-    })
-    const dots = Array.from(indicator.querySelectorAll('.dot'))
+      // ── インジケータードット生成 ──
+      items.forEach((_, i) => {
+        const btn = document.createElement('button')
+        btn.type = 'button'
+        btn.className = i === 0 ? 'dot-btn active' : 'dot-btn'
+        btn.setAttribute('aria-label', `スライド ${i + 1}`)
 
-    // スクロール位置に応じてアクティブドットを更新
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
+        const inner = document.createElement('span')
+        inner.className = 'dot-inner'
+        btn.appendChild(inner)
+        indicator.appendChild(btn)
+      })
+
+      const btns = Array.from(indicator.querySelectorAll<HTMLButtonElement>('.dot-btn'))
+
+      // ── スクロール連動でドットをアクティブにする ──
+      const slideObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return
             const idx = items.indexOf(entry.target as Element)
-            if (idx !== -1) {
-              dots.forEach((d, i) => d.classList.toggle('active', i === idx))
-            }
-          }
+            if (idx === -1) return
+            btns.forEach((b, i) => b.classList.toggle('active', i === idx))
+          })
+        },
+        { root: track, threshold: 0.5 }
+      )
+      items.forEach(item => slideObserver.observe(item))
+
+      // ── ドットクリックでスライド移動 ──
+      btns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          items[i]?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'start',
+          })
         })
-      },
-      { root: track, threshold: 0.5 }
-    )
-
-    items.forEach(item => observer.observe(item))
-
-    // ドットクリックでスライド移動
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        items[i]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
       })
     })
+  }
+
+  // 初回ロード（通常のページ表示）
+  initGalleries()
+
+  // ClientRouter (View Transitions) でのページ遷移後も再実行
+  document.addEventListener('astro:page-load', () => {
+    // data-initialized をリセットして再初期化できるようにする
+    document.querySelectorAll('.gallery[data-initialized]').forEach(el => {
+      delete (el as HTMLElement).dataset.initialized
+    })
+    initGalleries()
   })
 </script>
