@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions"
+import { ClientRouter } from "astro:transitions"
 import Header from "../components/Header.astro"
 import { daisyTheme } from "../theme"
 import { SEO } from "astro-seo"
@@ -47,7 +47,7 @@ const site = Astro.url.origin
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <main>

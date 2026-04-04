@@ -30,7 +30,7 @@ const mdPages = rawMdPages.sort((a, b) => compareMdDateDesc(a, b))
               <td>{pageInfo.data.date.toLocaleDateString("ja-JP")}</td>
               <>
                 <th>
-                  <a href={`/${pageInfo.slug}/`}>{pageInfo.data.title}</a>
+                  <a href={`/${pageInfo.id}/`}>{pageInfo.data.title}</a>
                 </th>
                 <td>
                   <TagBadges tags={pageInfo.data.tags} />
