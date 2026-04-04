@@ -1,13 +1,6 @@
 ---
 import { ThemeToggle } from "@/components/ui/ThemeToggle"
-
-const SECTIONS = [
-  { id: "products", label: "Products" },
-  { id: "publications", label: "Publications" },
-  { id: "writing", label: "Writing" },
-  { id: "about", label: "About" },
-  { id: "links", label: "Links" },
-]
+import { SECTIONS } from "@/data/sections"
 ---
 
 <nav
@@ -65,20 +58,4 @@ const SECTIONS = [
     if (el) observer.observe(el)
   })
 
-  // Scroll animations for .fade-in and .slide-in elements
-  const animObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible')
-          animObserver.unobserve(e.target)
-        }
-      })
-    },
-    { threshold: 0.12 }
-  )
-
-  document.querySelectorAll('.fade-in, .slide-in').forEach(el => {
-    animObserver.observe(el)
-  })
 </script>

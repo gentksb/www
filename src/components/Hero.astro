@@ -1,25 +1,12 @@
 ---
 import { SOCIALS } from "@/data/socials"
 import { LATEST_ACTIVITIES } from "@/data/about"
-import { ThemeToggle } from "@/components/ui/ThemeToggle"
-
-const SECTIONS = [
-  { id: "products", label: "Products" },
-  { id: "publications", label: "Publications" },
-  { id: "writing", label: "Writing" },
-  { id: "about", label: "About" },
-  { id: "links", label: "Links" },
-]
+import { SECTIONS } from "@/data/sections"
 ---
 
 <header class="hero-pad" style="min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--content-padding) 72px;position:relative;overflow:hidden">
   <!-- Grain texture -->
   <div style="position:absolute;inset:0;opacity:var(--hero-grain-opacity);background-image:url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\");pointer-events:none" />
-
-  <!-- Theme toggle (top right) -->
-  <div style="position:absolute;top:24px;right:var(--content-padding)">
-    <ThemeToggle client:load />
-  </div>
 
   <!-- Hero content -->
   <div style="max-width:820px;animation:heroFadeUp 0.9s ease forwards">

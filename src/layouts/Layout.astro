@@ -50,5 +50,19 @@ const ogImage = site + (og_image ?? "/images/logo.jpg")
   </head>
   <body>
     <slot />
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible')
+              observer.unobserve(e.target)
+            }
+          }
+        },
+        { threshold: 0.12 }
+      )
+      document.querySelectorAll('.fade-in, .slide-in').forEach(el => observer.observe(el))
+    </script>
   </body>
 </html>
