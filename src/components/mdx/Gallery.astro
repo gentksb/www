@@ -1,6 +1,8 @@
 ---
 // CSS scroll-snap ベースのギャラリーコンポーネント
-// SampleSlide.astro の代替 — html-rewriter-wasm 不要
+// 注意: MDX が <p><figure>...</figure></p> という無効 HTML を生成するため、
+// ブラウザが <p> と <figure> を別要素に分解する。
+// → JS でイメージを含む要素だけをスライドとして扱い、空 <p> を無視する。
 ---
 
 <div class="gallery" role="region" aria-label="サンプルページ" tabindex="0">
@@ -25,7 +27,14 @@
   }
   .gallery-track::-webkit-scrollbar { display: none; }
 
-  .gallery-track > :global(*) {
+  /* MDX が生成する空 <p> を非表示にして flex アイテムから除外 */
+  .gallery-track > :global(p) {
+    display: none;
+  }
+
+  /* figure や img が直接 track の子になった場合もスライドとして機能する */
+  .gallery-track > :global(figure),
+  .gallery-track > :global(.gallery-slide) {
     flex: 0 0 100%;
     scroll-snap-align: start;
     margin: 0;
@@ -33,13 +42,26 @@
     justify-content: center;
     align-items: center;
     background: var(--surface);
+    min-height: 200px;
   }
 
-  .gallery-track > :global(*) :global(img) {
+  .gallery-track > :global(figure) :global(img),
+  .gallery-track > :global(.gallery-slide) :global(img) {
     max-height: 70vh;
     width: auto;
     max-width: 100%;
     object-fit: contain;
+    display: block;
+  }
+
+  /* Astro Picture コンポーネントが生成する <picture> も対応 */
+  .gallery-track > :global(figure) :global(picture),
+  .gallery-track > :global(.gallery-slide) :global(picture) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 70vh;
   }
 
   .gallery-indicator {
@@ -54,6 +76,7 @@
     border-radius: 50%;
     background: var(--text-subtle);
     transition: background 0.2s;
+    cursor: pointer;
   }
   .gallery-indicator :global(.dot.active) {
     background: var(--text-primary);
@@ -69,12 +92,27 @@
 
 <script>
   document.querySelectorAll('.gallery').forEach(gallery => {
-    const track = gallery.querySelector('.gallery-track') as HTMLElement
-    const indicator = gallery.querySelector('.gallery-indicator') as HTMLElement
+    const track = gallery.querySelector('.gallery-track') as HTMLElement | null
+    const indicator = gallery.querySelector('.gallery-indicator') as HTMLElement | null
     if (!track || !indicator) return
-    const items = Array.from(track.children)
+
+    // MDX が生成する空 <p> を除外し、img/picture を含む要素だけをスライドとして使う
+    const items = Array.from(track.children).filter(el =>
+      el.querySelector('img, picture') !== null
+    )
+
+    if (items.length === 0) return
+
+    // スライドに CSS クラスを付与（figure や直接の img にも適用される）
+    items.forEach(el => {
+      if (!el.classList.contains('gallery-slide')) {
+        el.classList.add('gallery-slide')
+      }
+    })
+
     if (items.length <= 1) return
 
+    // インジケータードットを生成
     items.forEach((_, i) => {
       const dot = document.createElement('span')
       dot.className = i === 0 ? 'dot active' : 'dot'
@@ -82,17 +120,28 @@
     })
     const dots = Array.from(indicator.querySelectorAll('.dot'))
 
+    // スクロール位置に応じてアクティブドットを更新
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const idx = items.indexOf(entry.target as Element)
-            dots.forEach((d, i) => d.classList.toggle('active', i === idx))
+            if (idx !== -1) {
+              dots.forEach((d, i) => d.classList.toggle('active', i === idx))
+            }
           }
         })
       },
       { root: track, threshold: 0.5 }
     )
+
     items.forEach(item => observer.observe(item))
+
+    // ドットクリックでスライド移動
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        items[i]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+      })
+    })
   })
 </script>
