@@ -1,0 +1,98 @@
+---
+// CSS scroll-snap ベースのギャラリーコンポーネント
+// SampleSlide.astro の代替 — html-rewriter-wasm 不要
+---
+
+<div class="gallery" role="region" aria-label="サンプルページ" tabindex="0">
+  <div class="gallery-track">
+    <slot />
+  </div>
+  <div class="gallery-indicator" aria-hidden="true"></div>
+</div>
+
+<style>
+  .gallery {
+    position: relative;
+    margin: 2rem calc(-1 * var(--content-padding, 0px));
+  }
+
+  .gallery-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gallery-track::-webkit-scrollbar { display: none; }
+
+  .gallery-track > :global(*) {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--surface);
+  }
+
+  .gallery-track > :global(*) :global(img) {
+    max-height: 70vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .gallery-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 0;
+  }
+  .gallery-indicator :global(.dot) {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-subtle);
+    transition: background 0.2s;
+  }
+  .gallery-indicator :global(.dot.active) {
+    background: var(--text-primary);
+  }
+
+  @media (max-width: 640px) {
+    .gallery {
+      margin-left: calc(-1 * var(--content-padding, 20px));
+      margin-right: calc(-1 * var(--content-padding, 20px));
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.gallery').forEach(gallery => {
+    const track = gallery.querySelector('.gallery-track') as HTMLElement
+    const indicator = gallery.querySelector('.gallery-indicator') as HTMLElement
+    if (!track || !indicator) return
+    const items = Array.from(track.children)
+    if (items.length <= 1) return
+
+    items.forEach((_, i) => {
+      const dot = document.createElement('span')
+      dot.className = i === 0 ? 'dot active' : 'dot'
+      indicator.appendChild(dot)
+    })
+    const dots = Array.from(indicator.querySelectorAll('.dot'))
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const idx = items.indexOf(entry.target as Element)
+            dots.forEach((d, i) => d.classList.toggle('active', i === idx))
+          }
+        })
+      },
+      { root: track, threshold: 0.5 }
+    )
+    items.forEach(item => observer.observe(item))
+  })
+</script>

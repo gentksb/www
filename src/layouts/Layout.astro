@@ -1,8 +1,6 @@
 ---
-import { ClientRouter } from "astro:transitions"
-import Header from "../components/Header.astro"
-import { daisyTheme } from "../theme"
-import { SEO } from "astro-seo"
+import "../styles/global.css"
+
 export interface Props {
   title: string
   description?: string
@@ -12,52 +10,45 @@ export interface Props {
 const { title, description, og_image } = Astro.props
 const isTopPage = Astro.url.pathname === "/"
 const site = Astro.url.origin
+const defaultDesc = "ゲン(@gen_sobunya, gentksb, gensobunya)のポートフォリオサイト兼、同人サークル「幻想サイクル」の公式WEBサイト"
+const metaDesc = description ?? defaultDesc
+const ogImage = site + (og_image ?? "/images/logo.jpg")
 ---
 
 <!doctype html>
-<html lang="ja" data-theme={daisyTheme}>
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <SEO
-      title="Gen's Portfolio(幻想サイクルサークル公式WEB)"
-      description={description ??
-        "ゲン(@gen_sobunya, gentksb, gensobunya)のポートフォリオサイト兼、同人サークル「幻想サイクル」の公式WEBサイト"}
-      openGraph={{
-        basic: {
-          title: title,
-          type: isTopPage ? "website" : "article",
-          image: site + (og_image ?? "/images/logo.jpg")
-        },
-        image: {
-          alt: "gen_sobunya icon"
-        }
-      }}
-      twitter={{
-        card: isTopPage ? "summary" : "summary_large_image",
-        site: "@gen_sobunya",
-        title: title,
-        image: site + (og_image ?? "/images/logo.jpg"),
-        imageAlt: "article cover image",
-        description:
-          description ??
-          "ゲン(@gen_sobunya, gentksb, gensobunya)のポートフォリオサイト兼、同人サークル「幻想サイクル」の公式WEBサイト"
-      }}
-    />
+    <meta name="description" content={metaDesc} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={isTopPage ? "website" : "article"} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={metaDesc} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="gen_sobunya icon" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content={isTopPage ? "summary" : "summary_large_image"} />
+    <meta name="twitter:site" content="@gen_sobunya" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={metaDesc} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="article cover image" />
+
     <title>{title}</title>
-    <ClientRouter />
+
+    <!-- Theme initialization (prevents flash) -->
+    <script is:inline>
+      const theme = localStorage.getItem("theme") ??
+        (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+      document.documentElement.setAttribute("data-theme", theme)
+    </script>
   </head>
   <body>
-    <main>
-      <div class="h-full min-h-screen w-full bg-base-300">
-        <div class="max-lg container mx-auto">
-          <Header title="Gen's Portfolio" />
-          <div class="divider my-2"></div>
-          <slot />
-        </div>
-      </div>
-    </main>
+    <slot />
   </body>
 </html>
