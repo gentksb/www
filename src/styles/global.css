@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 /* ── CSS Custom Properties (Dark theme: default) ── */
 :root {
   --font-display: 'Noto Sans JP', sans-serif;
@@ -119,32 +117,18 @@ a {
 }
 
 /* ── Prose overrides (Tailwind Typography) ── */
-[data-theme="dark"] .prose {
-  --tw-prose-body: #B0B0B0;
-  --tw-prose-headings: #E8E8E8;
-  --tw-prose-links: #4ECDC4;
-  --tw-prose-bold: #E8E8E8;
-  --tw-prose-counters: #8A8A8A;
-  --tw-prose-bullets: #6B6B6B;
-  --tw-prose-hr: #2A2A2A;
-  --tw-prose-quotes: #8A8A8A;
-  --tw-prose-quote-borders: #2A2A2A;
-  --tw-prose-code: #E8E8E8;
-  --tw-prose-pre-bg: #141414;
-}
-
-[data-theme="light"] .prose {
-  --tw-prose-body: #3D3D3D;
-  --tw-prose-headings: #1A1A1A;
-  --tw-prose-links: #1E7A72;
-  --tw-prose-bold: #1A1A1A;
-  --tw-prose-counters: #6E6E6E;
-  --tw-prose-bullets: #8F8F8F;
-  --tw-prose-hr: #E0DED8;
-  --tw-prose-quotes: #6E6E6E;
-  --tw-prose-quote-borders: #E0DED8;
-  --tw-prose-code: #1A1A1A;
-  --tw-prose-pre-bg: #F5F4F0;
+.prose {
+  --tw-prose-body: var(--text-body);
+  --tw-prose-headings: var(--text-primary);
+  --tw-prose-links: var(--accent-teal);
+  --tw-prose-bold: var(--text-primary);
+  --tw-prose-counters: var(--text-muted);
+  --tw-prose-bullets: var(--text-subtle);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--text-muted);
+  --tw-prose-quote-borders: var(--border);
+  --tw-prose-code: var(--text-primary);
+  --tw-prose-pre-bg: var(--surface);
 }
 
 /* ── Mobile ── */

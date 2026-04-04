@@ -1,7 +1,6 @@
 export type Social = {
   name: string
   url: string
-  icon: string  // SVG path data
 }
 
 export const SOCIALS = [
