@@ -72,6 +72,7 @@ highlight: true              # 任意: true で AWARD バッジを表示
 | `available` | `purchase` の内容に応じて "Kindle" / "委託中" などを表示 |
 | `soldout` | "頒布終了" と表示。購入ボタンは無効化 |
 | `upcoming` | "準備中" と表示 |
+| `digital-only` | "電子版のみ" と表示。購入ボタンは有効のまま（物理版頒布終了・電子版は販売継続） |
 | 未設定 | ラベルなし |
 
 #### `tags` の慣例

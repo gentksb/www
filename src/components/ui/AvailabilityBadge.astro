@@ -12,6 +12,7 @@ function getLabel(): string | null {
   if (!availability) return null
   if (availability === "soldout") return "頒布終了"
   if (availability === "upcoming") return "準備中"
+  if (availability === "digital-only") return "電子版のみ"
   if (!purchase || purchase.length === 0) return null
 
   const labels = purchase.map(p => {

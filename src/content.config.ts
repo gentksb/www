@@ -22,7 +22,7 @@ const portfolioCollection = defineCollection({
       purchase: z.array(purchaseLink).optional(),
       price: z.number().optional(),
       pages: z.number().optional(),
-      availability: z.enum(["available", "soldout", "upcoming"]).optional(),
+      availability: z.enum(["available", "soldout", "upcoming", "digital-only"]).optional(),
     }),
 })
 

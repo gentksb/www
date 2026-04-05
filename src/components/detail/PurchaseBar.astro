@@ -9,6 +9,7 @@ const { purchase, availability } = Astro.props
 
 const isSoldOut = availability === "soldout"
 const isUpcoming = availability === "upcoming"
+const isDigitalOnly = availability === "digital-only"
 ---
 
 {purchase && purchase.length > 0 && (
@@ -29,6 +30,9 @@ const isUpcoming = availability === "upcoming"
     ))}
     {isSoldOut && (
       <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-subtle);align-self:center;padding:12px 0">頒布終了</span>
+    )}
+    {isDigitalOnly && (
+      <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-subtle);align-self:center;padding:12px 0">※ 電子版のみ販売（物理版頒布終了）</span>
     )}
   </div>
 )}
