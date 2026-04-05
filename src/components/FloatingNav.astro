@@ -5,14 +5,15 @@ import { SECTIONS } from "@/data/sections"
 
 <nav
   id="floating-nav"
-  style="position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:2px;align-items:center;background:var(--nav-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);padding:4px;opacity:0;pointer-events:none;transition:opacity 0.3s ease"
+  style="position:fixed;top:16px;z-index:50;display:flex;flex-wrap:wrap;gap:2px;align-items:center;justify-content:center;background:var(--nav-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);padding:4px;opacity:0;pointer-events:none;transition:opacity 0.3s ease"
+  class="floating-nav-responsive"
 >
   {SECTIONS.map(s => (
     <a
       href={`#${s.id}`}
       data-section={s.id}
       class="nav-item"
-      style="font-family:var(--font-mono);font-size:12px;font-weight:500;padding:8px 14px;border:none;cursor:pointer;background:transparent;color:var(--text-muted);transition:all 0.2s;letter-spacing:0.04em;text-decoration:none"
+      style="font-family:var(--font-mono);font-size:12px;font-weight:500;padding:6px 10px;border:none;cursor:pointer;background:transparent;color:var(--text-muted);transition:all 0.2s;letter-spacing:0.04em;text-decoration:none"
     >
       {s.label}
     </a>
@@ -20,6 +21,20 @@ import { SECTIONS } from "@/data/sections"
   <div style="width:1px;height:20px;background:var(--border);margin:0 4px" />
   <ThemeToggle client:load />
 </nav>
+
+<style>
+  .floating-nav-responsive {
+    left: 16px;
+    right: 16px;
+  }
+  @media (min-width: 640px) {
+    .floating-nav-responsive {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+    }
+  }
+</style>
 
 <script>
   const nav = document.getElementById('floating-nav')
