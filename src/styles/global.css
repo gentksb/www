@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
 /* ── CSS Custom Properties (Dark theme: default) ── */
 :root {
   --font-display: 'Noto Sans JP', sans-serif;
