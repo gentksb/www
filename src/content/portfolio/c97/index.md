@@ -5,7 +5,7 @@ draft: false
 tags: ["comicmarket", "C97", "Doujin", "New"]
 cover: "./c97cover.jpg"
 category: "doujin"
-availability: "soldout"
+availability: "available"
 ---
 
 ## スペース
