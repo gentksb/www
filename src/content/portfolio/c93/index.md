@@ -8,7 +8,7 @@ category: "doujin"
 purchase:
   - label: "冬王滝現場レポート - Kindle"
     url: "https://amzn.to/3OmYjyT"
-availability: "available"
+availability: "digital-only"
 ---
 
 ## 大阪北部飯ポタ本＋

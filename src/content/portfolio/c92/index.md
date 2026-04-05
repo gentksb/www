@@ -8,7 +8,7 @@ category: "doujin"
 purchase:
   - label: "Kindle"
     url: "https://amzn.to/4mcB1Z6"
-availability: "available"
+availability: "digital-only"
 ---
 
 ## 銀輪練之概略

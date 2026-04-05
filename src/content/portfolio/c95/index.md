@@ -5,7 +5,10 @@ draft: false
 tags: ["comicmarket", "C95", "Doujin"]
 cover: "./deirin_senden.jpg"
 category: "doujin"
-availability: "soldout"
+availability: "digital-only"
+purchase:
+  - label: "Kindle"
+    url: "https://amzn.to/3apCvtP"
 ---
 
 ## スペース

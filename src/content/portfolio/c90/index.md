@@ -5,7 +5,10 @@ draft: false
 tags: ["comicmarket", "C90", "Doujin"]
 cover: "./c90_sample01.png"
 category: "doujin"
-availability: "soldout"
+availability: "digital-only"
+purchase:
+  - label: "Kindle"
+    url: "https://amzn.to/2NJXuNU"
 ---
 
 ## ホビーレースのすゝめ

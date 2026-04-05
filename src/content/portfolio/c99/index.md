@@ -2,10 +2,13 @@
 title: "C99: Cyclocross Deep Dive"
 date: 2021-12-01
 draft: false
-tags: ["comicmarket", "C99", "Doujin", "New"]
+tags: ["comicmarket", "C99", "Doujin"]
 cover: "./c99cover.png"
 category: "doujin"
-availability: "soldout"
+availability: "digital-only"
+purchase:
+  - label: "Kindle"
+    url: "https://amzn.to/3I9zj6l"
 ---
 
 ## スペース
