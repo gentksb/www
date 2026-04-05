@@ -1,0 +1,167 @@
+---
+// CSS scroll-snap ベースのギャラリーコンポーネント
+// Custom Element で実装し、DOM 接続時に自己初期化する。
+---
+
+<gallery-viewer role="region" aria-label="サンプルページ" tabindex="0">
+  <div class="gallery-track">
+    <slot />
+  </div>
+  <div class="gallery-indicator" aria-hidden="true"></div>
+</gallery-viewer>
+
+<style>
+  gallery-viewer {
+    display: block;
+    position: relative;
+    margin: 2rem calc(-1 * var(--content-padding, 0px));
+  }
+
+  .gallery-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gallery-track::-webkit-scrollbar { display: none; }
+
+  /* MDX + Mdxpicture が生成する空 <p> を非表示 */
+  .gallery-track > :global(p) {
+    display: none;
+  }
+
+  .gallery-track > :global(.gallery-slide) {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--surface);
+    min-height: 200px;
+  }
+
+  .gallery-track > :global(.gallery-slide) :global(img) {
+    max-height: 70vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .gallery-track > :global(.gallery-slide) :global(picture) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* ── インジケーター ── */
+  .gallery-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gallery-indicator :global(.dot-inner) {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-subtle);
+    transition: background 0.25s, transform 0.25s;
+    pointer-events: none;
+  }
+
+  .gallery-indicator :global(.dot-btn) {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .gallery-indicator :global(.dot-btn.active) :global(.dot-inner) {
+    background: var(--text-primary);
+    transform: scale(1.35);
+  }
+
+  .gallery-indicator :global(.dot-btn:hover) :global(.dot-inner) {
+    background: var(--text-body);
+  }
+
+  @media (max-width: 640px) {
+    gallery-viewer {
+      margin-left: calc(-1 * var(--content-padding, 20px));
+      margin-right: calc(-1 * var(--content-padding, 20px));
+    }
+  }
+</style>
+
+<script>
+  class GalleryViewer extends HTMLElement {
+    connectedCallback() {
+      // 子要素のパースを確実に待つ
+      requestAnimationFrame(() => this.init())
+    }
+
+    private init() {
+      const track = this.querySelector('.gallery-track') as HTMLElement | null
+      const indicator = this.querySelector('.gallery-indicator') as HTMLElement | null
+      if (!track || !indicator) return
+
+      // 空 <p> を除外し、画像を含む要素だけをスライドとして扱う
+      const items = Array.from(track.children).filter(el =>
+        el.querySelector('img, picture') !== null
+      )
+      if (items.length === 0) return
+
+      items.forEach(el => el.classList.add('gallery-slide'))
+
+      if (items.length <= 1) return
+
+      // ── インジケータードット ──
+      items.forEach((_, i) => {
+        const btn = document.createElement('button')
+        btn.type = 'button'
+        btn.className = i === 0 ? 'dot-btn active' : 'dot-btn'
+        btn.setAttribute('aria-label', `スライド ${i + 1}`)
+
+        const inner = document.createElement('span')
+        inner.className = 'dot-inner'
+        btn.appendChild(inner)
+        indicator.appendChild(btn)
+      })
+
+      const btns = Array.from(indicator.querySelectorAll<HTMLButtonElement>('.dot-btn'))
+
+      // ── スクロール連動 ──
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue
+            const idx = items.indexOf(entry.target as Element)
+            if (idx === -1) continue
+            btns.forEach((b, i) => b.classList.toggle('active', i === idx))
+          }
+        },
+        { root: track, threshold: 0.5 }
+      )
+      items.forEach(item => observer.observe(item))
+
+      // ── ドットクリック ──
+      btns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          items[i]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+        })
+      })
+    }
+  }
+
+  customElements.define('gallery-viewer', GalleryViewer)
+</script>

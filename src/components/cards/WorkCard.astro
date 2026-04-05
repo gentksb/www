@@ -1,0 +1,57 @@
+---
+import { Picture } from "astro:assets"
+import type { CollectionEntry } from "astro:content"
+import AvailabilityBadge from "@/components/ui/AvailabilityBadge.astro"
+
+interface Props {
+  work: CollectionEntry<"portfolio">
+  index?: number
+}
+
+const { work, index = 0 } = Astro.props
+const isNew = work.data.tags?.includes("New") ?? false
+---
+
+<a
+  href={`/${work.id}/`}
+  class="work-card fade-in"
+  style={`display:block;text-decoration:none;color:inherit;transition-delay:${index * 0.06}s`}
+>
+  <div style="position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--surface);margin-bottom:12px;border:1px solid var(--border)">
+    {work.data.cover ? (
+      <Picture
+        src={work.data.cover}
+        alt={work.data.title}
+        widths={[200, 400]}
+        loading="lazy"
+        style="width:100%;height:100%;object-fit:cover"
+      />
+    ) : (
+      <div style="width:100%;height:100%;background:var(--surface-hover)" />
+    )}
+    <div style="position:absolute;inset:0;background:var(--card-overlay);opacity:0;transition:opacity 0.3s ease" class="card-overlay" />
+    {isNew && (
+      <div style="position:absolute;top:10px;right:10px;font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:0.12em;color:#fff;background:var(--accent);padding:3px 10px">NEW</div>
+    )}
+    <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to top,rgba(0,0,0,0.55),transparent);pointer-events:none" />
+    <div style="position:absolute;bottom:8px;left:10px;font-family:var(--font-mono);font-size:11px;color:#ffffffDD;letter-spacing:0.06em">{work.data.tags?.[0] ?? ""}</div>
+    <div style="position:absolute;bottom:8px;right:10px;font-family:var(--font-mono);font-size:11px;color:#ffffffAA">{work.data.date.getFullYear()}</div>
+    {work.data.availability && (
+      <div style="position:absolute;bottom:30px;right:10px">
+        <AvailabilityBadge availability={work.data.availability} purchase={work.data.purchase} />
+      </div>
+    )}
+  </div>
+  <h3 style="font-family:var(--font-display);font-size:14px;font-weight:600;line-height:1.5;color:var(--text-body);transition:color 0.2s;margin:0" class="work-card-title">
+    {work.data.title}
+  </h3>
+</a>
+
+<style>
+  .work-card:hover .card-overlay {
+    opacity: 1 !important;
+  }
+  .work-card:hover .work-card-title {
+    color: var(--text-primary);
+  }
+</style>

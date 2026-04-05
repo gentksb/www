@@ -1,9 +1,14 @@
 ---
-title: "C93：大阪北部飯ポタ本＋, 2017冬王滝　現場レポート"
+title: "C93：大阪北部飯ポタ本＋, 2017冬王滝現場レポート"
 date: 2017-12-12T20:42:29+09:00
 draft: false
-tags: ["comicmarket", "C93", "Doujin", "New"]
+tags: ["comicmarket", "C93", "Doujin"]
 cover: "./c93_sample01.jpg"
+category: "doujin"
+purchase:
+  - label: "冬王滝現場レポート - Kindle"
+    url: "https://amzn.to/3OmYjyT"
+availability: "digital-only"
 ---
 
 ## 大阪北部飯ポタ本＋

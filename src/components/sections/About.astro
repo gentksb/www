@@ -1,0 +1,118 @@
+---
+import SectionHeading from "@/components/ui/SectionHeading.astro"
+import { SKILLS, INTERESTS } from "@/data/about"
+---
+
+<section
+  id="about"
+  class="section-pad"
+  style="padding:100px var(--content-padding);max-width:960px;margin:0 auto"
+>
+  <SectionHeading label="ABOUT" />
+  <div
+    class="about-grid"
+    style="display:grid;grid-template-columns:1fr 1fr;gap:0 56px"
+  >
+    <div>
+      <div class="fade-in" style="margin-bottom:40px">
+        <h3
+          style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:14px"
+        >
+          WORK
+        </h3>
+        <div
+          style="font-family:var(--font-body);font-size:14px;line-height:1.9;color:var(--text-body)"
+        >
+          <p>
+            Solutions Architectとしてプリセールス領域を得意としています。Ex-AWS,
+            Work@Splunk Observability.
+          </p>
+        </div>
+      </div>
+      <div class="fade-in" style="margin-bottom:40px">
+        <h3
+          style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:14px"
+        >
+          SKILLS
+        </h3>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          {
+            SKILLS.map((s) => (
+              <span style="font-family:var(--font-mono);font-size:11px;padding:4px 10px;color:var(--text-muted);border:1px solid var(--border);display:inline-block">
+                {s}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="fade-in" style="margin-bottom:40px">
+        <h3
+          style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:14px"
+        >
+          CYCLING
+        </h3>
+        <div
+          style="font-family:var(--font-body);font-size:14px;line-height:1.9;color:var(--text-body)"
+        >
+          <p>
+            神奈川県南部を拠点に、シクロクロスレースとグラベルライドを中心に活動するサイクリスト。JCX/AJOCCシクロクロスシリーズにME2カテゴリーで参戦中。
+          </p>
+          <p style="margin-top:12px">
+            同人サークル「幻想サイクル」として、コミックマーケットで自転車技術同人誌を頒布。Kindle電子版・メロンブックス委託でも入手可能です。
+          </p>
+        </div>
+      </div>
+      <div class="fade-in" style="margin-bottom:40px">
+        <h3
+          style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:14px"
+        >
+          TOUHOU MUSIC
+        </h3>
+        <div
+          style="font-family:var(--font-body);font-size:14px;line-height:1.9;color:var(--text-body)"
+        >
+          <p>
+            東方Project二次創作の同人音楽シーンで、東方我楽多叢誌を中心にライブレポートやアルバムレビューを執筆。2019年には岸田教団&THE明星ロケッツのライブレポート企画で大賞を受賞しています。
+          </p>
+        </div>
+      </div>
+      <div class="fade-in" style="margin-bottom:40px">
+        <h3
+          style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:14px"
+        >
+          INTERESTS
+        </h3>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          {
+            INTERESTS.map((s) => (
+              <span style="font-family:var(--font-mono);font-size:11px;padding:4px 10px;color:var(--text-muted);border:1px solid var(--border);display:inline-block">
+                {s}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+      <div class="fade-in" style="margin-bottom:40px">
+        <h3
+          style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:14px"
+        >
+          CONTACT
+        </h3>
+        <div
+          style="font-family:var(--font-body);font-size:14px;line-height:1.9;color:var(--text-body)"
+        >
+          <p>
+            寄稿依頼・お仕事のご相談は <a
+              href="https://twitter.com/gen_sobunya"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color:var(--accent-teal)">X(@gen_sobunya)</a
+            > の DM へお気軽にどうぞ。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

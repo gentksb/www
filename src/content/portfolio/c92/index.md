@@ -2,8 +2,13 @@
 title: "C92：銀輪練之概略"
 date: 2017-08-01T21:49:59+09:00
 draft: false
-tags: ["comicmarket", "C92", "Doujin", "New"]
+tags: ["comicmarket", "C92", "Doujin"]
 cover: "./c92_sample01.jpg"
+category: "doujin"
+purchase:
+  - label: "Kindle"
+    url: "https://amzn.to/4mcB1Z6"
+availability: "digital-only"
 ---
 
 ## 銀輪練之概略

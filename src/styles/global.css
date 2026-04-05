@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ── CSS Custom Properties (Dark theme: default) ── */
+:root {
+  --font-display: 'Noto Sans JP', sans-serif;
+  --font-body: 'Noto Sans JP', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  /* Dark */
+  --bg: #0A0A0A;
+  --surface: #141414;
+  --surface-hover: #1E1E1E;
+  --text-primary: #E8E8E8;
+  --text-body: #B0B0B0;
+  --text-muted: #8A8A8A;
+  --text-subtle: #6B6B6B;
+  --border: #2A2A2A;
+  --border-hover: #3D3D3D;
+  --nav-bg: #1A1A1AE8;
+  --nav-active-bg: rgba(255, 255, 255, 0.09);
+  --accent: #FF6B4A;
+  --accent-teal: #4ECDC4;
+  --accent-border: #FF6B4A50;
+  --card-overlay: rgba(0, 0, 0, 0.12);
+  --selection: #FF6B4A30;
+  --hero-grain-opacity: 0.025;
+  --content-padding: 48px;
+}
+
+[data-theme="light"] {
+  --bg: #FAFAF7;
+  --surface: #FFFFFF;
+  --surface-hover: #F5F4F0;
+  --text-primary: #1A1A1A;
+  --text-body: #3D3D3D;
+  --text-muted: #6E6E6E;
+  --text-subtle: #8F8F8F;
+  --border: #E0DED8;
+  --border-hover: #C8C6BE;
+  --nav-bg: #FFFFFFE8;
+  --nav-active-bg: rgba(0, 0, 0, 0.06);
+  --accent: #B8301F;
+  --accent-teal: #1E7A72;
+  --accent-border: #B8301F40;
+  --card-overlay: rgba(0, 0, 0, 0.06);
+  --selection: #B8301F20;
+  --hero-grain-opacity: 0.015;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--text-primary);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  font-family: var(--font-body);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+a {
+  color: inherit;
+}
+
+/* ── Animations ── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drift {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.7; }
+}
+
+/* ── Fade-in via IntersectionObserver ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.slide-in.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Work card hover ── */
+.work-card img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+.work-card:hover img {
+  transform: scale(1.04);
+}
+
+/* ── Prose overrides (Tailwind Typography) ── */
+.prose {
+  --tw-prose-body: var(--text-body);
+  --tw-prose-headings: var(--text-primary);
+  --tw-prose-links: var(--accent-teal);
+  --tw-prose-bold: var(--text-primary);
+  --tw-prose-counters: var(--text-muted);
+  --tw-prose-bullets: var(--text-subtle);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--text-muted);
+  --tw-prose-quote-borders: var(--border);
+  --tw-prose-code: var(--text-primary);
+  --tw-prose-pre-bg: var(--surface);
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  :root {
+    --content-padding: 20px;
+  }
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-title {
+    font-size: 52px !important;
+  }
+}

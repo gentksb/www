@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+type Props = {
+  purchase?: CollectionEntry<"portfolio">["data"]["purchase"]
+  availability?: CollectionEntry<"portfolio">["data"]["availability"]
+}
+const { purchase, availability } = Astro.props
+
+const isSoldOut = availability === "soldout"
+const isUpcoming = availability === "upcoming"
+const isDigitalOnly = availability === "digital-only"
+---
+
+{purchase && purchase.length > 0 && (
+  <div class="purchase-bar" style="display:flex;gap:12px;flex-wrap:wrap;padding:24px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:32px 0">
+    {isUpcoming ? (
+      <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);padding:12px 24px;border:1px solid var(--border)">準備中</span>
+    ) : purchase.map(link => (
+      <a
+        href={isSoldOut ? undefined : link.url}
+        target={isSoldOut ? undefined : "_blank"}
+        rel={isSoldOut ? undefined : "noopener noreferrer"}
+        class:list={["purchase-link", { disabled: isSoldOut }]}
+        style={`font-family:var(--font-mono);font-size:13px;font-weight:600;padding:12px 24px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s ease;border:1px solid ${isSoldOut ? "var(--border)" : "var(--accent)"};color:${isSoldOut ? "var(--text-subtle)" : "var(--accent)"};background:${isSoldOut ? "transparent" : "var(--accent)10"};cursor:${isSoldOut ? "default" : "pointer"}`}
+      >
+        {link.label}
+        {!isSoldOut && <span style="font-size:14px">↗</span>}
+      </a>
+    ))}
+    {isSoldOut && (
+      <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-subtle);align-self:center;padding:12px 0">頒布終了</span>
+    )}
+    {isDigitalOnly && (
+      <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-subtle);align-self:center;padding:12px 0">※ 電子版のみ販売（物理版頒布終了）</span>
+    )}
+  </div>
+)}

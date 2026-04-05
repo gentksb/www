@@ -2,6 +2,7 @@
 title: "東方我楽多叢誌で東方アレンジのシングルCD記事を書きました"
 date: 2020-12-25
 draft: false
+category: "writing"
 tags: ["Achivements"]
 # cover: ""
 ---

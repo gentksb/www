@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content"
+import SectionHeading from "@/components/ui/SectionHeading.astro"
+import WorkCard from "@/components/cards/WorkCard.astro"
+
+const allWorks = await getCollection("portfolio", ({ data }) =>
+  !data.draft && data.category === "doujin"
+)
+const works = allWorks.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+---
+
+<section id="publications" class="section-pad" style="padding:100px var(--content-padding);max-width:960px;margin:0 auto">
+  <SectionHeading label="PUBLICATIONS" sub="コミックマーケット頒布の自転車技術同人誌" count={`${works.length} works`} />
+  <div class="works-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+    {works.map((w, i) => <WorkCard work={w} index={i} />)}
+  </div>
+</section>

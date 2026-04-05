@@ -2,8 +2,13 @@
 title: "C97:週末洗車部"
 date: 2019-12-13
 draft: false
-tags: ["comicmarket", "C97", "Doujin", "New"]
+tags: ["comicmarket", "C97", "Doujin"]
 cover: "./c97cover.jpg"
+category: "doujin"
+availability: "digital-only"
+purchase:
+  - label: "Kindle"
+    url: "https://amzn.to/34jEM5w"
 ---
 
 ## スペース

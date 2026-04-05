@@ -1,0 +1,61 @@
+---
+import { ThemeToggle } from "@/components/ui/ThemeToggle"
+import { SECTIONS } from "@/data/sections"
+---
+
+<nav
+  id="floating-nav"
+  style="position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:2px;align-items:center;background:var(--nav-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);padding:4px;opacity:0;pointer-events:none;transition:opacity 0.3s ease"
+>
+  {SECTIONS.map(s => (
+    <a
+      href={`#${s.id}`}
+      data-section={s.id}
+      class="nav-item"
+      style="font-family:var(--font-mono);font-size:12px;font-weight:500;padding:8px 14px;border:none;cursor:pointer;background:transparent;color:var(--text-muted);transition:all 0.2s;letter-spacing:0.04em;text-decoration:none"
+    >
+      {s.label}
+    </a>
+  ))}
+  <div style="width:1px;height:20px;background:var(--border);margin:0 4px" />
+  <ThemeToggle client:load />
+</nav>
+
+<script>
+  const nav = document.getElementById('floating-nav')
+  if (!nav) throw new Error('floating-nav not found')
+
+  // Show/hide based on scroll position
+  const onScroll = () => {
+    const show = window.scrollY > window.innerHeight * 0.6
+    nav.style.opacity = show ? '1' : '0'
+    nav.style.pointerEvents = show ? 'auto' : 'none'
+  }
+  window.addEventListener('scroll', onScroll, { passive: true })
+
+  // Highlight active section
+  const items = nav.querySelectorAll<HTMLElement>('[data-section]')
+  const sectionIds = Array.from(items).map(el => el.dataset.section!)
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          const id = e.target.id
+          items.forEach(item => {
+            const active = item.dataset.section === id
+            item.style.background = active ? 'var(--nav-active-bg)' : 'transparent'
+            item.style.color = active ? 'var(--text-primary)' : 'var(--text-muted)'
+          })
+        }
+      }
+    },
+    { rootMargin: '-40% 0px -55% 0px' }
+  )
+
+  sectionIds.forEach(id => {
+    const el = document.getElementById(id)
+    if (el) observer.observe(el)
+  })
+
+</script>

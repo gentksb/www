@@ -2,6 +2,7 @@
 title: "東方我楽多叢誌「ユレカ vol.2」ライブレポート企画でライターを担当しました"
 date: 2022-12-15
 draft: false
+category: "writing"
 tags: ["Achivements"]
 # cover: ""
 ---

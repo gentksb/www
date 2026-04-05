@@ -2,6 +2,7 @@
 title: "東方我楽多叢誌のFlowering Night 2020ライブレポートを担当しました"
 date: 2022-04-26
 draft: false
+category: "writing"
 tags: ["Achivements"]
 # cover: ""
 ---

@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss"
 import { getCollection } from "astro:content"
 
-export const get = async () => {
+export const GET = async () => {
   const entries = await getCollection("portfolio")
   return rss({
     title: "Gen's Portfolio(幻想サイクル公式WEBサイト)",
@@ -11,7 +11,7 @@ export const get = async () => {
     items: entries.map((entry) => ({
       title: entry.data.title,
       pubDate: entry.data.date,
-      link: `/${entry.slug}/`
+      link: `/${entry.id}/`
     }))
   })
 }
