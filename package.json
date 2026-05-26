@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@10.32.1",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "astro dev",
@@ -21,6 +22,12 @@
     "url": "https://github.com/gentksb/www/issues"
   },
   "homepage": "https://github.com/gentksb/www#readme",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
     "@astrojs/react": "^5.0.2",
@@ -33,6 +40,7 @@
     "astro-icon": "^1.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
