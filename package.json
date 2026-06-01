@@ -29,7 +29,7 @@
     ]
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.6",
+    "@astrojs/mdx": "^6.0.1",
     "@astrojs/react": "^5.0.6",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
@@ -38,14 +38,14 @@
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.4.2",
     "astro-icon": "^1.1.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.29",
-    "@types/react-dom": "^18.3.7",
+    "@types/react": "^19.2.16",
+    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.60.0",
     "@typescript-eslint/parser": "^8.60.0",
     "eslint": "^8.57.1",
