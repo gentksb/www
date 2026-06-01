@@ -6,7 +6,9 @@ import { SECTIONS } from "@/data/sections"
 
 <header class="hero-pad" style="min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--content-padding) 72px;position:relative;overflow:hidden">
   <!-- Grain texture -->
-  <div style="position:absolute;inset:0;opacity:var(--hero-grain-opacity);background-image:url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\");pointer-events:none" />
+  <div
+    style={`position:absolute;inset:0;opacity:var(--hero-grain-opacity);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none`}
+  />
 
   <!-- Hero content -->
   <div style="max-width:820px;animation:heroFadeUp 0.9s ease forwards">
