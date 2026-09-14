@@ -3,7 +3,7 @@ import { glob } from "astro/loaders"
 
 const purchaseLink = z.object({
   label: z.string(),
-  url: z.string().url(),
+  url: z.string().url()
 })
 
 const portfolioCollection = defineCollection({
@@ -15,15 +15,19 @@ const portfolioCollection = defineCollection({
       draft: z.boolean(),
       tags: z.array(z.string()),
       cover: image().optional(),
-      category: z.enum(["doujin", "writing", "achievement", "product"]).optional(),
+      category: z
+        .enum(["doujin", "writing", "achievement", "product"])
+        .optional(),
       outlet: z.string().optional(),
       externalUrl: z.string().optional(),
       highlight: z.boolean().optional(),
       purchase: z.array(purchaseLink).optional(),
       price: z.number().optional(),
       pages: z.number().optional(),
-      availability: z.enum(["available", "soldout", "upcoming", "digital-only"]).optional(),
-    }),
+      availability: z
+        .enum(["available", "soldout", "upcoming", "digital-only"])
+        .optional()
+    })
 })
 
 export const collections = { portfolio: portfolioCollection }

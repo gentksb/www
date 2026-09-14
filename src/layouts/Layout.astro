@@ -10,7 +10,8 @@ export interface Props {
 const { title, description, og_image } = Astro.props
 const isTopPage = Astro.url.pathname === "/"
 const site = Astro.url.origin
-const defaultDesc = "ゲン(@gen_sobunya, gentksb, gensobunya)のポートフォリオサイト兼、同人サークル「幻想サイクル」の公式WEBサイト"
+const defaultDesc =
+  "ゲン(@gen_sobunya, gentksb, gensobunya)のポートフォリオサイト兼、同人サークル「幻想サイクル」の公式WEBサイト"
 const metaDesc = description ?? defaultDesc
 const ogImage = site + (og_image ?? "/images/logo.jpg")
 ---
@@ -23,7 +24,10 @@ const ogImage = site + (og_image ?? "/images/logo.jpg")
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;900&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
     <meta name="description" content={metaDesc} />
     <meta name="generator" content={Astro.generator} />
 
@@ -35,7 +39,10 @@ const ogImage = site + (og_image ?? "/images/logo.jpg")
     <meta property="og:image:alt" content="gen_sobunya icon" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content={isTopPage ? "summary" : "summary_large_image"} />
+    <meta
+      name="twitter:card"
+      content={isTopPage ? "summary" : "summary_large_image"}
+    />
     <meta name="twitter:site" content="@gen_sobunya" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={metaDesc} />
@@ -46,8 +53,11 @@ const ogImage = site + (og_image ?? "/images/logo.jpg")
 
     <!-- Theme initialization (prevents flash) -->
     <script is:inline>
-      const theme = localStorage.getItem("theme") ??
-        (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+      const theme =
+        localStorage.getItem("theme") ??
+        (window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark")
       document.documentElement.setAttribute("data-theme", theme)
     </script>
   </head>
@@ -58,14 +68,16 @@ const ogImage = site + (og_image ?? "/images/logo.jpg")
         (entries) => {
           for (const e of entries) {
             if (e.isIntersecting) {
-              e.target.classList.add('visible')
+              e.target.classList.add("visible")
               observer.unobserve(e.target)
             }
           }
         },
         { threshold: 0.12 }
       )
-      document.querySelectorAll('.fade-in, .slide-in').forEach(el => observer.observe(el))
+      document
+        .querySelectorAll(".fade-in, .slide-in")
+        .forEach((el) => observer.observe(el))
     </script>
   </body>
 </html>

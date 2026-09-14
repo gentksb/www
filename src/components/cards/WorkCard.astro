@@ -29,20 +29,35 @@ const isNew = work.data.tags?.includes("New") ?? false
     ) : (
       <div style="width:100%;height:100%;background:var(--surface-hover)" />
     )}
-    <div style="position:absolute;inset:0;background:var(--card-overlay);opacity:0;transition:opacity 0.3s ease" class="card-overlay" />
+    <div
+      style="position:absolute;inset:0;background:var(--card-overlay);opacity:0;transition:opacity 0.3s ease"
+      class="card-overlay"
+    />
     {isNew && (
-      <div style="position:absolute;top:10px;right:10px;font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:0.12em;color:#fff;background:var(--accent);padding:3px 10px">NEW</div>
+      <div style="position:absolute;top:10px;right:10px;font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:0.12em;color:#fff;background:var(--accent);padding:3px 10px">
+        NEW
+      </div>
     )}
     <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to top,rgba(0,0,0,0.55),transparent);pointer-events:none" />
-    <div style="position:absolute;bottom:8px;left:10px;font-family:var(--font-mono);font-size:11px;color:#ffffffDD;letter-spacing:0.06em">{work.data.tags?.[0] ?? ""}</div>
-    <div style="position:absolute;bottom:8px;right:10px;font-family:var(--font-mono);font-size:11px;color:#ffffffAA">{work.data.date.getFullYear()}</div>
+    <div style="position:absolute;bottom:8px;left:10px;font-family:var(--font-mono);font-size:11px;color:#ffffffDD;letter-spacing:0.06em">
+      {work.data.tags?.[0] ?? ""}
+    </div>
+    <div style="position:absolute;bottom:8px;right:10px;font-family:var(--font-mono);font-size:11px;color:#ffffffAA">
+      {work.data.date.getFullYear()}
+    </div>
     {work.data.availability && (
       <div style="position:absolute;bottom:30px;right:10px">
-        <AvailabilityBadge availability={work.data.availability} purchase={work.data.purchase} />
+        <AvailabilityBadge
+          availability={work.data.availability}
+          purchase={work.data.purchase}
+        />
       </div>
     )}
   </div>
-  <h3 style="font-family:var(--font-display);font-size:14px;font-weight:600;line-height:1.5;color:var(--text-body);transition:color 0.2s;margin:0" class="work-card-title">
+  <h3
+    style="font-family:var(--font-display);font-size:14px;font-weight:600;line-height:1.5;color:var(--text-body);transition:color 0.2s;margin:0"
+    class="work-card-title"
+  >
     {work.data.title}
   </h3>
 </a>
