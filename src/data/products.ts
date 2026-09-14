@@ -21,13 +21,13 @@ export const PRODUCTS: Product[] = [
     url: "https://chromewebstore.google.com/detail/ajocctoys/amaehgcenbhjoacemfgiljkfmjlglabi",
     cta: "Chrome Web Store",
     stack: ["Chrome Extension", "JavaScript"],
-    status: "Active",
-  },
+    status: "Active"
+  }
 ]
 
 export const RETIRED_PRODUCTS: RetiredProduct[] = [
   {
     name: "AJOCCランクカードジェネレーター",
-    period: "2019–2024",
-  },
+    period: "2019–2024"
+  }
 ]

@@ -19,26 +19,38 @@ const { Content } = await render(entry)
 const data: CollectionEntry<"portfolio">["data"] = entry.data
 
 // JSON-LD for doujinshi
-const jsonLd = data.category === "doujin" ? JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Book",
-  "name": data.title,
-  "author": { "@type": "Person", "name": "Gen" },
-  "datePublished": data.date.toISOString().split("T")[0],
-  ...(data.cover ? { "image": data.cover.src } : {}),
-  ...(data.price ? { "offers": { "@type": "Offer", "price": data.price, "priceCurrency": "JPY" } } : {}),
-}) : null
+const jsonLd =
+  data.category === "doujin"
+    ? JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Book",
+        name: data.title,
+        author: { "@type": "Person", name: "Gen" },
+        datePublished: data.date.toISOString().split("T")[0],
+        ...(data.cover ? { image: data.cover.src } : {}),
+        ...(data.price
+          ? {
+              offers: {
+                "@type": "Offer",
+                price: data.price,
+                priceCurrency: "JPY"
+              }
+            }
+          : {})
+      })
+    : null
 ---
 
-<Layout
-  title={`${data.title} - Gen's Portfolio`}
-  og_image={data.cover?.src}
->
-  {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
+<Layout title={`${data.title} - Gen's Portfolio`} og_image={data.cover?.src}>
+  {jsonLd && <script type="application/ld+json" set:html={jsonLd}></script>}
 
   <div style="max-width:768px;margin:0 auto;padding:80px var(--content-padding) 120px">
     <!-- Back link -->
-    <a href="/" style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:48px;transition:color 0.2s" class="back-link">
+    <a
+      href="/"
+      style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:48px;transition:color 0.2s"
+      class="back-link"
+    >
       ← トップへ戻る
     </a>
 
@@ -60,10 +72,15 @@ const jsonLd = data.category === "doujin" ? JSON.stringify({
     </h1>
 
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px">
-      {data.tags?.map(tag => (
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;color:var(--text-muted);padding:3px 10px;border:1px solid var(--border)">{tag}</span>
+      {data.tags?.map((tag) => (
+        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;color:var(--text-muted);padding:3px 10px;border:1px solid var(--border)">
+          {tag}
+        </span>
       ))}
-      <time datetime={data.date.toISOString()} style="font-family:var(--font-mono);font-size:12px;color:var(--text-subtle)">
+      <time
+        datetime={data.date.toISOString()}
+        style="font-family:var(--font-mono);font-size:12px;color:var(--text-subtle)"
+      >
         {data.date.toLocaleDateString("ja-JP")}
       </time>
     </div>
@@ -89,17 +106,33 @@ const jsonLd = data.category === "doujin" ? JSON.stringify({
 
     <!-- Back link (bottom) -->
     <div style="margin-top:64px">
-      <a href="/" style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color 0.2s" class="back-link">
+      <a
+        href="/"
+        style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color 0.2s"
+        class="back-link"
+      >
         ← トップへ戻る
       </a>
     </div>
   </div>
 
   <!-- External embed scripts -->
-  <script async src="//cdn.iframe.ly/embed.js" charset="utf-8" is:inline></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" is:inline></script>
+  <script
+    async
+    src="//cdn.iframe.ly/embed.js"
+    charset="utf-8"
+    is:inline
+  ></script>
+  <script
+    async
+    src="https://platform.twitter.com/widgets.js"
+    charset="utf-8"
+    is:inline
+  ></script>
 </Layout>
 
 <style>
-  .back-link:hover { color: var(--text-primary); }
+  .back-link:hover {
+    color: var(--text-primary);
+  }
 </style>

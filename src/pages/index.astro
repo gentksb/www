@@ -8,7 +8,6 @@ import Writing from "@/components/sections/Writing.astro"
 import About from "@/components/sections/About.astro"
 import Links from "@/components/sections/Links.astro"
 import { SOCIALS } from "@/data/socials"
-
 ---
 
 <Layout title="Gen's Portfolio">
@@ -19,13 +18,23 @@ import { SOCIALS } from "@/data/socials"
   <Writing />
   <About />
   <Links />
-  <footer class="section-pad" style="border-top:1px solid var(--border);padding:28px var(--content-padding);display:flex;justify-content:space-between;align-items:center;max-width:960px;margin:0 auto;flex-wrap:wrap;gap:12px">
-    <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);letter-spacing:0.06em">© 2025 Gen / 幻想サイクル</span>
+  <footer
+    class="section-pad"
+    style="border-top:1px solid var(--border);padding:28px var(--content-padding);display:flex;justify-content:space-between;align-items:center;max-width:960px;margin:0 auto;flex-wrap:wrap;gap:12px"
+  >
+    <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-subtle);letter-spacing:0.06em">
+      © 2025 Gen / 幻想サイクル
+    </span>
     <div style="display:flex;gap:16px">
-      {SOCIALS.map(s => (
-        <a href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.name}
+      {SOCIALS.map((s) => (
+        <a
+          href={s.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={s.name}
           style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-decoration:none;transition:color 0.2s"
-          class="footer-social">
+          class="footer-social"
+        >
           {s.name}
         </a>
       ))}
@@ -34,5 +43,7 @@ import { SOCIALS } from "@/data/socials"
 </Layout>
 
 <style>
-  .footer-social:hover { color: var(--text-primary); }
+  .footer-social:hover {
+    color: var(--text-primary);
+  }
 </style>

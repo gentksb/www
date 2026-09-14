@@ -8,7 +8,7 @@ import { SECTIONS } from "@/data/sections"
   style="position:fixed;top:16px;z-index:50;display:flex;flex-wrap:wrap;gap:2px;align-items:center;justify-content:center;background:var(--nav-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);padding:4px;opacity:0;pointer-events:none;transition:opacity 0.3s ease"
   class="floating-nav-responsive"
 >
-  {SECTIONS.map(s => (
+  {SECTIONS.map((s) => (
     <a
       href={`#${s.id}`}
       data-section={s.id}
@@ -37,40 +37,43 @@ import { SECTIONS } from "@/data/sections"
 </style>
 
 <script>
-  const nav = document.getElementById('floating-nav')
-  if (!nav) throw new Error('floating-nav not found')
+  const nav = document.getElementById("floating-nav")
+  if (!nav) throw new Error("floating-nav not found")
 
   // Show/hide based on scroll position
   const onScroll = () => {
     const show = window.scrollY > window.innerHeight * 0.6
-    nav.style.opacity = show ? '1' : '0'
-    nav.style.pointerEvents = show ? 'auto' : 'none'
+    nav.style.opacity = show ? "1" : "0"
+    nav.style.pointerEvents = show ? "auto" : "none"
   }
-  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener("scroll", onScroll, { passive: true })
 
   // Highlight active section
-  const items = nav.querySelectorAll<HTMLElement>('[data-section]')
-  const sectionIds = Array.from(items).map(el => el.dataset.section!)
+  const items = nav.querySelectorAll<HTMLElement>("[data-section]")
+  const sectionIds = Array.from(items).map((el) => el.dataset.section!)
 
   const observer = new IntersectionObserver(
     (entries) => {
       for (const e of entries) {
         if (e.isIntersecting) {
           const id = e.target.id
-          items.forEach(item => {
+          items.forEach((item) => {
             const active = item.dataset.section === id
-            item.style.background = active ? 'var(--nav-active-bg)' : 'transparent'
-            item.style.color = active ? 'var(--text-primary)' : 'var(--text-muted)'
+            item.style.background = active
+              ? "var(--nav-active-bg)"
+              : "transparent"
+            item.style.color = active
+              ? "var(--text-primary)"
+              : "var(--text-muted)"
           })
         }
       }
     },
-    { rootMargin: '-40% 0px -55% 0px' }
+    { rootMargin: "-40% 0px -55% 0px" }
   )
 
-  sectionIds.forEach(id => {
+  sectionIds.forEach((id) => {
     const el = document.getElementById(id)
     if (el) observer.observe(el)
   })
-
 </script>

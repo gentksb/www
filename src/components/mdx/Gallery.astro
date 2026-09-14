@@ -24,7 +24,9 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
-  .gallery-track::-webkit-scrollbar { display: none; }
+  .gallery-track::-webkit-scrollbar {
+    display: none;
+  }
 
   /* MDX + Mdxpicture が生成する空 <p> を非表示 */
   .gallery-track > :global(p) {
@@ -69,7 +71,9 @@
     height: 6px;
     border-radius: 50%;
     background: var(--text-subtle);
-    transition: background 0.25s, transform 0.25s;
+    transition:
+      background 0.25s,
+      transform 0.25s;
     pointer-events: none;
   }
 
@@ -111,34 +115,38 @@
     }
 
     private init() {
-      const track = this.querySelector('.gallery-track') as HTMLElement | null
-      const indicator = this.querySelector('.gallery-indicator') as HTMLElement | null
+      const track = this.querySelector(".gallery-track") as HTMLElement | null
+      const indicator = this.querySelector(
+        ".gallery-indicator"
+      ) as HTMLElement | null
       if (!track || !indicator) return
 
       // 空 <p> を除外し、画像を含む要素だけをスライドとして扱う
-      const items = Array.from(track.children).filter(el =>
-        el.querySelector('img, picture') !== null
+      const items = Array.from(track.children).filter(
+        (el) => el.querySelector("img, picture") !== null
       )
       if (items.length === 0) return
 
-      items.forEach(el => el.classList.add('gallery-slide'))
+      items.forEach((el) => el.classList.add("gallery-slide"))
 
       if (items.length <= 1) return
 
       // ── インジケータードット ──
       items.forEach((_, i) => {
-        const btn = document.createElement('button')
-        btn.type = 'button'
-        btn.className = i === 0 ? 'dot-btn active' : 'dot-btn'
-        btn.setAttribute('aria-label', `スライド ${i + 1}`)
+        const btn = document.createElement("button")
+        btn.type = "button"
+        btn.className = i === 0 ? "dot-btn active" : "dot-btn"
+        btn.setAttribute("aria-label", `スライド ${i + 1}`)
 
-        const inner = document.createElement('span')
-        inner.className = 'dot-inner'
+        const inner = document.createElement("span")
+        inner.className = "dot-inner"
         btn.appendChild(inner)
         indicator.appendChild(btn)
       })
 
-      const btns = Array.from(indicator.querySelectorAll<HTMLButtonElement>('.dot-btn'))
+      const btns = Array.from(
+        indicator.querySelectorAll<HTMLButtonElement>(".dot-btn")
+      )
 
       // ── スクロール連動 ──
       const observer = new IntersectionObserver(
@@ -147,21 +155,25 @@
             if (!entry.isIntersecting) continue
             const idx = items.indexOf(entry.target as Element)
             if (idx === -1) continue
-            btns.forEach((b, i) => b.classList.toggle('active', i === idx))
+            btns.forEach((b, i) => b.classList.toggle("active", i === idx))
           }
         },
         { root: track, threshold: 0.5 }
       )
-      items.forEach(item => observer.observe(item))
+      items.forEach((item) => observer.observe(item))
 
       // ── ドットクリック ──
       btns.forEach((btn, i) => {
-        btn.addEventListener('click', () => {
-          items[i]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+        btn.addEventListener("click", () => {
+          items[i]?.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "start"
+          })
         })
       })
     }
   }
 
-  customElements.define('gallery-viewer', GalleryViewer)
+  customElements.define("gallery-viewer", GalleryViewer)
 </script>

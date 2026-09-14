@@ -31,27 +31,20 @@ try {
 ---
 
 <div class="w-full flex items-center">
-  <div
-    class="carousel carousel-center mx-auto max-w-lg p-2 space-x-2 bg-neutral rounded-box"
-  >
+  <div class="carousel carousel-center mx-auto max-w-lg p-2 space-x-2 bg-neutral rounded-box">
     <Fragment set:html={modifiedSlotHtmlString} />
   </div>
 </div>
 <div class="flex justify-center w-full py-2 gap-2">
-  {
-    () => {
-      const slideNavi = []
-      for (let i = 0; i < elementCounter; i++) {
-        slideNavi.push(
-          <a
-            href={`#slide${i}`}
-            class="btn bg-neutral-content btn-xs md:btn-md"
-          >
-            {i + 1}
-          </a>
-        )
-      }
-      return slideNavi
+  {() => {
+    const slideNavi = []
+    for (let i = 0; i < elementCounter; i++) {
+      slideNavi.push(
+        <a href={`#slide${i}`} class="btn bg-neutral-content btn-xs md:btn-md">
+          {i + 1}
+        </a>
+      )
     }
-  }
+    return slideNavi
+  }}
 </div>
