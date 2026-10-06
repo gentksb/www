@@ -134,7 +134,7 @@ import Gallery from "@/components/mdx/Gallery.astro"
 #### 4. ビルド確認
 
 ```bash
-npm run build
+pnpm build
 ```
 
 エラーがなければ `dist/` に静的ファイルが生成されます。
