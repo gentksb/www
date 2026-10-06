@@ -1,0 +1,3 @@
+# 一覧にない依存がビルドスクリプトを持つと pnpm install が ERR_PNPM_IGNORED_BUILDS で失敗する。
+allowBuilds:
+  esbuild: true
